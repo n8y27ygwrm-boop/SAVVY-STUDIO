@@ -1,0 +1,37 @@
+# macOS and local editor metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+.thumbnail
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Dependencies and generated build output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.parcel-cache/
+.next/
+.turbo/
+
+# Logs, temporary files, and runtime artifacts
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+uploads/pasted-*.txt
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx

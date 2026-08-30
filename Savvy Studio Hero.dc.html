@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050508;font-family:Manrope,system-ui,sans-serif}
+a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
+@keyframes ssDraw{from{clip-path:inset(100% 0 0 0);filter:blur(6px)}to{clip-path:inset(0 0 0 0);filter:blur(0)}}
+@keyframes ssSheen{0%{transform:translateX(-135%)}26%{transform:translateX(135%)}100%{transform:translateX(135%)}}
+@keyframes ssRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ssFade{from{opacity:0}to{opacity:1}}
+@keyframes ssRule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes ssSpine{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes ssBranch{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes ssSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ssNudge{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+@keyframes ssPulse{0%{opacity:.55;transform:scale(1)}30%{opacity:1;transform:scale(1.14)}100%{opacity:.55;transform:scale(1)}}
+@keyframes ssPulseRing{0%{opacity:.5;transform:scale(.6)}100%{opacity:0;transform:scale(1.9)}}
+@keyframes ssExtend{from{transform:scaleX(0);opacity:.7}60%{opacity:1}to{transform:scaleX(1);opacity:1}}
+@keyframes ssWipe{from{clip-path:inset(0 100% 0 0);opacity:.4}to{clip-path:inset(0 0 0 0);opacity:1}}
+@keyframes ssForm{from{opacity:0;filter:blur(7px);transform:translateY(5px);letter-spacing:.22em}70%{filter:blur(1px)}to{opacity:1;filter:blur(0);transform:translateY(0);letter-spacing:.012em}}
+@keyframes ssNode{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes ssNodeRing{from{opacity:.6;transform:scale(.5)}to{opacity:0;transform:scale(2.2)}}
+@keyframes ssBreathe{0%,100%{opacity:.4}50%{opacity:.92}}
+@keyframes ssBreatheRing{0%,100%{opacity:.16;transform:scale(.9)}50%{opacity:.5;transform:scale(1.12)}}
+@keyframes ssEkg{from{stroke-dashoffset:26}to{stroke-dashoffset:-170}}
+@keyframes ssJargon1{from{opacity:1;filter:blur(0)}to{opacity:0;filter:blur(3px);transform:translate(-26px,-14px)}}
+@keyframes ssJargon2{from{opacity:1;filter:blur(0)}to{opacity:0;filter:blur(3px);transform:translate(30px,-10px)}}
+@keyframes ssJargon3{from{opacity:1;filter:blur(0)}to{opacity:0;filter:blur(3px);transform:translate(-18px,22px)}}
+@keyframes ssJargon4{from{opacity:1;filter:blur(0)}to{opacity:0;filter:blur(3px);transform:translate(24px,18px)}}
+@keyframes ssMist{0%{opacity:.95;transform:translate3d(0,2%,0) scale(1.02)}32%{opacity:.8}56%{opacity:.54}80%{opacity:.24}100%{opacity:0;transform:translate3d(-3%,-1%,0) scale(1.14)}}
+@keyframes ssMistB{0%{opacity:.85;transform:translate3d(0,-1%,0) scale(1.06)}30%{opacity:.72}58%{opacity:.46}80%{opacity:.2}100%{opacity:0;transform:translate3d(4%,1%,0) scale(1.18)}}
+.ss-intel-caption{box-sizing:border-box;will-change:opacity,transform,filter}
+.ft-product-stage{position:absolute;inset:0;overflow:hidden;opacity:var(--ft-stage-opacity,0);pointer-events:none;font-family:Manrope,system-ui,sans-serif;color:#e9e6e3}
+.ft-shell{position:absolute;inset:clamp(14px,2.2vh,24px) clamp(14px,1.6vw,24px) clamp(50px,6.4vh,64px);overflow:hidden;border:1px solid rgba(207,219,225,.16);border-radius:4px;background:#0a0f13;box-shadow:0 24px 80px rgba(0,0,0,.48);pointer-events:auto}
+.ft-map-base{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:translate3d(var(--ft-map-x,0),0,0) scale(var(--ft-map-scale,1));transform-origin:48% 48%;filter:saturate(.82) brightness(.88);will-change:transform;transition:filter .3s ease}
+.ft-map-tint{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,7,9,.08),rgba(4,7,9,0) 55%,rgba(4,7,9,.26)),linear-gradient(180deg,rgba(4,7,9,.02),rgba(4,7,9,.1));pointer-events:none}
+.ft-focus-marker{position:absolute;left:43.4%;top:25.4%;width:16px;height:16px;margin:-8px 0 0 -8px;border:2px solid #ff8d39;border-radius:50%;background:#f37425;box-shadow:0 0 0 7px rgba(243,116,37,.15),0 0 28px rgba(243,116,37,.7);opacity:var(--ft-focus,0);transform:scale(var(--ft-focus-scale,.72));transition:box-shadow .25s ease;cursor:pointer}
+.ft-focus-marker:hover,.ft-focus-marker:focus-visible{box-shadow:0 0 0 11px rgba(243,116,37,.2),0 0 34px rgba(243,116,37,.9);outline:none}
+.ft-focus-label{position:absolute;left:calc(43.4% + 18px);top:calc(25.4% - 13px);padding:8px 11px;border:1px solid rgba(255,255,255,.14);border-radius:3px;background:rgba(10,14,17,.92);font-size:10px;line-height:1.45;color:#f3efeb;opacity:var(--ft-focus,0);transform:translateX(var(--ft-focus-x,10px));white-space:nowrap}
+.ft-panel{position:absolute;top:0;right:0;bottom:0;width:min(30%,480px);min-width:350px;border-left:1px solid rgba(217,228,232,.13);background:linear-gradient(145deg,rgba(15,21,25,.985),rgba(10,14,17,.995));box-shadow:-28px 0 60px rgba(0,0,0,.28);opacity:var(--ft-client-o,0);transform:translateX(var(--ft-client-x,48px));will-change:opacity,transform;overflow:hidden}
+.ft-panel-scroll{height:100%;box-sizing:border-box;padding:27px 25px 24px;display:flex;flex-direction:column;gap:18px}
+.ft-panel-head{display:flex;align-items:flex-start;gap:11px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft-pin{width:15px;height:15px;margin-top:4px;border-radius:50% 50% 50% 0;background:#e98636;transform:rotate(-45deg);box-shadow:0 0 14px rgba(233,134,54,.36);flex:0 0 auto}
+.ft-panel-title{margin:0;font-size:20px;font-weight:400;letter-spacing:-.02em;color:#f4f0ed}
+.ft-kebab{margin-left:auto;font-size:15px;color:#aeb4b7}
+.ft-badge{display:inline-flex;width:max-content;margin-top:7px;padding:4px 7px;border-radius:3px;background:rgba(49,116,55,.35);font-size:9px;color:#83d187}
+.ft-badge-warn{background:rgba(177,49,36,.25);color:#ff7b69}
+.ft-meta{display:grid;grid-template-columns:82px 1fr;gap:11px 13px;font-size:11px;line-height:1.45}
+.ft-meta dt{color:#777f84}.ft-meta dd{margin:0;color:#d7d9da}
+.ft-section-label{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#80888c}
+.ft-follow{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px;border:1px solid rgba(255,255,255,.1);border-radius:3px;background:rgba(255,255,255,.018)}
+.ft-follow strong{display:block;margin-top:6px;font-size:13px;font-weight:400;color:#f0ece8}.ft-follow small{font-size:9px;color:#9ba1a4}
+.ft-action{appearance:none;border:1px solid rgba(220,226,229,.25);border-radius:3px;background:rgba(255,255,255,.02);padding:8px 10px;font:inherit;font-size:9px;color:#e5e1df;cursor:pointer;transition:border-color .2s ease,background .2s ease,transform .2s ease}
+.ft-action:hover,.ft-action:focus-visible{border-color:#f0576b;background:rgba(240,87,107,.08);transform:translateY(-1px);outline:none}
+.ft-action-primary{border-color:#d83d44;background:#d6383f;color:white}
+.ft-notes{padding-top:13px;border-top:1px solid rgba(255,255,255,.1);font-size:10px;line-height:1.6;color:#c5c7c8}
+.ft-deep{opacity:var(--ft-deep,0);transform:translateY(var(--ft-deep-y,12px));margin-top:auto}
+.ft-history{display:grid;gap:7px;margin-top:9px}.ft-history-row{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;box-sizing:border-box;padding:10px 11px;border:1px solid rgba(255,255,255,.08);border-radius:3px;font-size:10px;color:#b8bdc0}.ft-history-row span:last-child{color:#e4e1de}
+.ft-panel-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.ft-schedule{position:absolute;top:8.3%;left:11.7%;right:0;bottom:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(285px,27%);background:rgba(12,17,20,.985);opacity:var(--ft-schedule-o,0);transform:translateY(var(--ft-schedule-y,22px));overflow:hidden;will-change:opacity,transform}
+.ft-schedule-main{padding:24px 20px 20px;border-right:1px solid rgba(255,255,255,.1);overflow:hidden}
+.ft-schedule-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}.ft-schedule-head h4{margin:0 auto 0 0;font-size:20px;font-weight:400}.ft-schedule-head small{color:#858c90;font-size:10px}
+.ft-visit-list{display:grid;gap:7px}.ft-period{margin:5px 0 0;font-size:8px;letter-spacing:.13em;color:#747c80;text-transform:uppercase}.ft-visit{display:grid;grid-template-columns:26px 92px 1fr auto;align-items:center;gap:11px;min-height:70px;box-sizing:border-box;padding:12px 13px;border:1px solid rgba(255,255,255,.08);border-radius:3px;background:rgba(255,255,255,.015);font-size:11px}.ft-visit:hover{border-color:rgba(241,120,51,.42)}
+.ft-visit-num{width:23px;height:23px;border:1px solid #e66e20;border-radius:50%;display:grid;place-items:center;color:#f08231}.ft-visit-time{color:#dfe0e0}.ft-visit-name strong{display:block;font-size:12px;font-weight:400;color:#f1eeeb}.ft-visit-name small{color:#7f878b;font-size:9px}.ft-status{padding:4px 6px;border-radius:3px;background:rgba(38,104,50,.28);color:#69c779;font-size:8px}.ft-status-warn{background:rgba(172,92,27,.2);color:#ee9a48}.ft-status-pending{background:rgba(62,75,93,.35);color:#9eb4d2}
+.ft-route-summary{padding:23px 18px;background:rgba(255,255,255,.012);overflow:hidden}.ft-route-summary h5{margin:0 0 17px;font-size:13px;font-weight:400}.ft-route-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}.ft-route-metrics strong{display:block;font-size:15px;font-weight:400;color:#eeeae7}.ft-route-metrics small{font-size:8px;color:#777f84}.ft-route-line{position:relative;height:120px;margin:18px 0;border:1px solid rgba(255,255,255,.08);background:radial-gradient(circle at 35% 36%,rgba(239,108,26,.16),transparent 5%),radial-gradient(circle at 66% 68%,rgba(239,108,26,.16),transparent 5%),linear-gradient(30deg,transparent 48%,rgba(239,108,26,.55) 49%,transparent 50%);overflow:hidden}.ft-attention{display:grid;gap:7px}.ft-attention div{padding:9px;border:1px solid rgba(255,255,255,.08);font-size:9px;color:#b9bdc0}.ft-attention strong{display:block;color:#eeebe8;font-weight:400;margin-bottom:2px}
+.ft-bottom-cards{position:absolute;left:11.7%;right:min(30%,480px);bottom:0;height:31%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:10px;background:rgba(10,15,18,.97);border-top:1px solid rgba(255,255,255,.1);opacity:var(--ft-bottom-o,0);transform:translateY(var(--ft-bottom-y,28px));box-sizing:border-box}
+.ft-card{padding:14px;border:1px solid rgba(255,255,255,.09);border-radius:3px;background:rgba(255,255,255,.015);overflow:hidden}.ft-card-head{display:flex;justify-content:space-between;margin-bottom:12px;font-size:10px;color:#e4e1df}.ft-card-head span:last-child{color:#eb654f}.ft-card-row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:8.5px;color:#9da3a6}.ft-card-row strong{font-weight:400;color:#ddd9d6}.ft-progress{height:3px;margin:14px 0 6px;background:#252d31}.ft-progress span{display:block;width:50%;height:100%;background:#62bb68}
+.ft-ai{position:absolute;top:8.3%;right:0;bottom:0;width:min(32%,500px);min-width:380px;padding:20px;box-sizing:border-box;border-left:1px solid rgba(255,255,255,.1);background:linear-gradient(145deg,rgba(16,22,26,.99),rgba(10,14,17,.995));opacity:var(--ft-ai-o,0);transform:translateX(var(--ft-ai-x,42px));overflow:hidden}.ft-ai-head{display:flex;justify-content:space-between;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.1);font-size:14px}.ft-beta{font-size:8px;color:#9ca2a5;background:rgba(255,255,255,.06);padding:3px 5px;border-radius:2px}.ft-chat{margin-top:16px;display:grid;gap:12px}.ft-chat-bubble{padding:13px 14px;border:1px solid rgba(255,255,255,.07);border-radius:4px;background:rgba(255,255,255,.025);font-size:10px;line-height:1.55;color:#d3d5d6}.ft-chat-answer{padding:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.018);font-size:9.5px;line-height:1.55;color:#bdc1c3}.ft-chat-answer strong{font-weight:500;color:#efebe8}.ft-chat-answer ul{margin:8px 0 0;padding-left:17px}.ft-chat-answer li{margin:7px 0}.ft-ai-list{margin-top:12px;border:1px solid rgba(255,255,255,.08)}.ft-ai-list div{display:grid;grid-template-columns:18px 1fr auto;gap:8px;align-items:center;padding:8px;border-bottom:1px solid rgba(255,255,255,.07);font-size:9px}.ft-ai-list div:last-child{border-bottom:0}.ft-ai-list b{width:16px;height:16px;display:grid;place-items:center;border:1px solid #d96b23;border-radius:50%;font-size:8px;color:#f08332}.ft-recommend{margin-top:12px;padding:11px;border:1px solid rgba(255,255,255,.08);font-size:9px;color:#b9bec0}.ft-recommend strong{display:block;margin-bottom:4px;color:#e9e5e2;font-weight:400}
+.ft-eastside{left:58%;top:44%;opacity:var(--ft-final-o,0);transform:scale(var(--ft-final-scale,.72))}.ft-eastside-label{left:calc(58% + 18px);top:calc(44% - 13px);opacity:var(--ft-final-o,0);transform:translateX(var(--ft-final-x,10px))}
+.ft-caption{position:absolute;z-index:8;left:clamp(34px,6vw,100px);top:clamp(34px,8vh,82px);width:min(410px,32vw);padding:14px 16px;background:linear-gradient(90deg,rgba(5,5,8,.86),rgba(5,5,8,.28) 82%,transparent);opacity:var(--ft-cap-o,0);transform:translateY(var(--ft-cap-y,10px));filter:blur(var(--ft-cap-blur,3px));pointer-events:none}.ft-caption-kicker{display:flex;align-items:center;gap:9px;font-size:8.5px;letter-spacing:.22em;color:#c42a3d}.ft-caption-kicker:before{content:"";width:18px;height:1px;background:#b31527}.ft-caption h4{margin:10px 0 0;font-family:'Bodoni Moda',serif;font-size:clamp(18px,1.6vw,25px);font-weight:300;line-height:1.18;color:#f2ece7}.ft-caption p{margin:8px 0 0;font-size:11px;font-weight:300;line-height:1.55;color:rgba(232,222,216,.58)}
+.ft-state-rail{position:absolute;z-index:9;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:7px;align-items:center}.ft-state-rail span{width:18px;height:1px;background:rgba(226,205,190,.18)}.ft-state-rail span.ft-on{background:#f0576b}
+/* Product correction pass: scroll drives observable interface events inside persistent UI. */
+.ft-map-base{transform:translate3d(var(--ft-map-x,0),var(--ft-map-y,0),0) scale(var(--ft-map-scale,1));transition:filter .3s ease,transform .18s linear}
+.ft-live-marker{appearance:none;position:absolute;z-index:2;width:10px;height:10px;margin:-5px 0 0 -5px;padding:0;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:#a78f7a;box-shadow:0 2px 9px rgba(0,0,0,.5);opacity:var(--ft-marker-o,0);transform:translateY(calc((1 - var(--ft-marker-o,0))*5px)) scale(calc(.76 + var(--ft-marker-o,0)*.24));transition:opacity .18s linear,transform .18s ease,filter .2s ease,box-shadow .2s ease;cursor:pointer}
+.ft-live-marker[data-tone="blue"]{background:#5e789f}.ft-live-marker[data-tone="amber"]{background:#c47933}.ft-live-marker[data-tone="red"]{background:#bb3f43}
+.ft-live-marker:after{content:"";position:absolute;inset:-8px;border:1px solid rgba(240,87,107,.62);border-radius:50%;opacity:var(--ft-pulse-o,0);transform:scale(var(--ft-pulse-scale,.72));pointer-events:none}
+.ft-live-marker:hover,.ft-live-marker:focus-visible{z-index:4;filter:brightness(1.4);box-shadow:0 0 0 6px rgba(240,87,107,.12),0 0 22px rgba(240,87,107,.45);outline:none}
+.ft-relation{position:absolute;z-index:2;left:43.4%;right:min(30%,480px);top:25.4%;height:1px;background:linear-gradient(90deg,rgba(179,21,39,.75),rgba(179,21,39,.12));opacity:var(--ft-relation-o,0);transform:scaleX(var(--ft-relation-scale,0));transform-origin:left center;pointer-events:none}
+.ft-focus-marker{z-index:4;border-color:#f0576b;background:#d83d44;box-shadow:0 0 0 calc(4px + var(--ft-focus,0)*5px) rgba(179,21,39,.17),0 0 24px rgba(179,21,39,.5)}
+.ft-focus-marker:hover,.ft-focus-marker:focus-visible{box-shadow:0 0 0 11px rgba(240,87,107,.2),0 0 30px rgba(240,87,107,.72)}
+.ft-focus-label{z-index:4}.ft-action:active,.ft-visit:active,.ft-ai-result:active,.ft-route-node:active{transform:translateY(0) scale(.985)}
+.ft-panel,.ft-schedule,.ft-bottom-cards,.ft-ai{z-index:5}
+.ft-client-panel .ft-context-1{opacity:var(--ft-ctx-1,0);transform:translateY(calc((1 - var(--ft-ctx-1,0))*7px))}
+.ft-client-panel .ft-context-2{opacity:var(--ft-ctx-2,0);transform:translateY(calc((1 - var(--ft-ctx-2,0))*7px))}
+.ft-client-panel .ft-context-3{opacity:var(--ft-ctx-3,0);transform:translateY(calc((1 - var(--ft-ctx-3,0))*7px))}
+.ft-client-panel .ft-context-4{opacity:var(--ft-ctx-4,0);transform:translateY(calc((1 - var(--ft-ctx-4,0))*7px))}
+.ft-client-panel .ft-follow{border-color:rgba(240,87,107,calc(.1 + var(--ft-follow-active,0)*.55));box-shadow:inset 3px 0 0 rgba(240,87,107,var(--ft-follow-active,0)),0 0 24px rgba(179,21,39,calc(var(--ft-follow-active,0)*.08));filter:brightness(calc(1 + var(--ft-follow-active,0)*.18))}
+.ft-client-panel .ft-notes{opacity:var(--ft-notes-o,0);transform:translateY(calc((1 - var(--ft-notes-o,0))*7px))}
+.ft-client-panel .ft-history-row:first-child{border-color:rgba(240,87,107,calc(var(--ft-recent-o,0)*.38));background:rgba(240,87,107,calc(var(--ft-recent-o,0)*.035));filter:brightness(calc(.82 + var(--ft-recent-o,0)*.18))}
+.ft-client-panel .ft-panel-actions{opacity:var(--ft-actions-o,0);transform:translateY(calc((1 - var(--ft-actions-o,0))*7px))}
+.ft-client-panel .ft-action-primary{box-shadow:0 0 0 calc(var(--ft-actions-o,0)*3px) rgba(216,56,63,.13)}
+.ft-schedule-head,.ft-period{opacity:var(--ft-schedule-structure,0);transform:translateY(calc((1 - var(--ft-schedule-structure,0))*6px))}
+.ft-visit{appearance:none;width:100%;font-family:inherit;color:inherit;text-align:left;cursor:pointer;opacity:var(--ft-row-o,0);transform:translateY(calc((1 - var(--ft-row-o,0))*8px));filter:brightness(calc(.86 + var(--ft-row-active,0)*.24));box-shadow:inset calc(var(--ft-row-active,0)*3px) 0 0 rgba(240,87,107,.8);transition:border-color .2s ease,filter .2s ease,box-shadow .2s ease,transform .2s ease}
+.ft-visit:hover,.ft-visit:focus-visible{border-color:rgba(240,87,107,.58);filter:brightness(1.12);outline:none}
+.ft-route-summary{opacity:var(--ft-route-summary-o,0);transform:translateX(calc((1 - var(--ft-route-summary-o,0))*10px))}
+.ft-route-line{opacity:var(--ft-mini-map-o,0);height:clamp(120px,18vh,160px);transform:translateY(calc((1 - var(--ft-mini-map-o,0))*8px));background:#0a0f13;isolation:isolate}
+.ft-route-map-asset{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}.ft-route-map-underlay{filter:grayscale(1) brightness(.52) saturate(.25);opacity:.62}.ft-route-map-reveal{z-index:1;clip-path:inset(0 var(--ft-route-clip,100%) 0 0);filter:saturate(.92) brightness(.9)}
+.ft-route-node{appearance:none;position:absolute;z-index:2;width:21px;height:21px;margin:-10px 0 0 -10px;padding:0;border:1px solid rgba(255,176,100,.9);border-radius:50%;background:#ad501c;color:#fff;font:600 8px/1 Manrope,sans-serif;display:grid;place-items:center;opacity:var(--ft-node-o,0);transform:scale(calc(.72 + var(--ft-node-o,0)*.28 + var(--ft-node-active,0)*.12));box-shadow:0 0 0 calc(var(--ft-node-active,0)*5px) rgba(240,87,107,.15),0 2px 8px rgba(0,0,0,.55);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.ft-route-node:hover,.ft-route-node:focus-visible{background:#d83d44;color:#fff;box-shadow:0 0 0 5px rgba(240,87,107,.16);outline:none}
+.ft-route-node[data-stop="1"]{left:34%;top:14%}.ft-route-node[data-stop="2"]{left:30%;top:31%}.ft-route-node[data-stop="3"]{left:55%;top:33%}.ft-route-node[data-stop="4"]{left:19%;top:45%}.ft-route-node[data-stop="5"]{left:73%;top:70%}.ft-route-node[data-stop="6"]{left:70%;top:82%}
+.ft-schedule:has(.ft-visit[data-stop="1"]:is(:hover,:focus-visible)) .ft-route-node[data-stop="1"],.ft-schedule:has(.ft-visit[data-stop="2"]:is(:hover,:focus-visible)) .ft-route-node[data-stop="2"],.ft-schedule:has(.ft-visit[data-stop="3"]:is(:hover,:focus-visible)) .ft-route-node[data-stop="3"],.ft-schedule:has(.ft-visit[data-stop="4"]:is(:hover,:focus-visible)) .ft-route-node[data-stop="4"],.ft-schedule:has(.ft-visit[data-stop="5"]:is(:hover,:focus-visible)) .ft-route-node[data-stop="5"],.ft-schedule:has(.ft-visit[data-stop="6"]:is(:hover,:focus-visible)) .ft-route-node[data-stop="6"]{background:#d83d44;color:#fff;box-shadow:0 0 0 5px rgba(240,87,107,.18);transform:scale(1.13)}
+.ft-schedule:has(.ft-route-node[data-stop="1"]:is(:hover,:focus-visible)) .ft-visit[data-stop="1"],.ft-schedule:has(.ft-route-node[data-stop="2"]:is(:hover,:focus-visible)) .ft-visit[data-stop="2"],.ft-schedule:has(.ft-route-node[data-stop="3"]:is(:hover,:focus-visible)) .ft-visit[data-stop="3"],.ft-schedule:has(.ft-route-node[data-stop="4"]:is(:hover,:focus-visible)) .ft-visit[data-stop="4"],.ft-schedule:has(.ft-route-node[data-stop="5"]:is(:hover,:focus-visible)) .ft-visit[data-stop="5"],.ft-schedule:has(.ft-route-node[data-stop="6"]:is(:hover,:focus-visible)) .ft-visit[data-stop="6"]{border-color:rgba(240,87,107,.58);filter:brightness(1.12);box-shadow:inset 3px 0 0 #d83d44}
+.ft-ai-signal{position:absolute;z-index:7;right:4%;top:16%;display:flex;align-items:center;gap:9px;padding:10px 13px;border:1px solid rgba(240,87,107,.32);border-radius:3px;background:rgba(12,17,20,.94);color:#efebe8;font-size:10px;opacity:var(--ft-ai-signal-o,0);transform:translateY(calc((1 - var(--ft-ai-signal-o,0))*7px)) scale(calc(.96 + var(--ft-ai-signal-o,0)*.04));pointer-events:none}
+.ft-ai-signal:before{content:"";width:7px;height:7px;border-radius:50%;background:#d83d44;box-shadow:0 0 0 5px rgba(216,61,68,.12)}
+.ft-ai .ft-ai-query{opacity:var(--ft-ai-query-o,0);transform:translateY(calc((1 - var(--ft-ai-query-o,0))*7px))}.ft-ai .ft-ai-answer{opacity:var(--ft-ai-answer-o,0);transform:translateY(calc((1 - var(--ft-ai-answer-o,0))*7px))}
+.ft-ai-list{display:grid}.ft-ai-result{appearance:none;display:grid!important;grid-template-columns:18px 1fr auto!important;width:100%;border:0;border-bottom:1px solid rgba(255,255,255,.07);background:transparent;color:#bdc1c3;text-align:left;cursor:pointer;opacity:var(--ft-result-o,0);transform:translateY(calc((1 - var(--ft-result-o,0))*6px));font-family:inherit}
+.ft-ai-result:last-child{border-bottom:0}.ft-ai-result:hover,.ft-ai-result:focus-visible{background:rgba(240,87,107,.055);outline:none}.ft-recommend{opacity:var(--ft-recommend-o,0);transform:translateY(calc((1 - var(--ft-recommend-o,0))*7px))}
+.ft-ai-map-marker{appearance:none;position:absolute;z-index:4;width:15px;height:15px;margin:-7px 0 0 -7px;border:2px solid #f0576b;border-radius:50%;background:#d83d44;opacity:var(--ft-ai-map-o,0);transform:scale(calc(.76 + var(--ft-ai-map-o,0)*.24));box-shadow:0 0 0 7px rgba(179,21,39,.13);cursor:pointer}.ft-ai-map-marker span{position:absolute;left:18px;top:-7px;padding:5px 7px;border:1px solid rgba(255,255,255,.12);background:rgba(9,13,16,.9);color:#ebe7e4;font:8px/1.2 Manrope,sans-serif;white-space:nowrap}
+.ft-ai-map-marker[data-account="eastside"]{left:58%;top:44%}.ft-ai-map-marker[data-account="hillside"]{left:62%;top:63%}.ft-ai-map-marker[data-account="northline"]{left:43.4%;top:25.4%}
+.ft-ai-map-marker:hover,.ft-ai-map-marker:focus-visible,.ft-shell:has(.ft-ai-result[data-account="eastside"]:is(:hover,:focus-visible)) .ft-ai-map-marker[data-account="eastside"],.ft-shell:has(.ft-ai-result[data-account="hillside"]:is(:hover,:focus-visible)) .ft-ai-map-marker[data-account="hillside"],.ft-shell:has(.ft-ai-result[data-account="northline"]:is(:hover,:focus-visible)) .ft-ai-map-marker[data-account="northline"]{box-shadow:0 0 0 10px rgba(240,87,107,.2),0 0 28px rgba(240,87,107,.5);outline:none}
+.ft-eastside{z-index:6;opacity:var(--ft-eastside-o,0);transform:scale(var(--ft-eastside-scale,.72))}.ft-eastside-label{z-index:6;opacity:var(--ft-eastside-o,0);transform:translateX(var(--ft-eastside-x,10px))}
+.ft-final-panel .ft-final-context{opacity:var(--ft-final-context-o,0);transform:translateY(calc((1 - var(--ft-final-context-o,0))*7px))}.ft-final-panel .ft-final-actions{opacity:var(--ft-final-actions-o,0);transform:translateY(calc((1 - var(--ft-final-actions-o,0))*7px))}
+.ft-nav-overlay{position:absolute;z-index:4;left:0;top:8.3%;bottom:0;width:11.7%;overflow:hidden;pointer-events:none}.ft-nav-map-dimmer{position:absolute;left:0;right:0;top:0;height:9%;background:rgba(7,11,14,.68);opacity:var(--ft-nav-map-dim,0)}
+.ft-nav-active-surface{position:absolute;left:0;right:0;top:var(--ft-nav-top,0%);height:9%;border-left:3px solid #f0576b;background:linear-gradient(90deg,rgba(179,21,39,.13),rgba(179,21,39,.025));opacity:var(--ft-nav-active-o,0);box-sizing:border-box;transition:top .18s linear,opacity .18s linear}
+.ft-nav-cue{position:absolute;right:12px;width:6px;height:6px;border-radius:50%;background:#f0576b;box-shadow:0 0 0 4px rgba(240,87,107,.1);opacity:var(--ft-nav-cue-o,.12);transform:scale(calc(.72 + var(--ft-nav-cue-o,.12)*.28))}.ft-nav-cue-clients{top:13.1%;--ft-nav-cue-o:var(--ft-clients-cue,.12)}.ft-nav-cue-messages{top:49%;--ft-nav-cue-o:var(--ft-messages-cue,.12)}
+.ft-nav-tasks-badge{position:absolute;right:9px;top:29%;min-width:16px;height:16px;padding:0 4px;box-sizing:border-box;border-radius:8px;background:rgba(179,21,39,.72);color:#ff9a8e;font:600 8px/16px Manrope,sans-serif;text-align:center;opacity:var(--ft-tasks-badge-o,.18);transform:scale(calc(.8 + var(--ft-tasks-badge-o,.18)*.2))}
+.ft-followups-badge{position:absolute;z-index:7;left:39.2%;top:1.05%;width:18px;height:18px;border:1px solid rgba(240,87,107,.24);border-radius:50%;background:#40161b;color:#ff8c81;font:600 8px/16px Manrope,sans-serif;text-align:center;opacity:var(--ft-followups-badge-o,0);transform:scale(calc(.82 + var(--ft-followups-badge-o,0)*.18));box-shadow:0 0 0 4px rgba(179,21,39,calc(var(--ft-followups-badge-o,0)*.08));pointer-events:none}
+.ft-card-attention{border-color:rgba(240,87,107,calc(.09 + var(--ft-system-attention-o,0)*.26));box-shadow:inset 0 2px 0 rgba(240,87,107,calc(var(--ft-system-attention-o,0)*.34));filter:brightness(calc(1 + var(--ft-system-attention-o,0)*.08))}
+/* Infrastructure: one persistent evidence topology; scroll changes proof state, not screens. */
+.bp-stage{position:absolute;inset:0;overflow:hidden;opacity:var(--bp-stage-o,0);pointer-events:none;color:#eee8e2;font-family:Manrope,system-ui,sans-serif}
+.bp-shell{position:absolute;inset:clamp(14px,2.2vh,24px) clamp(14px,1.6vw,24px) clamp(50px,6.4vh,64px);overflow:hidden;border:1px solid rgba(226,205,190,.14);border-radius:4px;background:#08080b;box-shadow:0 24px 80px rgba(0,0,0,.46);pointer-events:auto;display:grid;grid-template-columns:clamp(150px,13vw,205px) minmax(0,1fr) clamp(310px,27vw,420px);grid-template-rows:58px minmax(0,1fr) 38px}
+.bp-topbar{grid-column:1/-1;grid-row:1;z-index:6;display:flex;align-items:center;gap:clamp(18px,2vw,34px);padding:0 18px;border-bottom:1px solid rgba(226,205,190,.1);background:#0b0b0e;box-sizing:border-box}
+.bp-brand{display:flex;align-items:center;gap:9px;margin-right:auto;font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.035em;color:#f1e9e2}.bp-brand-mark{width:14px;height:14px;border:1px solid #b31527;transform:rotate(45deg);display:block}.bp-brand small{font:8px/1 Manrope,sans-serif;letter-spacing:.18em;color:rgba(226,205,190,.34)}
+.bp-top-state{display:flex;align-items:center;gap:9px;font:8px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;color:rgba(226,205,190,.42);white-space:nowrap}.bp-top-state strong{font-weight:500;color:#d8d0c8}.bp-state-dot{width:6px;height:6px;border-radius:50%;background:#5f8f68}.bp-state-dot.amber{background:#c38a45}.bp-evidence-state{position:relative;padding-right:77px}.bp-evidence-state .bp-unverified{color:#d8a25d;opacity:calc(1 - var(--bp-final,0))}.bp-evidence-state .bp-demonstrated{position:absolute;right:0;top:50%;color:#8db195;opacity:var(--bp-final,0);transform:translateY(-50%)}.bp-stage[data-accepted="true"] .bp-evidence-state .bp-state-dot{background:#5f8f68}
+.bp-final-metrics{display:flex;gap:18px;margin-left:10px;opacity:var(--bp-final,0);transform:translateY(calc((1 - var(--bp-final,0))*5px));font:8px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;color:rgba(226,205,190,.48)}.bp-final-metrics b{display:block;font-size:11px;font-weight:500;color:#eee8e2}
+.bp-hierarchy{grid-column:1;grid-row:2/4;z-index:5;padding:22px 16px;border-right:1px solid rgba(226,205,190,.1);background:#09090c;box-sizing:border-box}.bp-hierarchy-label{font:7.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;color:rgba(226,205,190,.3)}.bp-tree{margin-top:22px;display:grid;gap:13px}.bp-tree-row{appearance:none;border:0;background:transparent;padding:0;color:rgba(226,205,190,.36);font:8px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:left;letter-spacing:.05em;cursor:pointer}.bp-tree-row:nth-child(2){padding-left:12px}.bp-tree-row:nth-child(3){padding-left:24px}.bp-tree-row:nth-child(4){padding-left:36px;color:#eee8e2}.bp-tree-row:hover,.bp-tree-row:focus-visible{color:#f0576b;outline:none}.bp-hierarchy-meta{margin-top:32px;padding-top:18px;border-top:1px solid rgba(226,205,190,.08);display:grid;gap:12px;font:7.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;color:rgba(226,205,190,.34)}.bp-hierarchy-meta strong{display:block;font-size:9px;font-weight:400;color:#d8d0c8}
+.bp-canvas{position:relative;grid-column:2/4;grid-row:2;overflow:hidden;background:#07070a}.bp-canvas:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(226,205,190,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(226,205,190,.022) 1px,transparent 1px);background-size:42px 42px;opacity:.55}.bp-canvas:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 120px rgba(0,0,0,.7);pointer-events:none}
+.bp-topology{position:absolute;z-index:1;left:2%;top:10%;width:96%;height:78%;transform:translate3d(var(--bp-topology-x,0%),calc(var(--bp-depth,0)*1%),0) scale(calc(.97 + var(--bp-depth,0)*.035));transform-origin:58% 48%;overflow:visible;will-change:transform}.bp-edge{fill:none;stroke:rgba(226,205,190,calc(.11 + var(--bp-edge-prom,0)*.31));stroke-width:1.2;vector-effect:non-scaling-stroke;transition:stroke .2s ease,opacity .2s ease}.bp-edge-arrow{fill:rgba(226,205,190,calc(.18 + var(--bp-edge-prom,0)*.34))}.bp-edge-demo{stroke:rgba(107,147,116,calc(.22 + var(--bp-proof,0)*.62))}.bp-edge-partial{stroke:rgba(195,138,69,calc(.22 + var(--bp-proof,0)*.48));stroke-dasharray:4 7}.bp-edge-b05{stroke:rgba(195,138,69,calc(.15 + var(--bp-frontier,0)*.85));stroke-width:calc(1.2px + var(--bp-frontier,0)*1.8px);stroke-dasharray:none}.bp-edge-b06{stroke:rgba(195,138,69,calc(.12 + var(--bp-next-frontier,0)*.78));stroke-width:calc(1.1px + var(--bp-next-frontier,0)*1.4px)}.bp-stage[data-accepted="true"] .bp-edge-b05,.bp-edge-b05.bp-scroll-accepted{stroke:rgba(107,147,116,calc(.26 + var(--bp-accept,0)*.7));stroke-width:calc(1.2px + var(--bp-accept,0)*.9px)}
+.bp-node{opacity:calc(.5 + var(--bp-node-prom,0)*.5);transition:opacity .2s ease,filter .2s ease}.bp-node.downstream{opacity:var(--bp-downstream-o,1)}.bp-node rect{fill:#0d0d10;stroke:rgba(226,205,190,.19);stroke-width:1;rx:2}.bp-node .bp-node-kicker{fill:rgba(226,205,190,.34);font:7px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em}.bp-node .bp-node-label{fill:#e8e0d9;font:500 10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.045em}.bp-node .bp-node-state{fill:#78a080;font:7px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}.bp-node.downstream .bp-node-state{fill:rgba(226,205,190,.3)}
+.bp-edge-hit{appearance:none;position:absolute;z-index:4;min-width:38px;padding:5px 7px;border:1px solid rgba(226,205,190,calc(var(--bp-id-o,0)*.16));border-radius:2px;background:rgba(8,8,11,calc(var(--bp-id-o,0)*.9));color:rgba(226,205,190,calc(var(--bp-id-o,0)*.58));font:7px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.09em;opacity:var(--bp-id-o,0);cursor:pointer;transform:translate(-50%,-50%);transition:border-color .18s ease,color .18s ease,opacity .18s ease}.bp-edge-hit:hover,.bp-edge-hit:focus-visible{z-index:8;border-color:#d7a05b;color:#f1d6b3;outline:none}.bp-edge-hit[data-edge="b01"]{left:calc(17% + var(--bp-topology-x,0%));top:50%}.bp-edge-hit[data-edge="b02"]{left:calc(29% + var(--bp-topology-x,0%));top:42%}.bp-edge-hit[data-edge="b03"]{left:calc(41% + var(--bp-topology-x,0%));top:42%}.bp-edge-hit[data-edge="b04"]{left:calc(53% + var(--bp-topology-x,0%));top:42%}.bp-edge-hit[data-edge="b05"]{left:calc(65% + var(--bp-topology-x,0%));top:42%;border-color:rgba(195,138,69,calc(var(--bp-frontier,0)*.78));color:rgba(238,199,145,calc(.3 + var(--bp-frontier,0)*.7));box-shadow:0 0 0 calc(var(--bp-frontier,0)*4px) rgba(195,138,69,.08)}.bp-edge-hit[data-edge="b06"]{left:calc(78% + var(--bp-topology-x,0%));top:42%}.bp-edge-hit[data-edge="b07"]{left:calc(89% + var(--bp-topology-x,0%));top:50%}
+.bp-edge-contract{position:absolute;left:50%;bottom:calc(100% + 7px);width:150px;padding:8px 9px;border:1px solid rgba(226,205,190,.13);background:#0d0d10;color:rgba(226,205,190,.58);font:7.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:left;letter-spacing:0;opacity:0;transform:translate(-50%,4px);pointer-events:none}.bp-edge-hit:hover .bp-edge-contract,.bp-edge-hit:focus-visible .bp-edge-contract{opacity:1;transform:translate(-50%,0)}
+.bp-stage:has(.bp-edge-hit:is(:hover,:focus-visible)) .bp-node{opacity:.2}.bp-stage:has(.bp-edge-hit[data-edge="b01"]:is(:hover,:focus-visible)) .bp-node[data-node="product"],.bp-stage:has(.bp-edge-hit[data-edge="b01"]:is(:hover,:focus-visible)) .bp-node[data-node="ingress"],.bp-stage:has(.bp-edge-hit[data-edge="b02"]:is(:hover,:focus-visible)) .bp-node[data-node="ingress"],.bp-stage:has(.bp-edge-hit[data-edge="b02"]:is(:hover,:focus-visible)) .bp-node[data-node="queue"],.bp-stage:has(.bp-edge-hit[data-edge="b03"]:is(:hover,:focus-visible)) .bp-node[data-node="queue"],.bp-stage:has(.bp-edge-hit[data-edge="b03"]:is(:hover,:focus-visible)) .bp-node[data-node="worker"],.bp-stage:has(.bp-edge-hit[data-edge="b04"]:is(:hover,:focus-visible)) .bp-node[data-node="worker"],.bp-stage:has(.bp-edge-hit[data-edge="b04"]:is(:hover,:focus-visible)) .bp-node[data-node="eligibility"],.bp-stage:has(.bp-edge-hit[data-edge="b05"]:is(:hover,:focus-visible)) .bp-node[data-node="eligibility"],.bp-stage:has(.bp-edge-hit[data-edge="b05"]:is(:hover,:focus-visible)) .bp-node[data-node="bonus"],.bp-stage:has(.bp-edge-hit[data-edge="b06"]:is(:hover,:focus-visible)) .bp-node[data-node="bonus"],.bp-stage:has(.bp-edge-hit[data-edge="b06"]:is(:hover,:focus-visible)) .bp-node[data-node="save"],.bp-stage:has(.bp-edge-hit[data-edge="b07"]:is(:hover,:focus-visible)) .bp-node[data-node="save"],.bp-stage:has(.bp-edge-hit[data-edge="b07"]:is(:hover,:focus-visible)) .bp-node[data-node="publish"]{opacity:1;filter:brightness(1.22)}
+.bp-frontier-label{position:absolute;z-index:5;left:calc(65% + var(--bp-topology-x,0%));top:31%;padding:8px 10px;border-left:2px solid #c38a45;background:rgba(12,11,10,.92);opacity:var(--bp-frontier-label,0);transform:translate(-50%,calc((1 - var(--bp-frontier-label,0))*7px));font:7.5px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.11em;color:#e8c28f;white-space:nowrap}.bp-frontier-label strong{display:block;margin-top:3px;font-size:10px;font-weight:500;color:#f0e7dc;letter-spacing:.04em}
+.bp-proof-matrix{position:absolute;z-index:5;left:48%;top:62%;width:270px;padding:12px;border:1px solid rgba(226,205,190,.12);background:rgba(10,10,13,.94);opacity:var(--bp-matrix-o,0);transform:translateY(calc((1 - var(--bp-matrix-o,0))*8px));box-sizing:border-box}.bp-proof-matrix h5{margin:0 0 9px;font:7.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;color:rgba(226,205,190,.42)}.bp-proof-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:6px 0;border-top:1px solid rgba(226,205,190,.07);font:8px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;color:rgba(226,205,190,.45)}.bp-proof-row b{font-weight:500;color:#82a98a}.bp-proof-row:last-child b{color:#d8a25d}
+.bp-inspector{grid-column:3;grid-row:2/4;z-index:7;position:relative;border-left:1px solid rgba(226,205,190,.12);background:#0c0c0f;opacity:var(--bp-inspector-o,0);transform:translateX(calc((1 - var(--bp-inspector-o,0))*36px));overflow:hidden;pointer-events:var(--bp-inspector-pe,none)}.bp-inspector-head{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid rgba(226,205,190,.1);box-sizing:border-box}.bp-inspector-title{font:9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:#e9e1da}.bp-inspector-tabs{display:flex;gap:11px;font:6.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.09em;color:rgba(226,205,190,.3)}.bp-inspector-tabs span.active{color:#d6a260}.bp-inspector-body{position:absolute;left:0;right:0;top:58px;bottom:0;padding:18px;box-sizing:border-box;overflow:hidden}.bp-inspector-view{position:absolute;inset:18px;overflow:hidden}.bp-claim-view{opacity:var(--bp-claim-o,0);transform:translateY(calc((1 - var(--bp-claim-o,0))*8px))}.bp-verify-view{opacity:var(--bp-verify-o,0);transform:translateY(calc((1 - var(--bp-verify-o,0))*8px))}.bp-inspector-kicker{font:7px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.15em;color:#c99857}.bp-inspector-view h4{margin:8px 0 15px;font:400 16px/1.25 'Cormorant Garamond',serif;color:#f0e8e0}.bp-claim-block{padding:11px 0;border-top:1px solid rgba(226,205,190,.09)}.bp-claim-block label,.bp-verify-section label{display:block;margin-bottom:5px;font:6.8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;color:rgba(226,205,190,.34)}.bp-claim-block p,.bp-verify-section p{margin:0;font-size:9px;line-height:1.5;color:rgba(232,222,216,.66)}.bp-claim-block.gap p{color:#d8a25d}
+.bp-verify-section{padding:8px 0;border-top:1px solid rgba(226,205,190,.08)}.bp-verify-section ul{margin:0;padding-left:15px;font-size:8px;line-height:1.55;color:rgba(232,222,216,.56)}.bp-authority{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bp-authority div{padding:8px;border:1px solid rgba(226,205,190,.08);font:7px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:rgba(226,205,190,.44)}.bp-authority strong{display:block;margin-bottom:4px;color:#d6cfc8;font-weight:500}.bp-authority .prohibited strong{color:#bf7777}
+.bp-evidence-list{margin-top:10px;display:grid;gap:5px}.bp-evidence-row{appearance:none;width:100%;display:grid;grid-template-columns:1fr auto;gap:10px;padding:8px 9px;border:1px solid rgba(226,205,190,.08);background:rgba(255,255,255,.012);color:rgba(226,205,190,.52);font:7.5px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:left;opacity:var(--bp-row-o,0);transform:translateY(calc((1 - var(--bp-row-o,0))*5px));cursor:pointer}.bp-evidence-row b{font-weight:500;color:#8db195}.bp-evidence-row:hover,.bp-evidence-row:focus-visible{border-color:#c38a45;color:#eee8e2;outline:none}.bp-stage:has(.bp-evidence-row:is(:hover,:focus-visible)) .bp-edge-b05{stroke:#e3aa61;stroke-width:3px}
+.bp-decision{position:absolute;z-index:9;left:clamp(165px,14vw,215px);right:clamp(330px,28vw,430px);bottom:42px;padding:13px 15px;border:1px solid rgba(195,138,69,.34);background:#0e0d0d;opacity:var(--bp-decision-o,0);transform:translateY(calc((1 - var(--bp-decision-o,0))*10px));pointer-events:var(--bp-decision-pe,none);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px}.bp-decision-title{font:8px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;color:#e2bb85}.bp-decision-facts{display:flex;gap:14px;font:7px/1.25 ui-monospace,SFMono-Regular,Menlo,monospace;color:rgba(226,205,190,.38)}.bp-decision-facts b{display:block;color:#e9e1da;font-weight:500}.bp-decision-actions{display:flex;gap:6px}.bp-decision-actions button{appearance:none;border:1px solid rgba(226,205,190,.16);background:transparent;padding:7px 8px;color:rgba(226,205,190,.56);font:6.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;cursor:pointer}.bp-decision-actions button:first-child{border-color:#b31527;background:#8e1725;color:#f6e9e6}.bp-decision-actions button.selected{border-color:#f0576b;box-shadow:0 0 0 2px rgba(240,87,107,.12);color:#fff}.bp-decision-actions button:hover,.bp-decision-actions button:focus-visible{border-color:#f0576b;color:#fff;outline:none}
+.bp-history{grid-column:2;grid-row:3;z-index:6;display:flex;align-items:center;gap:16px;padding:0 15px;border-top:1px solid rgba(226,205,190,.08);background:#09090c;font:7px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:rgba(226,205,190,.28)}.bp-history span{display:flex;align-items:center;gap:6px}.bp-history i{width:5px;height:5px;border-radius:50%;background:#5f8f68}.bp-history .current i{background:#c38a45}.bp-history .accepted{opacity:var(--bp-accept,0)}
+.bp-caption{position:absolute;z-index:10;width:min(370px,30vw);padding:13px 15px;background:rgba(5,5,8,.78);opacity:var(--bp-cap-o,0);transform:translateY(var(--bp-cap-y,9px));pointer-events:none}.bp-caption .kicker{display:flex;align-items:center;gap:9px;font-size:8px;letter-spacing:.2em;color:#bd3342}.bp-caption .kicker:before{content:"";width:17px;height:1px;background:#b31527}.bp-caption h4{margin:9px 0 0;font:300 clamp(18px,1.55vw,25px)/1.2 'Bodoni Moda',serif;color:#f2ece7}.bp-caption p{margin:7px 0 0;font-size:10px;line-height:1.5;color:rgba(232,222,216,.56)}.bp-caption-1{left:18%;top:16%}.bp-caption-2{right:29%;top:14%}.bp-caption-3{left:20%;bottom:14%}.bp-caption-4{left:19%;top:14%}.bp-caption-5{left:18%;bottom:13%}.bp-caption-6{left:20%;top:15%}
+.bp-state-rail{position:absolute;z-index:12;left:50%;bottom:17px;transform:translateX(-50%);display:flex;gap:7px}.bp-state-rail span{width:18px;height:1px;background:rgba(226,205,190,.16)}.bp-state-rail span.on{background:#c38a45}
+@media(max-width:900px){
+  .bp-shell{grid-template-columns:120px minmax(0,1fr) 300px}.bp-final-metrics{display:none}.bp-top-state:nth-of-type(2){display:none}.bp-caption{width:min(330px,37vw)}.bp-decision{left:130px;right:310px;grid-template-columns:1fr auto}.bp-decision-facts{display:none}
+}
+@media(max-width:700px){
+  .bp-shell{inset:12px 10px 60px;display:block}.bp-topbar{height:52px}.bp-brand small,.bp-top-state:first-of-type,.bp-final-metrics{display:none}.bp-hierarchy{display:none}.bp-canvas{position:absolute;left:0;right:0;top:52px;bottom:0}.bp-topology{left:-18%;top:10%;width:136%;height:66%}.bp-edge-hit{transform:translate(-50%,-50%) scale(.9)}.bp-proof-matrix{left:9%;top:auto;bottom:15%;width:250px}.bp-inspector{position:absolute;left:0;right:0;top:auto;bottom:0;height:54%;border-left:0;border-top:1px solid rgba(226,205,190,.14);transform:translateY(calc((1 - var(--bp-inspector-o,0))*30px))}.bp-decision{left:10px;right:10px;bottom:8px;grid-template-columns:1fr}.bp-decision-actions{justify-content:stretch}.bp-decision-actions button{flex:1}.bp-history{display:none}.bp-caption{width:min(310px,78vw);padding:11px 13px}.bp-caption-1,.bp-caption-2,.bp-caption-3,.bp-caption-4,.bp-caption-5,.bp-caption-6{left:6%;right:auto;top:68px;bottom:auto}.bp-frontier-label{top:27%}.bp-state-rail{bottom:11px}
+}
+@media(prefers-reduced-motion:reduce){.bp-stage *{transition-duration:.01ms!important;animation:none!important}.bp-topology{will-change:auto}}
+.ss-system-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(34px,4vw,72px)}
+.ss-system-entry{position:relative;min-height:310px;padding:32px 0 0;border-top:1px solid rgba(226,205,190,.14);display:flex;flex-direction:column}
+.ss-system-entry:before{content:"";position:absolute;left:0;top:0;width:44px;height:1px;background:#B31527}
+.ss-system-cta{appearance:none;border:0;background:transparent;padding:14px 0 8px;color:#E3BFA4;font-family:Manrope,sans-serif;font-size:9.5px;letter-spacing:.2em;text-align:left;cursor:pointer;display:flex;align-items:center;gap:12px;transition:color .35s ease}
+.ss-system-cta:hover{color:#F0576B}
+.ss-system-cta:after{content:"";display:block;width:34px;height:1px;background:rgba(179,21,39,.72);transform-origin:left;transition:width .4s ease,background .4s ease}
+.ss-system-cta:hover:after{width:58px;background:#F0576B}
+@media(max-width:820px){
+  .ss-system-grid{grid-template-columns:1fr;gap:54px}
+  .ss-system-entry{min-height:250px}
+}
+@media(max-height:780px) and (min-width:701px){
+  .ft-panel-scroll{padding:18px 18px 16px;gap:10px}
+  .ft-panel-head{padding-bottom:9px}.ft-panel-title{font-size:18px}.ft-badge{margin-top:5px;padding:3px 6px}
+  .ft-meta{gap:7px 11px;font-size:10px;line-height:1.35}.ft-follow{padding:10px}.ft-follow strong{margin-top:4px;font-size:12px}
+  .ft-notes{padding-top:9px;line-height:1.4}.ft-deep{margin-top:0}.ft-history{gap:5px;margin-top:6px}.ft-history-row{min-height:34px;padding:7px 9px;font-size:9px}.ft-panel-actions{margin-top:7px}
+  .ft-schedule-main{padding-top:18px}.ft-schedule-head{margin-bottom:11px}.ft-visit-list{gap:5px}.ft-visit{min-height:61px;padding:9px 11px}.ft-route-summary{padding-top:18px}
+}
+@media(max-width:700px){
+  .ss-intel-caption{left:24px!important;right:24px!important;max-width:none!important;padding-right:0}
+  .ss-intel-caption[data-intel-caption="1"],.ss-intel-caption[data-intel-caption="2"]{top:12%!important;bottom:auto!important}
+  .ss-intel-caption[data-intel-caption="3"],.ss-intel-caption[data-intel-caption="5"]{top:auto!important;bottom:12%!important}
+  .ss-intel-caption[data-intel-caption="4"],.ss-intel-caption[data-intel-caption="6"]{top:13%!important;bottom:auto!important}
+  .ft-shell{inset:18px 12px 72px}
+  .ft-map-base{object-fit:cover;object-position:43% center}
+  .ft-panel,.ft-ai{top:auto;left:0;right:0;bottom:0;width:100%;min-width:0;height:58%;border-left:0;border-top:1px solid rgba(255,255,255,.13);transform:translateY(var(--ft-client-x,44px))}
+  .ft-ai{height:62%;transform:translateY(var(--ft-ai-x,44px))}
+  .ft-panel-scroll{padding:17px 16px 15px;gap:11px;overflow:hidden}.ft-deep{display:none}.ft-meta{grid-template-columns:64px 1fr}.ft-notes{display:none}
+  .ft-panel[aria-label="Eastside Pharmacy client details"] .ft-deep{display:block;margin-top:4px}.ft-panel[aria-label="Eastside Pharmacy client details"] .ft-history-row:nth-child(n+2){display:none}
+  .ft-schedule{top:8.3%;left:0;grid-template-columns:1fr}.ft-schedule-main{padding:16px 12px;border-right:0}.ft-route-summary{display:none}.ft-visit{grid-template-columns:22px 62px 1fr;gap:7px;min-height:0;padding:7px}.ft-visit .ft-status{display:none}.ft-visit-list{gap:4px}
+  .ft-bottom-cards{left:0;right:0;height:33%;grid-template-columns:1fr 1fr;padding:7px}.ft-bottom-cards .ft-card:nth-child(3){display:none}.ft-card{padding:10px}
+  .ft-caption,.ft-caption:nth-of-type(even){left:20px;right:20px;top:64px;bottom:auto;width:auto;padding:10px 12px}.ft-caption h4{font-size:19px}.ft-caption p{font-size:10px}
+  .ft-focus-marker{left:50%;top:33%}.ft-focus-label{left:calc(50% + 16px);top:calc(33% - 12px)}.ft-eastside{left:55%;top:38%}.ft-eastside-label{left:calc(55% + 16px);top:calc(38% - 12px)}
+  .ft-state-rail{bottom:86px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ss-intel-caption{transition:opacity .12s linear!important;transform:none!important;filter:none!important}
+  .ft-product-stage *{transition-duration:.01ms!important;animation-duration:.01ms!important;filter:none!important}
+}
+</style></helmet>
+
+<section style="position:relative;width:100%;min-height:100vh;background:#050508;overflow:hidden;font-family:Manrope,sans-serif">
+  <div style="position:absolute;right:88px;top:104px;width:600px;height:600px;overflow:hidden;opacity:.62;mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.55) 78%,transparent 100%);-webkit-mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.55) 78%,transparent 100%)">
+    <img data-anim src="assets/ss-monogram.png" alt="Savvy Studio monogram" style="position:absolute;width:600px;height:600px;left:0;top:0;mix-blend-mode:screen;animation:ssDraw 2.6s cubic-bezier(.2,.85,.2,1) .2s both"/>
+    <sc-if value="{{ sheen }}" hint-placeholder-val="{{ true }}">
+    <div data-anim style="position:absolute;inset:0;background:linear-gradient(100deg,transparent 42%,rgba(255,214,208,.4) 50%,transparent 58%);mix-blend-mode:color-dodge;animation:ssSheen 9s ease-in-out 2s infinite"></div>
+    </sc-if>
+  </div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,8,.55) 0%,rgba(5,5,8,.1) 30%,rgba(5,5,8,.86) 68%,#050508 100%)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,#050508 4%,rgba(5,5,8,.35) 42%,rgba(5,5,8,0) 70%)"></div>
+
+  <div data-anim style="position:absolute;inset:-12%;pointer-events:none;background:radial-gradient(44% 36% at 30% 60%,rgba(70,72,82,.42),transparent 70%),radial-gradient(38% 32% at 68% 36%,rgba(56,58,68,.36),transparent 72%),radial-gradient(58% 44% at 50% 88%,rgba(38,40,48,.44),transparent 74%);filter:blur(48px);animation:ssMist 1.95s cubic-bezier(.3,.7,.2,1) both"></div>
+  <div data-anim style="position:absolute;inset:-16%;pointer-events:none;background:radial-gradient(36% 28% at 76% 64%,rgba(80,68,72,.28),transparent 70%),radial-gradient(48% 28% at 18% 28%,rgba(46,48,56,.34),transparent 72%);filter:blur(64px);animation:ssMistB 1.9s cubic-bezier(.3,.7,.2,1) both"></div>
+
+  <div data-anim style="position:absolute;left:0;right:0;top:40%;height:1px;transform-origin:left;background:linear-gradient(90deg,rgba(194,24,43,0),rgba(126,15,30,.35) 30%,#B31527 62%,#F0576B 78%,rgba(194,24,43,0));animation:ssRule 2s cubic-bezier(.25,.9,.2,1) 1.1s both"></div>
+
+  <sc-if value="{{ showTopNav }}" hint-placeholder-val="{{ true }}">
+  <div data-anim style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:36px 68px;animation:ssFade 1.2s ease .8s both">
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.44em;color:#E3BFA4">SAVVY</div>
+      <div style="font-size:8.5px;letter-spacing:.5em;color:rgba(226,205,190,.45)">STUDIO</div>
+    </div>
+    <div style="display:flex;gap:34px;font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.45)">
+      <a href="#">WORK</a><a href="#">APPROACH</a><a href="#">SYSTEMS</a><a href="#" style="color:#E3BFA4">CONTACT</a>
+    </div>
+  </div>
+  </sc-if>
+
+  <div style="position:relative;min-height:100vh;display:grid;grid-template-columns:minmax(0,660px) auto;align-items:end;gap:48px;padding:200px 68px 150px">
+    <div>
+      <div data-anim style="font-size:10px;letter-spacing:.36em;color:rgba(226,205,190,.55);animation:ssRise 1s ease 1.4s both">SAVVY STUDIO — INTELLIGENT SYSTEMS &amp; DIGITAL PRODUCTS</div>
+      <h1 data-anim style="margin:24px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:80px;line-height:1.02;letter-spacing:.01em;color:#F6F0EB;animation:ssRise 1.2s ease 1.6s both">Systems that think<br/>before they act.</h1>
+      <p data-anim style="margin:28px 0 0;max-width:540px;font-size:16px;font-weight:300;line-height:1.72;color:rgba(232,222,216,.6);animation:ssRise 1.1s ease 1.9s both">We turn complex business problems into systems, products, and tools that work.</p>
+    </div>
+    <div data-anim style="display:flex;justify-content:flex-end;animation:ssRise 1s ease 2.1s both">
+      <a href="#" style="padding:18px 34px;border:1px solid rgba(226,205,190,.24);border-radius:2px;font-size:11px;letter-spacing:.2em;color:#F0D5C4;background:rgba(122,14,28,.12);backdrop-filter:blur(2px);white-space:nowrap" style-hover="background:linear-gradient(100deg,#4A0812,#C2182B 55%,#7E0F1E);border-color:#C2182B;color:#fff">START A CONVERSATION</a>
+    </div>
+  </div>
+
+  <sc-if value="{{ showServiceRail }}" hint-placeholder-val="{{ true }}">
+  <div data-anim style="position:absolute;left:68px;right:68px;bottom:56px;display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(226,205,190,.1);font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.42);animation:ssFade 1.2s ease 2.4s both">
+    <span>INTELLIGENT SYSTEMS</span><span>DIGITAL PRODUCTS</span><span>AUTOMATION</span><span>INFRASTRUCTURE</span>
+  </div>
+  </sc-if>
+</section>
+
+<section style="position:relative;background:#050508;padding:clamp(96px,13vh,150px) clamp(28px,4.7vw,68px);font-family:Manrope,sans-serif">
+  <div style="position:relative;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;padding-left:clamp(0px,14vw,300px)">
+    <span style="position:relative;width:64px;height:1px;background:#B31527"></span>
+    <div ref="{{ refPause }}" style="position:relative;display:flex;flex-wrap:wrap;gap:0 .3em;width:100%;max-width:660px;min-height:56px;margin:34px 0 0">
+    <div style="position:absolute;left:-6%;right:-4%;top:-62px;bottom:6px;pointer-events:none;overflow:visible">
+      <sc-if value="{{ inViewPause }}" hint-placeholder-val="{{ false }}">
+      <span style="position:absolute;top:2%;left:6%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.13);transform:rotate(-7deg);animation:ssJargon1 .95s cubic-bezier(.3,.75,.2,1) 0.02s both">APIs</span>
+      <span style="position:absolute;top:18%;left:52%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.12);transform:rotate(4deg);animation:ssJargon2 .95s cubic-bezier(.3,.75,.2,1) 0.1s both">agentic workflows</span>
+      <span style="position:absolute;top:58%;left:2%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.11);transform:rotate(3deg);animation:ssJargon3 .95s cubic-bezier(.3,.75,.2,1) 0.06s both">data pipelines</span>
+      <span style="position:absolute;top:78%;left:38%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.1);transform:rotate(-5deg);animation:ssJargon4 .95s cubic-bezier(.3,.75,.2,1) 0.16s both">orchestration layers</span>
+      <span style="position:absolute;top:36%;left:78%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.13);transform:rotate(6deg);animation:ssJargon2 .95s cubic-bezier(.3,.75,.2,1) 0.22s both">webhooks</span>
+      <span style="position:absolute;top:88%;left:70%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.1);transform:rotate(-3deg);animation:ssJargon4 .95s cubic-bezier(.3,.75,.2,1) 0.28s both">idempotency</span>
+      <span style="position:absolute;top:-6%;left:70%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.11);transform:rotate(5deg);animation:ssJargon1 .95s cubic-bezier(.3,.75,.2,1) 0.19s both">vector stores</span>
+      </sc-if>
+      <sc-if value="{{ pauseAtRest }}" hint-placeholder-val="{{ true }}">
+      <span style="position:absolute;top:2%;left:6%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.13);transform:rotate(-7deg)">APIs</span>
+      <span style="position:absolute;top:18%;left:52%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.12);transform:rotate(4deg)">agentic workflows</span>
+      <span style="position:absolute;top:58%;left:2%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.11);transform:rotate(3deg)">data pipelines</span>
+      <span style="position:absolute;top:78%;left:38%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.1);transform:rotate(-5deg)">orchestration layers</span>
+      <span style="position:absolute;top:36%;left:78%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.13);transform:rotate(6deg)">webhooks</span>
+      <span style="position:absolute;top:88%;left:70%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.1);transform:rotate(-3deg)">idempotency</span>
+      <span style="position:absolute;top:-6%;left:70%;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:12.5px;font-weight:300;letter-spacing:.06em;white-space:nowrap;color:rgba(232,222,216,0.11);transform:rotate(5deg)">vector stores</span>
+      </sc-if>
+    </div>
+
+      <sc-if value="{{ inViewPause }}" hint-placeholder-val="{{ false }}">
+        <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(32px,3.6vw,44px);line-height:1.22;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.00s both">You</span>
+        <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(32px,3.6vw,44px);line-height:1.22;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.06s both">don't</span>
+        <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(32px,3.6vw,44px);line-height:1.22;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.12s both">need</span>
+        <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(32px,3.6vw,44px);line-height:1.22;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.18s both">to</span>
+        <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(32px,3.6vw,44px);line-height:1.22;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.24s both">know</span>
+        <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(32px,3.6vw,44px);line-height:1.22;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.30s both">what</span>
+        <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(32px,3.6vw,44px);line-height:1.22;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.36s both">you</span>
+        <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(32px,3.6vw,44px);line-height:1.22;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.42s both">need.</span>
+      </sc-if>
+    </div>
+    <p style="margin:26px 0 0;max-width:520px;font-size:14px;font-weight:300;line-height:1.8;letter-spacing:.03em;color:rgba(232,222,216,.46);text-wrap:pretty">Bring us the problem, the process, or the idea. We'll figure out what should exist.</p>
+    <div ref="{{ refDx }}" style="width:100%;max-width:660px;margin:44px 0 0">
+      <sc-if value="{{ dxClosed }}" hint-placeholder-val="{{ true }}">
+      <div onClick="{{ dxOpen }}" style="display:inline-flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease" style-hover="border-color:rgba(179,21,39,.75)">
+        <span style="position:relative;flex:0 0 auto;width:22px;height:22px;display:block">
+          <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border:1px solid #B31527;border-radius:50%;animation:ssBreatheRing 3.4s ease-in-out infinite"></span>
+          <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="#F0576B" stroke-width="0.9" stroke-linejoin="round" style="display:block;animation:ssBreathe 3.4s ease-in-out infinite">
+            <path d="M11 5.5 L16 11 L11 16.5 L6 11 Z"></path>
+            <path d="M11 9.4 L11 12.6"></path>
+          </svg>
+        </span>
+        <span style="width:28px;height:1px;background:#B31527"></span>
+        <span style="font-size:10.5px;letter-spacing:.22em;color:#E3BFA4">FIND THE RIGHT SYSTEM</span>
+        <svg viewBox="0 0 130 18" width="130" height="18" fill="none" style="display:block;flex:0 0 auto;overflow:visible">
+          <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="rgba(179,21,39,.34)" stroke-width="1" stroke-linejoin="round"></path>
+          <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="#F0576B" stroke-width="1" stroke-linejoin="round" stroke-dasharray="26 320" style="animation:ssEkg 2.8s cubic-bezier(.5,0,.5,1) infinite"></path>
+        </svg>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ dxStep1 }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative">
+        <span style="position:absolute;left:0;top:0;bottom:0;width:1px;transform-origin:top;background:linear-gradient(180deg,#B31527,rgba(179,21,39,.15));animation:ssSpine .6s cubic-bezier(.25,.9,.2,1) both"></span>
+        <div style="padding-left:30px">
+          <div style="display:flex;flex-wrap:wrap;gap:0 .28em;max-width:520px">
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.10s both">What's</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.15s both">slowing</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.20s both">you</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.25s both">down</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.30s both">most</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.35s both">right</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.40s both">now?</span>
+          </div>
+          <div style="margin:28px 0 0">
+
+        <div onClick="{{ dxPickI }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.34s both" style-hover="border-color:rgba(179,21,39,.75)">
+          <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
+          <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">Manual, repetitive work — leads, follow-ups, admin that eats our time</span>
+        </div>
+
+        <div onClick="{{ dxPickP }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.42s both" style-hover="border-color:rgba(179,21,39,.75)">
+          <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
+          <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">We have an idea for a product or tool, but no way to build it</span>
+        </div>
+
+        <div onClick="{{ dxPickF }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.5s both" style-hover="border-color:rgba(179,21,39,.75)">
+          <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
+          <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">Our team lacks the tools or dashboards to work efficiently</span>
+        </div>
+
+        <div onClick="{{ dxPickUnsure }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.58s both" style-hover="border-color:rgba(179,21,39,.75)">
+          <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
+          <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">Not sure — something just isn't working the way it should</span>
+        </div>
+          </div>
+
+      <div style="margin:34px 0 0;animation:ssNudge .55s ease 0.66s both">
+        <div style="font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.42)">OR SKIP THE QUESTIONS</div>
+        <div style="display:flex;align-items:flex-end;gap:16px;margin:14px 0 0;max-width:560px">
+          <input type="text" value="{{ dxText }}" onChange="{{ dxOnText }}" placeholder="Or just tell us in your own words." style="flex:1 1 auto;min-width:0;background:transparent;border:0;border-bottom:1px solid rgba(226,205,190,.18);padding:10px 0;font-family:Manrope,sans-serif;font-size:14px;font-weight:300;letter-spacing:.02em;color:#F2ECE7;outline:none"/>
+          <a href="#" onClick="{{ dxSubmitText }}" style="flex:0 0 auto;padding-bottom:11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">SEND</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ dxStep2 }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative">
+        <span style="position:absolute;left:0;top:0;bottom:0;width:1px;transform-origin:top;background:linear-gradient(180deg,#B31527,rgba(179,21,39,.15));animation:ssSpine .6s cubic-bezier(.25,.9,.2,1) both"></span>
+        <div style="padding-left:30px">
+          <div style="display:flex;flex-wrap:wrap;gap:0 .28em;max-width:520px">
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.06s both">What</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.11s both">would</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.16s both">change</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.21s both">if</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.26s both">this</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.31s both">were</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.36s both">solved?</span>
+          </div>
+          <div style="margin:28px 0 0">
+
+        <div onClick="{{ dxImpactTime }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.3s both" style-hover="border-color:rgba(179,21,39,.75)">
+          <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
+          <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">We'd save real time</span>
+        </div>
+
+        <div onClick="{{ dxImpactConvert }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.38s both" style-hover="border-color:rgba(179,21,39,.75)">
+          <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
+          <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">We'd look more professional and convert better</span>
+        </div>
+
+        <div onClick="{{ dxImpactGrow }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.46s both" style-hover="border-color:rgba(179,21,39,.75)">
+          <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
+          <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">We could grow without hiring more people</span>
+        </div>
+
+        <div onClick="{{ dxImpactCurious }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.54s both" style-hover="border-color:rgba(179,21,39,.75)">
+          <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
+          <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">Just curious what's possible</span>
+        </div>
+          </div>
+          <a href="#" onClick="{{ dxSkipImpact }}" style="display:inline-block;margin:26px 0 0;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.4);border-bottom:1px solid rgba(226,205,190,.14);padding-bottom:3px;animation:ssNudge .55s ease .62s both" style-hover="color:#E3BFA4;border-color:rgba(179,21,39,.7)">SKIP THIS</a>
+
+      <div style="margin:34px 0 0;animation:ssNudge .55s ease 0.68s both">
+        <div style="font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.42)">OR IN YOUR OWN WORDS</div>
+        <div style="display:flex;align-items:flex-end;gap:16px;margin:14px 0 0;max-width:560px">
+          <input type="text" value="{{ dxText }}" onChange="{{ dxOnText }}" placeholder="Or just tell us in your own words." style="flex:1 1 auto;min-width:0;background:transparent;border:0;border-bottom:1px solid rgba(226,205,190,.18);padding:10px 0;font-family:Manrope,sans-serif;font-size:14px;font-weight:300;letter-spacing:.02em;color:#F2ECE7;outline:none"/>
+          <a href="#" onClick="{{ dxSubmitText }}" style="flex:0 0 auto;padding-bottom:11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">SEND</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ dxStep3 }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative">
+        <span style="position:absolute;left:0;top:0;bottom:0;width:1px;transform-origin:top;background:linear-gradient(180deg,#B31527,rgba(179,21,39,.15));animation:ssSpine .6s cubic-bezier(.25,.9,.2,1) both"></span>
+        <div style="padding-left:30px">
+          <div style="display:flex;flex-wrap:wrap;gap:0 .28em;max-width:520px">
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.08s both">Tell</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.13s both">us</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.18s both">in</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.23s both">your</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.28s both">own</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.33s both">words.</span>
+          </div>
+          <p style="margin:20px 0 0;max-width:440px;font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(232,222,216,.44)">No categories, no jargon. Whatever the problem actually looks like from where you sit.</p>
+
+      <div style="margin:34px 0 0;animation:ssNudge .55s ease 0.3s both">
+        <div style="font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.42)">IN YOUR OWN WORDS</div>
+        <div style="display:flex;align-items:flex-end;gap:16px;margin:14px 0 0;max-width:560px">
+          <input type="text" value="{{ dxText }}" onChange="{{ dxOnText }}" placeholder="Or just tell us in your own words." style="flex:1 1 auto;min-width:0;background:transparent;border:0;border-bottom:1px solid rgba(226,205,190,.18);padding:10px 0;font-family:Manrope,sans-serif;font-size:14px;font-weight:300;letter-spacing:.02em;color:#F2ECE7;outline:none"/>
+          <a href="#" onClick="{{ dxSubmitText }}" style="flex:0 0 auto;padding-bottom:11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">SEND</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ dxResult }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative">
+        <span style="position:absolute;left:0;top:0;bottom:0;width:1px;transform-origin:top;background:linear-gradient(180deg,#B31527,rgba(179,21,39,.15));animation:ssSpine .6s cubic-bezier(.25,.9,.2,1) both"></span>
+        <div style="padding-left:30px">
+          <div style="display:flex;align-items:flex-start;gap:16px;animation:ssNudge .6s ease .2s both">
+
+        <sc-if value="{{ dxIsI }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="#F0576B" stroke-width="0.9" stroke-linejoin="round" style="display:block;flex:0 0 auto;margin-top:7px"><path d="M4 15.5 L11 4 L18 15.5 M4 15.5 L18 15.5 M11 4 L11 15.5"></path><circle cx="11" cy="4" r="1.5" fill="#050508"></circle><circle cx="4" cy="15.5" r="1.5" fill="#050508"></circle><circle cx="18" cy="15.5" r="1.5" fill="#050508"></circle></svg>
+        </sc-if>
+        <sc-if value="{{ dxIsP }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="#F0576B" stroke-width="0.9" stroke-linejoin="round" style="display:block;flex:0 0 auto;margin-top:7px"><path d="M3.5 8 L10.5 3.5 L17.5 8 L10.5 12.5 Z"></path><path d="M3.5 8 L3.5 14 L10.5 18.5 L17.5 14 L17.5 8"></path><path d="M10.5 12.5 L10.5 18.5"></path></svg>
+        </sc-if>
+        <sc-if value="{{ dxIsF }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="#F0576B" stroke-width="0.9" stroke-linejoin="round" style="display:block;flex:0 0 auto;margin-top:7px"><path d="M4 4 L18 4 M4 18 L18 18 M4 4 L4 18 M18 4 L18 18 M4 4 L18 18 M18 4 L4 18"></path><circle cx="4" cy="4" r="1.5" fill="#050508"></circle><circle cx="18" cy="4" r="1.5" fill="#050508"></circle><circle cx="4" cy="18" r="1.5" fill="#050508"></circle><circle cx="18" cy="18" r="1.5" fill="#050508"></circle></svg>
+        </sc-if>
+            <div>
+              <div style="font-size:10px;letter-spacing:.34em;color:#E3BFA4">{{ dxResultLabel }}</div>
+              <p style="margin:14px 0 0;max-width:480px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.28;letter-spacing:.014em;color:#F2ECE7;text-wrap:pretty">{{ dxResultHook }}</p>
+              <p style="margin:16px 0 0;max-width:440px;font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(232,222,216,.44)">{{ dxResultNote }}</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:30px 44px;margin:40px 0 0;padding-top:26px;border-top:1px solid rgba(226,205,190,.12);animation:ssNudge .6s ease .34s both">
+            <div style="flex:1 1 300px;min-width:0">
+              <div style="font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.42)">EMAIL</div>
+              <div style="display:flex;align-items:flex-end;gap:16px;margin:12px 0 0">
+                <input type="email" value="{{ dxEmail }}" onChange="{{ dxOnEmail }}" placeholder="you@company.com" style="flex:1 1 auto;min-width:0;background:transparent;border:0;border-bottom:1px solid rgba(226,205,190,.18);padding:10px 0;font-family:Manrope,sans-serif;font-size:14px;font-weight:300;letter-spacing:.02em;color:#F2ECE7;outline:none"/>
+                <a href="#" onClick="{{ dxSubmitEmail }}" style="flex:0 0 auto;padding-bottom:11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">SEND</a>
+              </div>
+            </div>
+            <a href="#" style="flex:0 0 auto;padding-bottom:11px;font-size:10px;letter-spacing:.22em;color:#F0D5C4;border-bottom:1px solid rgba(179,21,39,.55)" style-hover="color:#fff;border-color:#F0576B">CONTINUE ON WHATSAPP</a>
+          </div>
+          <a href="#" onClick="{{ dxReset }}" style="display:inline-block;margin:30px 0 0;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.34);border-bottom:1px solid rgba(226,205,190,.14);padding-bottom:3px" style-hover="color:#E3BFA4;border-color:rgba(179,21,39,.7)">START OVER</a>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section ref="{{ refSystem }}" data-screen-label="The System" style="position:relative;min-height:118vh;background:#050508;padding:clamp(92px,12vh,148px) clamp(28px,4.7vw,68px);font-family:Manrope,sans-serif;box-sizing:border-box;display:flex;align-items:center;overflow:hidden">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(54% 44% at 78% 38%,rgba(94,12,24,.12),transparent 72%)"></div>
+  <div style="position:relative;width:100%;max-width:1440px;margin:0 auto;opacity:{{ wkSystemO }};transform:translateY({{ wkSystemY }});transition:opacity .65s ease,transform .8s cubic-bezier(.2,.75,.25,1);pointer-events:{{ wkSystemPe }}">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:16px;margin:0 0 clamp(58px,7vh,86px)">
+      <span style="width:44px;height:1px;background:#B31527"></span>
+      <span style="font-size:10px;letter-spacing:.34em;color:#E3BFA4">THE SYSTEM</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:17px;letter-spacing:.02em;color:rgba(226,205,190,.5)">Three layers. One working whole.</span>
+    </div>
+    <div class="ss-system-grid">
+      <article class="ss-system-entry">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-size:9.5px;letter-spacing:.2em;color:rgba(194,24,43,.9)">01</span>
+          <span style="font-size:9.5px;letter-spacing:.3em;color:#E3BFA4">INTELLIGENCE</span>
+        </div>
+        <div style="margin:13px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:15px;line-height:1.45;color:rgba(226,205,190,.48)">how the system understands and decides</div>
+        <h2 style="margin:42px 0 0;max-width:360px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(29px,2.5vw,40px);line-height:1.12;letter-spacing:.008em;color:#F2ECE7;text-wrap:balance">The intelligence behind every decision.</h2>
+        <button class="ss-system-cta" onClick="{{ wkExploreIntelligence }}" style="margin-top:auto">EXPLORE INTELLIGENCE</button>
+      </article>
+      <article class="ss-system-entry">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-size:9.5px;letter-spacing:.2em;color:rgba(194,24,43,.9)">02</span>
+          <span style="font-size:9.5px;letter-spacing:.3em;color:#E3BFA4">PRODUCT</span>
+        </div>
+        <div style="margin:13px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:15px;line-height:1.45;color:rgba(226,205,190,.48)">where the system becomes useful</div>
+        <h2 style="margin:42px 0 0;max-width:350px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(29px,2.5vw,40px);line-height:1.12;letter-spacing:.008em;color:#F2ECE7;text-wrap:balance">Products people actually want to use.</h2>
+        <button class="ss-system-cta" onClick="{{ wkExploreProduct }}" style="margin-top:auto">EXPLORE PRODUCT</button>
+      </article>
+      <article class="ss-system-entry">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-size:9.5px;letter-spacing:.2em;color:rgba(194,24,43,.9)">03</span>
+          <span style="font-size:9.5px;letter-spacing:.3em;color:#E3BFA4">INFRASTRUCTURE</span>
+        </div>
+        <div style="margin:13px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:15px;line-height:1.45;color:rgba(226,205,190,.48)">what keeps everything connected</div>
+        <h2 style="margin:42px 0 0;max-width:360px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(29px,2.5vw,40px);line-height:1.12;letter-spacing:.008em;color:#F2ECE7;text-wrap:balance">The infrastructure that keeps it reliable.</h2>
+        <button class="ss-system-cta" onClick="{{ wkExploreInfrastructure }}" style="margin-top:auto">EXPLORE INFRASTRUCTURE</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section aria-hidden="true" style="display:none;position:relative;background:#050508;padding:clamp(80px,9vh,110px) clamp(28px,4.7vw,68px) clamp(110px,12vh,150px);font-family:Manrope,sans-serif">
+  <div style="max-width:1440px;margin:0 auto">
+
+    <div onClick="{{ toggleP1 }}" style="display:flex;flex-wrap:wrap;gap:clamp(26px,4vw,68px);padding:34px 0 clamp(56px,6vw,84px);border-top:1px solid rgba(226,205,190,.12);position:relative;cursor:pointer;transition:border-color .5s ease" style-hover="border-color:rgba(226,205,190,.24)">
+      <span style="position:absolute;left:0;top:0;width:44px;height:1px;background:#B31527"></span>
+      <div style="flex:0 0 auto;width:clamp(180px,17vw,240px)">
+        <div style="display:flex;align-items:center;gap:13px">
+          <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="{{ markP1Stroke }}" stroke-width="0.9" stroke-linejoin="round" style="display:block;flex:0 0 auto;opacity:{{ markP1Opacity }};transition:opacity .55s ease .28s,stroke .55s ease .28s">
+            <path d="M4 15.5 L11 4 L18 15.5 M4 15.5 L18 15.5 M11 4 L11 15.5"></path>
+            <circle cx="11" cy="4" r="1.5" fill="#050508"></circle>
+            <circle cx="4" cy="15.5" r="1.5" fill="#050508"></circle>
+            <circle cx="18" cy="15.5" r="1.5" fill="#050508"></circle>
+          </svg>
+          <span style="font-size:10px;letter-spacing:.2em;color:rgba(194,24,43,.85)">01</span>
+          <span style="font-size:10px;letter-spacing:.34em;color:#E3BFA4">INTELLIGENCE</span>
+        </div>
+        <div style="margin:12px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:15px;letter-spacing:.02em;color:rgba(226,205,190,.5);padding-left:35px">how the business thinks</div>
+      </div>
+      <div style="flex:1 1 380px;min-width:0">
+        <div ref="{{ refP1 }}" style="display:flex;flex-wrap:wrap;gap:0 .3em;max-width:430px;min-height:72px">
+          <sc-if value="{{ inViewP1 }}" hint-placeholder-val="{{ false }}">
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.00s both">The</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.06s both">decisions</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.12s both">your</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.18s both">business</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.24s both">makes</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.30s both">automatically.</span>
+          </sc-if>
+        </div>
+      </div>
+      <sc-if value="{{ openP1 }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1 1 100%;position:relative;padding:30px 0 0 0">
+        <span style="position:absolute;left:0;top:0;bottom:26px;width:1px;transform-origin:top;background:linear-gradient(180deg,#B31527,rgba(179,21,39,.35));animation:ssSpine .55s cubic-bezier(.25,.9,.2,1) both"></span>
+        <div style="display:flex;flex-direction:column;gap:14px;padding-left:1px">
+
+          <div style="display:flex;align-items:baseline;gap:16px;min-height:26px">
+            <span style="flex:0 0 auto;width:38px;height:1px;margin-top:11px;transform-origin:left;background:rgba(179,21,39,.85);animation:ssBranch .5s cubic-bezier(.2,.85,.2,1) 0.34s both"></span>
+            <span style="font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .5s ease 0.46s both">Workflows, agents, orchestration</span>
+          </div>
+
+          <div style="display:flex;align-items:baseline;gap:16px;min-height:26px">
+            <span style="flex:0 0 auto;width:38px;height:1px;margin-top:11px;transform-origin:left;background:rgba(179,21,39,.85);animation:ssBranch .5s cubic-bezier(.2,.85,.2,1) 0.46s both"></span>
+            <span style="font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .5s ease 0.5800000000000001s both">Extraction, classification, human-in-the-loop review</span>
+          </div>
+
+          <div style="display:flex;align-items:baseline;gap:16px;min-height:26px">
+            <span style="flex:0 0 auto;width:38px;height:1px;margin-top:11px;transform-origin:left;background:rgba(179,21,39,.85);animation:ssBranch .5s cubic-bezier(.2,.85,.2,1) 0.58s both"></span>
+            <span style="font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .5s ease 0.7s both">CRM, email, and reporting automation</span>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+
+    <div onClick="{{ toggleP2 }}" style="display:flex;flex-wrap:wrap;gap:clamp(26px,4vw,68px);padding:34px 0 clamp(56px,6vw,84px);border-top:1px solid rgba(226,205,190,.12);position:relative;cursor:pointer;transition:border-color .5s ease" style-hover="border-color:rgba(226,205,190,.24)">
+      <span style="position:absolute;left:0;top:0;width:44px;height:1px;background:#B31527"></span>
+      <div style="flex:0 0 auto;width:clamp(180px,17vw,240px)">
+        <div style="display:flex;align-items:center;gap:13px">
+          <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="{{ markP2Stroke }}" stroke-width="0.9" stroke-linejoin="round" style="display:block;flex:0 0 auto;opacity:{{ markP2Opacity }};transition:opacity .55s ease .28s,stroke .55s ease .28s">
+            <path d="M3.5 8 L10.5 3.5 L17.5 8 L10.5 12.5 Z"></path>
+            <path d="M3.5 8 L3.5 14 L10.5 18.5 L17.5 14 L17.5 8"></path>
+            <path d="M10.5 12.5 L10.5 18.5"></path>
+          </svg>
+          <span style="font-size:10px;letter-spacing:.2em;color:rgba(194,24,43,.85)">02</span>
+          <span style="font-size:10px;letter-spacing:.34em;color:#E3BFA4">PRODUCT</span>
+        </div>
+        <div style="margin:12px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:15px;letter-spacing:.02em;color:rgba(226,205,190,.5);padding-left:35px">what customers and users touch</div>
+      </div>
+      <div style="flex:1 1 380px;min-width:0">
+        <div ref="{{ refP2 }}" style="display:flex;flex-wrap:wrap;gap:0 .3em;max-width:430px;min-height:72px">
+          <sc-if value="{{ inViewP2 }}" hint-placeholder-val="{{ false }}">
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.00s both">From</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.06s both">idea</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.12s both">to</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.18s both">a</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.24s both">product</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.30s both">people</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.36s both">actually</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.42s both">use.</span>
+          </sc-if>
+        </div>
+      </div>
+      <sc-if value="{{ openP2 }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1 1 100%;position:relative;padding:30px 0 0 0">
+        <span style="position:absolute;left:0;top:0;bottom:26px;width:1px;transform-origin:top;background:linear-gradient(180deg,#B31527,rgba(179,21,39,.35));animation:ssSpine .55s cubic-bezier(.25,.9,.2,1) both"></span>
+        <div style="display:flex;flex-direction:column;gap:14px;padding-left:1px">
+
+          <div style="display:flex;align-items:baseline;gap:16px;min-height:26px">
+            <span style="flex:0 0 auto;width:38px;height:1px;margin-top:11px;transform-origin:left;background:rgba(179,21,39,.85);animation:ssBranch .5s cubic-bezier(.2,.85,.2,1) 0.34s both"></span>
+            <span style="font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .5s ease 0.46s both">Web apps, portals, dashboards</span>
+          </div>
+
+          <div style="display:flex;align-items:baseline;gap:16px;min-height:26px">
+            <span style="flex:0 0 auto;width:38px;height:1px;margin-top:11px;transform-origin:left;background:rgba(179,21,39,.85);animation:ssBranch .5s cubic-bezier(.2,.85,.2,1) 0.46s both"></span>
+            <span style="font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .5s ease 0.5800000000000001s both">MVPs and SaaS prototypes</span>
+          </div>
+
+          <div style="display:flex;align-items:baseline;gap:16px;min-height:26px">
+            <span style="flex:0 0 auto;width:38px;height:1px;margin-top:11px;transform-origin:left;background:rgba(179,21,39,.85);animation:ssBranch .5s cubic-bezier(.2,.85,.2,1) 0.58s both"></span>
+            <span style="font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .5s ease 0.7s both">Conversion-driven websites wired into CRM and booking</span>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+
+    <div onClick="{{ toggleP3 }}" style="display:flex;flex-wrap:wrap;gap:clamp(26px,4vw,68px);padding:34px 0 0;border-top:1px solid rgba(226,205,190,.12);position:relative;cursor:pointer;transition:border-color .5s ease" style-hover="border-color:rgba(226,205,190,.24)">
+      <span style="position:absolute;left:0;top:0;width:44px;height:1px;background:#B31527"></span>
+      <div style="flex:0 0 auto;width:clamp(180px,17vw,240px)">
+        <div style="display:flex;align-items:center;gap:13px">
+          <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="{{ markP3Stroke }}" stroke-width="0.9" stroke-linejoin="round" style="display:block;flex:0 0 auto;opacity:{{ markP3Opacity }};transition:opacity .55s ease .28s,stroke .55s ease .28s">
+            <path d="M4 4 L18 4 M4 18 L18 18 M4 4 L4 18 M18 4 L18 18 M4 4 L18 18 M18 4 L4 18"></path>
+            <circle cx="4" cy="4" r="1.5" fill="#050508"></circle>
+            <circle cx="18" cy="4" r="1.5" fill="#050508"></circle>
+            <circle cx="4" cy="18" r="1.5" fill="#050508"></circle>
+            <circle cx="18" cy="18" r="1.5" fill="#050508"></circle>
+          </svg>
+          <span style="font-size:10px;letter-spacing:.2em;color:rgba(194,24,43,.85)">03</span>
+          <span style="font-size:10px;letter-spacing:.34em;color:#E3BFA4">INFRASTRUCTURE</span>
+        </div>
+        <div style="margin:12px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:15px;letter-spacing:.02em;color:rgba(226,205,190,.5);padding-left:35px">what holds it together</div>
+      </div>
+      <div style="flex:1 1 380px;min-width:0">
+        <div ref="{{ refP3 }}" style="display:flex;flex-wrap:wrap;gap:0 .3em;max-width:430px;min-height:72px">
+          <sc-if value="{{ inViewP3 }}" hint-placeholder-val="{{ false }}">
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.00s both">The</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.06s both">tools</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.12s both">and</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.18s both">plumbing</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.24s both">that</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.30s both">hold</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.36s both">it</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.42s both">all</span>
+            <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;line-height:1.26;letter-spacing:.012em;color:#F2ECE7;animation:ssForm .85s cubic-bezier(.25,.85,.2,1) 0.48s both">together.</span>
+          </sc-if>
+        </div>
+      </div>
+      <sc-if value="{{ openP3 }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1 1 100%;position:relative;padding:30px 0 0 0">
+        <span style="position:absolute;left:0;top:0;bottom:26px;width:1px;transform-origin:top;background:linear-gradient(180deg,#B31527,rgba(179,21,39,.35));animation:ssSpine .55s cubic-bezier(.25,.9,.2,1) both"></span>
+        <div style="display:flex;flex-direction:column;gap:14px;padding-left:1px">
+
+          <div style="display:flex;align-items:baseline;gap:16px;min-height:26px">
+            <span style="flex:0 0 auto;width:38px;height:1px;margin-top:11px;transform-origin:left;background:rgba(179,21,39,.85);animation:ssBranch .5s cubic-bezier(.2,.85,.2,1) 0.34s both"></span>
+            <span style="font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .5s ease 0.46s both">Admin panels and approval flows</span>
+          </div>
+
+          <div style="display:flex;align-items:baseline;gap:16px;min-height:26px">
+            <span style="flex:0 0 auto;width:38px;height:1px;margin-top:11px;transform-origin:left;background:rgba(179,21,39,.85);animation:ssBranch .5s cubic-bezier(.2,.85,.2,1) 0.46s both"></span>
+            <span style="font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .5s ease 0.5800000000000001s both">Monitoring dashboards</span>
+          </div>
+
+          <div style="display:flex;align-items:baseline;gap:16px;min-height:26px">
+            <span style="flex:0 0 auto;width:38px;height:1px;margin-top:11px;transform-origin:left;background:rgba(179,21,39,.85);animation:ssBranch .5s cubic-bezier(.2,.85,.2,1) 0.58s both"></span>
+            <span style="font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .5s ease 0.7s both">API connections, data sync, validation</span>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section style="display:{{ wkHowDisplay }};position:relative;background:#050508;padding:clamp(90px,11vh,130px) clamp(28px,4.7vw,68px) clamp(110px,13vh,160px);font-family:Manrope,sans-serif;border-top:1px solid rgba(226,205,190,.07)">
+  <div style="max-width:1440px;margin:0 auto">
+    <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 clamp(56px,7vh,84px)">
+      <span style="width:44px;height:1px;background:#B31527"></span>
+      <span style="font-size:10px;letter-spacing:.34em;color:#E3BFA4">HOW IT WORKS</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:15px;letter-spacing:.02em;color:rgba(226,205,190,.5)">from problem to working system</span>
+    </div>
+    <div ref="{{ refFlow }}" style="position:relative">
+      <sc-if value="{{ inViewFlow }}" hint-placeholder-val="{{ false }}">
+      <span style="position:absolute;left:4px;right:0;top:0;height:1px;transform-origin:left;background:linear-gradient(90deg,rgba(194,24,43,0),#7E0F1E 6%,#B31527 46%,#F0576B 82%,rgba(194,24,43,.25));animation:ssRule 2.1s cubic-bezier(.25,.9,.2,1) both"></span>
+      <span style="position:absolute;left:50%;right:25%;top:-2px;height:5px;overflow:hidden;pointer-events:none;mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)">
+        <span style="position:absolute;inset:0;background:linear-gradient(100deg,transparent 42%,rgba(255,214,208,.4) 50%,transparent 58%);mix-blend-mode:color-dodge;animation:ssSheen 9s ease-in-out 2.1s infinite"></span>
+      </span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(30px,3.4vw,56px)">
+      <div style="position:relative;display:flex;flex-direction:column;padding-top:38px">
+        <span style="position:absolute;left:0;top:-4px;width:9px;height:9px;border-radius:50%;background:#F0576B;box-shadow:0 0 12px rgba(240,87,107,.6);animation:ssNode .5s cubic-bezier(.25,.9,.2,1) 0.35s both"></span>
+        <span style="position:absolute;left:-8px;top:-12px;width:25px;height:25px;border-radius:50%;border:1px solid rgba(240,87,107,.8);animation:ssNodeRing .9s ease-out 0.35s both"></span>
+        <div style="font-size:10px;letter-spacing:.2em;color:rgba(194,24,43,.85);animation:ssNudge .5s ease 0.41s both">01</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0 .28em;margin:14px 0 0;max-width:250px">
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.45s both">YOU</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.50s both">BRING</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.55s both">THE</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.60s both">PROBLEM</span>
+        </div>
+        <p style="margin:18px 0 0;max-width:265px;font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .6s ease 0.59s both">Messy is fine — a slow process, a broken workflow, an idea not built yet.</p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;padding-top:38px">
+        <span style="position:absolute;left:0;top:-4px;width:9px;height:9px;border-radius:50%;background:#F0576B;box-shadow:0 0 12px rgba(240,87,107,.6);animation:ssNode .5s cubic-bezier(.25,.9,.2,1) 0.77s both"></span>
+        <span style="position:absolute;left:-8px;top:-12px;width:25px;height:25px;border-radius:50%;border:1px solid rgba(240,87,107,.8);animation:ssNodeRing .9s ease-out 0.77s both"></span>
+        <div style="font-size:10px;letter-spacing:.2em;color:rgba(194,24,43,.85);animation:ssNudge .5s ease 0.83s both">02</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0 .28em;margin:14px 0 0;max-width:250px">
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.87s both">WE</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.92s both">MAP</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 0.97s both">THE</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 1.02s both">SYSTEM</span>
+        </div>
+        <p style="margin:18px 0 0;max-width:265px;font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .6s ease 1.01s both">We figure out what's actually happening, and what should happen instead.</p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;padding-top:38px">
+        <span style="position:absolute;left:0;top:-4px;width:9px;height:9px;border-radius:50%;background:#F0576B;box-shadow:0 0 12px rgba(240,87,107,.6);animation:ssNode .5s cubic-bezier(.25,.9,.2,1) 1.19s both"></span>
+        <span style="position:absolute;left:-8px;top:-12px;width:25px;height:25px;border-radius:50%;border:1px solid rgba(240,87,107,.8);animation:ssNodeRing .9s ease-out 1.19s both"></span>
+        <div style="font-size:10px;letter-spacing:.2em;color:rgba(194,24,43,.85);animation:ssNudge .5s ease 1.25s both">03</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0 .28em;margin:14px 0 0;max-width:250px">
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 1.29s both">WE</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 1.34s both">BUILD</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 1.39s both">IT</span>
+        </div>
+        <p style="margin:18px 0 0;max-width:265px;font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .6s ease 1.43s both">A working system you can see, use, and test early.</p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;padding-top:38px">
+        <span style="position:absolute;left:0;top:-3px;width:96px;height:7px;pointer-events:none;background:radial-gradient(closest-side at 4px 50%,rgba(255,214,208,.75),rgba(240,87,107,.5) 42%,transparent 100%);filter:blur(1.4px);animation:ssFade .9s ease 1.61s both"></span>
+        <span style="position:absolute;left:0;top:0;width:104px;height:1px;pointer-events:none;background:linear-gradient(90deg,rgba(240,87,107,.9),rgba(240,87,107,.42) 34%,rgba(194,24,43,.18) 66%,transparent);animation:ssFade 1.1s ease 1.61s both"></span>
+        <span style="position:absolute;left:22px;top:2.5px;width:70px;height:1px;pointer-events:none;background:linear-gradient(90deg,rgba(240,87,107,.34),transparent);filter:blur(.6px);animation:ssFade 1.3s ease 1.72s both"></span>
+        <span style="position:absolute;left:34px;top:-2.5px;width:52px;height:1px;pointer-events:none;background:linear-gradient(90deg,rgba(240,87,107,.24),transparent);filter:blur(.9px);animation:ssFade 1.3s ease 1.8s both"></span>
+        <div style="font-size:10px;letter-spacing:.2em;color:rgba(194,24,43,.85);animation:ssNudge .5s ease 1.67s both">04</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0 .28em;margin:14px 0 0;max-width:250px">
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 1.71s both">IT</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 1.76s both">RUNS,</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 1.81s both">AND</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 1.86s both">KEEPS</span>
+          <span style="display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:23px;line-height:1.24;letter-spacing:.014em;color:#F2ECE7;animation:ssForm .7s cubic-bezier(.25,.85,.2,1) 1.91s both">ADAPTING</span>
+        </div>
+        <p style="margin:18px 0 0;max-width:265px;font-size:13px;font-weight:300;line-height:1.78;letter-spacing:.03em;color:rgba(232,222,216,.44);text-wrap:pretty;animation:ssNudge .6s ease 1.85s both">Once it's live, it evolves with the business.</p>
+      </div>
+      </div>
+      </sc-if>
+    </div>
+    <div style="display:flex;margin:clamp(76px,9.5vh,116px) 0 0">
+      <div onClick="{{ dxStart }}" style="display:inline-flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease" style-hover="border-color:rgba(179,21,39,.75)">
+        <span style="position:relative;flex:0 0 auto;width:22px;height:22px;display:block">
+          <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border:1px solid #B31527;border-radius:50%;animation:ssBreatheRing 3.4s ease-in-out infinite"></span>
+          <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="#F0576B" stroke-width="0.9" stroke-linejoin="round" style="display:block;animation:ssBreathe 3.4s ease-in-out infinite">
+            <path d="M11 5.5 L16 11 L11 16.5 L6 11 Z"></path>
+            <path d="M11 9.4 L11 12.6"></path>
+          </svg>
+        </span>
+        <span style="width:28px;height:1px;background:#B31527"></span>
+        <span style="font-size:10.5px;letter-spacing:.22em;color:#E3BFA4">BRING US THE PROBLEM</span>
+        <svg viewBox="0 0 130 18" width="130" height="18" fill="none" style="display:block;flex:0 0 auto;overflow:visible">
+          <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="rgba(179,21,39,.34)" stroke-width="1" stroke-linejoin="round"></path>
+          <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="#F0576B" stroke-width="1" stroke-linejoin="round" stroke-dasharray="26 320" style="animation:ssEkg 2.8s cubic-bezier(.5,0,.5,1) infinite"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section ref="{{ refWork }}" data-screen-label="Expanded System" style="position:relative;height:{{ wkSectionH }};background:#050508;overflow:visible;visibility:{{ wkStageV }};opacity:{{ wkStageO }};transition:opacity .6s ease">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:#050508">
+
+    <div style="position:absolute;inset:0;opacity:{{ wkIntelO }};pointer-events:none">
+      <video ref="{{ refVidBg }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" src="assets/intelligence_16x9_pillarbox.mp4" style="position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(52px) saturate(.72);opacity:.22"></video>
+      <video ref="{{ refVid }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" src="assets/intelligence_16x9_pillarbox.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center"></video>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,8,.18),rgba(5,5,8,0) 28%,rgba(5,5,8,0) 72%,rgba(5,5,8,.32))"></div>
+      <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;opacity:0" fill="none" stroke="#B31527" stroke-width="1">
+        <path d="M-40 350 H420" stroke="rgba(240,87,107,.85)"></path>
+        <path d="M420 350 C520 350 540 200 660 200 H1080" stroke="rgba(240,87,107,.5)"></path>
+        <path d="M420 350 H1080" stroke="rgba(179,21,39,.45)"></path>
+        <path d="M420 350 C520 350 540 500 660 500 H1080" stroke="rgba(179,21,39,.32)"></path>
+        <path d="M660 200 C760 200 780 120 880 120 H1080" stroke="rgba(179,21,39,.22)"></path>
+        <path d="M660 500 C760 500 780 590 880 590 H1080" stroke="rgba(179,21,39,.16)"></path>
+        <circle cx="420" cy="350" r="5" fill="#F0576B" stroke="none"></circle>
+        <circle cx="420" cy="350" r="17" stroke="rgba(240,87,107,.35)"></circle>
+        <circle cx="660" cy="200" r="3.5" fill="rgba(240,87,107,.8)" stroke="none"></circle>
+        <circle cx="660" cy="500" r="3.5" fill="rgba(179,21,39,.7)" stroke="none"></circle>
+        <circle cx="1080" cy="200" r="2.5" fill="rgba(240,87,107,.55)" stroke="none"></circle>
+        <circle cx="1080" cy="350" r="2.5" fill="rgba(179,21,39,.5)" stroke="none"></circle>
+        <circle cx="1080" cy="500" r="2.5" fill="rgba(179,21,39,.4)" stroke="none"></circle>
+        <circle cx="1080" cy="120" r="2" fill="rgba(179,21,39,.3)" stroke="none"></circle>
+        <circle cx="1080" cy="590" r="2" fill="rgba(179,21,39,.24)" stroke="none"></circle>
+      </svg>
+      <div style="position:absolute;inset:0;background:radial-gradient(125% 100% at 30% 46%,rgba(5,5,8,0) 24%,rgba(5,5,8,.55) 64%,rgba(5,5,8,.9) 100%)"></div>
+    </div>
+
+    <div class="ft-product-stage" aria-label="FieldTrack product walkthrough" style="--ft-stage-opacity:{{ wkProductO }}">
+      <div class="ft-shell" style="--ft-map-x:{{ ftMapX }};--ft-map-y:{{ ftMapY }};--ft-map-scale:{{ ftMapScale }};--ft-focus:{{ ftFocus }};--ft-focus-scale:{{ ftFocusScale }};--ft-focus-x:{{ ftFocusX }};--ft-relation-o:{{ ftRelationO }};--ft-relation-scale:{{ ftRelationScale }};--ft-ctx-1:{{ ftCtx1 }};--ft-ctx-2:{{ ftCtx2 }};--ft-ctx-3:{{ ftCtx3 }};--ft-ctx-4:{{ ftCtx4 }};--ft-follow-active:{{ ftFollowActive }};--ft-notes-o:{{ ftNotesO }};--ft-deep:{{ ftDeep }};--ft-deep-y:{{ ftDeepY }};--ft-recent-o:{{ ftRecentO }};--ft-actions-o:{{ ftActionsO }};--ft-schedule-o:{{ ftScheduleO }};--ft-schedule-y:{{ ftScheduleY }};--ft-schedule-structure:{{ ftScheduleStructure }};--ft-route-summary-o:{{ ftRouteSummaryO }};--ft-mini-map-o:{{ ftMiniMapO }};--ft-route-draw:{{ ftRouteDraw }};--ft-route-clip:{{ ftRouteClip }};--ft-ai-signal-o:{{ ftAiSignalO }};--ft-ai-o:{{ ftAiO }};--ft-ai-x:{{ ftAiX }};--ft-ai-query-o:{{ ftAiQueryO }};--ft-ai-answer-o:{{ ftAiAnswerO }};--ft-recommend-o:{{ ftRecommendO }};--ft-bottom-o:{{ ftBottomO }};--ft-bottom-y:{{ ftBottomY }};--ft-final-route-o:{{ ftFinalRouteO }};--ft-final-route-draw:{{ ftFinalRouteDraw }};--ft-eastside-o:{{ ftEastsideO }};--ft-eastside-scale:{{ ftEastsideScale }};--ft-eastside-x:{{ ftEastsideX }};--ft-final-context-o:{{ ftFinalContextO }};--ft-final-actions-o:{{ ftFinalActionsO }};--ft-nav-map-dim:{{ ftNavMapDim }};--ft-nav-top:{{ ftNavTop }};--ft-nav-active-o:{{ ftNavActiveO }};--ft-clients-cue:{{ ftClientsCue }};--ft-messages-cue:{{ ftMessagesCue }};--ft-tasks-badge-o:{{ ftTasksBadgeO }};--ft-followups-badge-o:{{ ftFollowupsBadgeO }};--ft-system-attention-o:{{ ftSystemAttentionO }}">
+        <img class="ft-map-base" src="assets/fieldtrack-map-overview.png" alt="FieldTrack territory map with client locations"/>
+        <div class="ft-map-tint"></div>
+        <div class="ft-nav-overlay" aria-hidden="true">
+          <div class="ft-nav-map-dimmer"></div>
+          <div class="ft-nav-active-surface"></div>
+          <span class="ft-nav-cue ft-nav-cue-clients"></span>
+          <span class="ft-nav-tasks-badge">3</span>
+          <span class="ft-nav-cue ft-nav-cue-messages"></span>
+        </div>
+        <div class="ft-followups-badge" aria-hidden="true">3</div>
+
+        <button class="ft-live-marker" data-tone="blue" aria-label="Focus West District client" style="left:29%;top:42%;--ft-marker-o:{{ ftMk1 }}"></button>
+        <button class="ft-live-marker" data-tone="amber" aria-label="Focus Downtown client" style="left:49%;top:53%;--ft-marker-o:{{ ftMk2 }};--ft-pulse-o:{{ ftPulse1 }};--ft-pulse-scale:{{ ftPulseScale1 }}"></button>
+        <button class="ft-live-marker" aria-label="Focus North District client" style="left:54%;top:35%;--ft-marker-o:{{ ftMk3 }}"></button>
+        <button class="ft-live-marker" data-tone="blue" aria-label="Focus East District client" style="left:68%;top:36%;--ft-marker-o:{{ ftMk4 }};--ft-pulse-o:{{ ftPulse2 }};--ft-pulse-scale:{{ ftPulseScale2 }}"></button>
+        <button class="ft-live-marker" data-tone="red" aria-label="Focus South District client" style="left:61%;top:68%;--ft-marker-o:{{ ftMk5 }}"></button>
+        <button class="ft-live-marker" aria-label="Focus Ridgewood client" style="left:35%;top:63%;--ft-marker-o:{{ ftMk6 }}"></button>
+        <button class="ft-live-marker" data-tone="amber" aria-label="Focus Hillside client" style="left:76%;top:59%;--ft-marker-o:{{ ftMk7 }};--ft-pulse-o:{{ ftPulse3 }};--ft-pulse-scale:{{ ftPulseScale3 }}"></button>
+        <button class="ft-live-marker" data-tone="blue" aria-label="Focus Southpark client" style="left:48%;top:78%;--ft-marker-o:{{ ftMk8 }}"></button>
+
+        <button class="ft-focus-marker" aria-label="Open Northline Pharmacy"></button>
+        <div class="ft-focus-label">Northline Pharmacy<br/><span style="color:#8d9599">9:00 AM · follow-up</span></div>
+        <div class="ft-relation"></div>
+
+        <aside class="ft-panel ft-client-panel" aria-label="Northline Pharmacy client details" style="--ft-client-o:{{ ftClientO }};--ft-client-x:{{ ftClientX }};pointer-events:{{ ftClientPe }}">
+          <div class="ft-panel-scroll">
+            <div class="ft-panel-head ft-context-1">
+              <span class="ft-pin"></span>
+              <div><h4 class="ft-panel-title">Northline Pharmacy</h4><span class="ft-badge ft-badge-warn" style="opacity:{{ ftWarnO }}">Needs Follow-up</span><span class="ft-badge" style="opacity:{{ ftDeep }}">Active Client</span></div>
+              <span class="ft-kebab">···</span>
+            </div>
+            <dl class="ft-meta ft-context-1">
+              <dt>Zone</dt><dd>North District</dd>
+              <dt>Status</dt><dd>Active Client</dd>
+              <dt>Contact</dt><dd>Jessica Lin, Pharmacist</dd>
+              <dt>Phone</dt><dd>(612) 555-0198</dd>
+              <dt>Email</dt><dd>jessica.lin@northlinepharm.com</dd>
+              <dt>Address</dt><dd>1728 Lakeview Rd<br/>Northview, MN 55411</dd>
+            </dl>
+            <div class="ft-follow ft-context-2">
+              <div><span class="ft-section-label">Next follow-up</span><strong>Tomorrow, May 14</strong><small>10:00 AM</small></div>
+              <button class="ft-action">Mark Done</button>
+            </div>
+            <div class="ft-context-3" style="display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:9px;color:#8d9599"><span><span class="ft-section-label">Last activity</span><br/><span style="color:#d8d8d7">Met with Jessica Lin</span><br/>May 6, 2025 · 9:45 AM</span><button class="ft-action" style="align-self:center">View</button></div>
+            <div class="ft-notes ft-context-4"><span class="ft-section-label">Notes</span><br/>Interested in new OTC pain relief line. Follow up on sampling.</div>
+            <div class="ft-deep">
+              <span class="ft-section-label">Visit history</span>
+              <div class="ft-history">
+                <div class="ft-history-row"><span>May 6, 2025 · 9:45 AM</span><span>Met with Jessica Lin</span></div>
+                <div class="ft-history-row"><span>Apr 25, 2025 · 2:15 PM</span><span>Checked stock levels</span></div>
+                <div class="ft-history-row"><span>Apr 10, 2025 · 11:30 AM</span><span>Introduced new line</span></div>
+              </div>
+              <div class="ft-panel-actions"><button class="ft-action ft-action-primary">Add Visit</button><button class="ft-action">Log Activity</button></div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="ft-schedule" aria-label="Today schedule" style="pointer-events:{{ ftSchedulePe }}">
+          <div class="ft-schedule-main">
+            <div class="ft-schedule-head"><div><h4>Today, May 14, 2025</h4><small>Your planned route · 6 visits</small></div><button class="ft-action">Optimize Route</button><button class="ft-action">Reschedule</button></div>
+            <div class="ft-visit-list">
+              <div class="ft-period">Morning</div>
+              <button class="ft-visit" data-stop="1" style="--ft-row-o:{{ ftRow1 }};--ft-row-active:{{ ftActive1 }}"><span class="ft-visit-num">1</span><span class="ft-visit-time">09:00 AM</span><span class="ft-visit-name"><strong>Northline Pharmacy</strong><small>1728 Lakeview Rd · Drive 18 min</small></span><span class="ft-status">Confirmed</span></button>
+              <button class="ft-visit" data-stop="2" style="--ft-row-o:{{ ftRow2 }};--ft-row-active:{{ ftActive2 }}"><span class="ft-visit-num">2</span><span class="ft-visit-time">10:30 AM</span><span class="ft-visit-name"><strong>WellCare Clinic</strong><small>2330 Main St NE · Drive 22 min</small></span><span class="ft-status">Confirmed</span></button>
+              <div class="ft-period">Midday</div>
+              <button class="ft-visit" data-stop="3" style="--ft-row-o:{{ ftRow3 }};--ft-row-active:{{ ftActive3 }}"><span class="ft-visit-num">3</span><span class="ft-visit-time">01:00 PM</span><span class="ft-visit-name"><strong>Eastside Pharmacy</strong><small>515 Central Ave NE · Drive 15 min</small></span><span class="ft-status ft-status-warn">Needs follow-up</span></button>
+              <button class="ft-visit" data-stop="4" style="--ft-row-o:{{ ftRow4 }};--ft-row-active:{{ ftActive4 }}"><span class="ft-visit-num">4</span><span class="ft-visit-time">03:00 PM</span><span class="ft-visit-name"><strong>Southpark Pharmacy</strong><small>2100 Bloomington Ave · Drive 12 min</small></span><span class="ft-status">Confirmed</span></button>
+              <div class="ft-period">Afternoon</div>
+              <button class="ft-visit" data-stop="5" style="--ft-row-o:{{ ftRow5 }};--ft-row-active:{{ ftActive5 }}"><span class="ft-visit-num">5</span><span class="ft-visit-time">04:30 PM</span><span class="ft-visit-name"><strong>Hillside Clinic</strong><small>2901 Chicago Ave S · Drive 8 min</small></span><span class="ft-status ft-status-pending">Pending</span></button>
+              <button class="ft-visit" data-stop="6" style="--ft-row-o:{{ ftRow6 }};--ft-row-active:{{ ftActive6 }}"><span class="ft-visit-num">6</span><span class="ft-visit-time">05:45 PM</span><span class="ft-visit-name"><strong>Ridgewood Pharmacy</strong><small>4200 Ridgewood Ave · End of day sync</small></span><span class="ft-status ft-status-pending">Pending</span></button>
+            </div>
+          </div>
+          <aside class="ft-route-summary">
+            <h5>Today's route</h5>
+            <div class="ft-route-metrics"><div><strong>6</strong><small>Visits</small></div><div><strong>29.1 mi</strong><small>Total distance</small></div><div><strong>6h 15m</strong><small>Total time</small></div></div>
+            <button class="ft-action ft-action-primary" style="width:100%;margin-top:15px">Start Route</button>
+            <h5 style="margin-top:20px">Next stop</h5>
+            <div style="padding:11px;border:1px solid rgba(255,255,255,.09);font-size:10px;color:#eee9e5">Northline Pharmacy<br/><span style="color:#82898d">09:00 AM – 09:45 AM</span></div>
+            <div class="ft-route-line" aria-label="Mini route map">
+              <img class="ft-route-map-asset ft-route-map-underlay" src="assets/fieldtrack-route-map.png" alt=""/>
+              <img class="ft-route-map-asset ft-route-map-reveal" src="assets/fieldtrack-route-map.png" alt=""/>
+              <button class="ft-route-node" data-stop="1" aria-label="Highlight visit 1, Northline Pharmacy" style="--ft-node-o:{{ ftRow1 }};--ft-node-active:{{ ftActive1 }}">1</button>
+              <button class="ft-route-node" data-stop="2" aria-label="Highlight visit 2, WellCare Clinic" style="--ft-node-o:{{ ftRow2 }};--ft-node-active:{{ ftActive2 }}">2</button>
+              <button class="ft-route-node" data-stop="3" aria-label="Highlight visit 3, Eastside Pharmacy" style="--ft-node-o:{{ ftRow3 }};--ft-node-active:{{ ftActive3 }}">3</button>
+              <button class="ft-route-node" data-stop="4" aria-label="Highlight visit 4, Southpark Pharmacy" style="--ft-node-o:{{ ftRow4 }};--ft-node-active:{{ ftActive4 }}">4</button>
+              <button class="ft-route-node" data-stop="5" aria-label="Highlight visit 5, Hillside Clinic" style="--ft-node-o:{{ ftRow5 }};--ft-node-active:{{ ftActive5 }}">5</button>
+              <button class="ft-route-node" data-stop="6" aria-label="Highlight visit 6, Ridgewood Pharmacy" style="--ft-node-o:{{ ftRow6 }};--ft-node-active:{{ ftActive6 }}">6</button>
+            </div>
+            <h5>Attention needed</h5>
+            <div class="ft-attention"><div><strong>Eastside Pharmacy</strong>Follow up on OTC pain relief line</div><div><strong>Hillside Clinic</strong>Waiting on sample request approval</div></div>
+          </aside>
+        </section>
+
+        <div class="ft-bottom-cards">
+          <div class="ft-card"><div class="ft-card-head"><span>Today's route</span><span>View full</span></div><div class="ft-route-metrics"><div><strong>6</strong><small>Visits</small></div><div><strong>29.1 mi</strong><small>Distance</small></div><div><strong>6h 15m</strong><small>Time</small></div></div><div class="ft-progress"><span></span></div><div class="ft-card-row"><strong>3 of 6 completed</strong><span>50%</span></div></div>
+          <div class="ft-card"><div class="ft-card-head"><span>Live visits</span><span style="color:#68bd6c">6 in progress</span></div><div class="ft-card-row"><strong>WellCare Clinic</strong><span style="color:#68bd6c">In visit</span></div><div class="ft-card-row"><strong>Southpark Pharmacy</strong><span style="color:#68bd6c">In visit</span></div><div class="ft-card-row"><strong>Ridgewood Pharmacy</strong><span style="color:#68bd6c">In visit</span></div><div class="ft-card-row"><strong>Lakeside Clinic</strong><span>Wrap-up</span></div></div>
+          <div class="ft-card ft-card-attention"><div class="ft-card-head"><span>Attention needed</span><span>View all</span></div><div class="ft-card-row"><strong>3 clients need follow-up</strong><span>This week</span></div><div class="ft-card-row"><strong>2 pricing updates</strong><span>Awaiting</span></div><div class="ft-card-row"><strong>1 sample request</strong><span>Pending</span></div></div>
+        </div>
+
+        <div class="ft-ai-signal">3 accounts need attention.</div>
+        <button class="ft-ai-map-marker" data-account="eastside" aria-label="AI result: Eastside Pharmacy" style="--ft-ai-map-o:{{ ftAiMap1O }};pointer-events:{{ ftAiMapPe }}"><span>Eastside</span></button>
+        <button class="ft-ai-map-marker" data-account="hillside" aria-label="AI result: Hillside Clinic" style="--ft-ai-map-o:{{ ftAiMap2O }};pointer-events:{{ ftAiMapPe }}"><span>Hillside</span></button>
+        <button class="ft-ai-map-marker" data-account="northline" aria-label="AI result: Northline Pharmacy" style="--ft-ai-map-o:{{ ftAiMap3O }};pointer-events:{{ ftAiMapPe }}"><span>Northline</span></button>
+
+        <aside class="ft-ai" aria-label="AI Assistant" style="pointer-events:{{ ftAiPe }}">
+          <div class="ft-ai-head"><span>AI Assistant</span><span class="ft-beta">Beta</span></div>
+          <div class="ft-chat">
+            <div class="ft-chat-bubble ft-ai-query">Which clients need follow-up today?</div>
+            <div class="ft-chat-answer ft-ai-answer"><strong>3 accounts need attention today:</strong><ul><li><strong>Eastside Pharmacy</strong> — OTC pain relief follow-up after 1:00 PM visit</li><li><strong>Hillside Clinic</strong> — pending sample request approval</li><li><strong>Northline Pharmacy</strong> — confirm pricing update before tomorrow visit</li></ul>
+              <div class="ft-ai-list">
+                <button class="ft-ai-result" data-account="eastside" style="--ft-result-o:{{ ftAiResult1O }}"><b>1</b><span>Eastside Pharmacy<br/><small>1:00 PM</small></span><span style="color:#f08332">Open</span></button>
+                <button class="ft-ai-result" data-account="hillside" style="--ft-result-o:{{ ftAiResult2O }}"><b>2</b><span>Hillside Clinic<br/><small>4:30 PM</small></span><span style="color:#9db8dd">View</span></button>
+                <button class="ft-ai-result" data-account="northline" style="--ft-result-o:{{ ftAiResult3O }}"><b>3</b><span>Northline Pharmacy<br/><small>Tomorrow</small></span><span style="color:#f08332">Open</span></button>
+              </div>
+              <div class="ft-recommend"><strong>Recommended next action</strong>Contact Eastside Pharmacy first, then reschedule Hillside Clinic if approval is still pending.</div>
+            </div>
+          </div>
+        </aside>
+
+        <button class="ft-focus-marker ft-eastside" aria-label="Open Eastside Pharmacy" style="pointer-events:{{ ftEastsidePe }}"></button>
+        <div class="ft-focus-label ft-eastside-label">Eastside Pharmacy<br/><span style="color:#8d9599">1:00 PM · active route</span></div>
+        <aside class="ft-panel ft-final-panel" aria-label="Eastside Pharmacy client details" style="--ft-client-o:{{ ftFinalPanelO }};--ft-client-x:{{ ftFinalPanelX }};pointer-events:{{ ftFinalPe }}">
+          <div class="ft-panel-scroll">
+            <div class="ft-panel-head"><span class="ft-pin"></span><div><h4 class="ft-panel-title">Eastside Pharmacy</h4><span class="ft-badge">Active Client</span></div><span class="ft-kebab">···</span></div>
+            <dl class="ft-meta ft-final-context"><dt>Zone</dt><dd>South District</dd><dt>Priority</dt><dd><span style="color:#f08332">●</span> Medium</dd><dt>Next follow-up</dt><dd>Fri, May 23 · 10:00 AM</dd><dt>Contact</dt><dd>Jessica Lin, Pharmacist</dd><dt>Phone</dt><dd>(612) 555–0198</dd><dt>Email</dt><dd>jessica.lin@eastsidepharm.com</dd><dt>Address</dt><dd>515 Central Ave NE<br/>Minneapolis, MN 55413</dd></dl>
+            <div class="ft-notes ft-final-context"><span class="ft-section-label">Notes</span><br/>OTC pain relief line moving well. Interested in flu shots for Q3. Follow up on cooler install.</div>
+            <div class="ft-deep ft-final-context"><span class="ft-section-label">Activity</span><div class="ft-history"><div class="ft-history-row"><span>May 9, 2025 · 1:10 PM</span><span>Product review</span></div><div class="ft-history-row"><span>Apr 25, 2025 · 10:28 AM</span><span>Pricing update</span></div><div class="ft-history-row"><span>Apr 10, 2025 · 1:35 PM</span><span>Introduced new line</span></div></div><div class="ft-panel-actions ft-final-actions"><button class="ft-action ft-action-primary">Log Visit</button><button class="ft-action">Start Follow-up</button></div></div>
+          </div>
+        </aside>
+
+        <div class="ft-caption" style="--ft-cap-o:{{ ftCap1O }};--ft-cap-y:{{ ftCap1Y }};--ft-cap-blur:{{ ftCap1Blur }};left:clamp(34px,6vw,100px);right:auto;top:clamp(34px,8vh,82px);bottom:auto"><div class="ft-caption-kicker">02 · PRODUCT</div><h4>The work starts scattered.</h4><p>People, places, notes, follow-ups — all moving at once.</p></div>
+        <div class="ft-caption" style="--ft-cap-o:{{ ftCap2O }};--ft-cap-y:{{ ftCap2Y }};--ft-cap-blur:{{ ftCap2Blur }};left:auto;right:clamp(390px,31vw,470px);top:auto;bottom:10%"><div class="ft-caption-kicker">02 · PRODUCT</div><h4>Then it becomes one working view.</h4><p>The right context, around the thing you're actually working on.</p></div>
+        <div class="ft-caption" style="--ft-cap-o:{{ ftCap3O }};--ft-cap-y:{{ ftCap3Y }};--ft-cap-blur:{{ ftCap3Blur }};left:clamp(34px,6vw,100px);right:auto;top:auto;bottom:10%"><div class="ft-caption-kicker">02 · PRODUCT</div><h4>Every action makes the next one clearer.</h4><p>Status, history, follow-up — connected instead of remembered.</p></div>
+        <div class="ft-caption" style="--ft-cap-o:{{ ftCap4O }};--ft-cap-y:{{ ftCap4Y }};--ft-cap-blur:{{ ftCap4Blur }};left:14%;right:auto;top:auto;bottom:8%"><div class="ft-caption-kicker">02 · PRODUCT</div><h4>The work becomes a sequence.</h4><p>What happened, what comes next, and where attention is needed.</p></div>
+        <div class="ft-caption" style="--ft-cap-o:{{ ftCap5O }};--ft-cap-y:{{ ftCap5Y }};--ft-cap-blur:{{ ftCap5Blur }};left:auto;right:33%;top:13%;bottom:auto"><div class="ft-caption-kicker">02 · PRODUCT</div><h4>Then the product starts helping back.</h4><p>Ask what's happening. Surface what matters.</p></div>
+        <div class="ft-caption" style="--ft-cap-o:{{ ftCap6O }};--ft-cap-y:{{ ftCap6Y }};--ft-cap-blur:{{ ftCap6Blur }};left:clamp(34px,6vw,100px);right:auto;top:clamp(34px,8vh,82px);bottom:auto"><div class="ft-caption-kicker">02 · PRODUCT</div><h4>And the work keeps moving.</h4><p>A product built around the process, not around the software.</p></div>
+
+        <div class="ft-state-rail" aria-hidden="true"><span class="{{ ftDot1 }}"></span><span class="{{ ftDot2 }}"></span><span class="{{ ftDot3 }}"></span><span class="{{ ftDot4 }}"></span><span class="{{ ftDot5 }}"></span><span class="{{ ftDot6 }}"></span></div>
+      </div>
+    </div>
+
+    <div style="position:absolute;inset:0;opacity:0;pointer-events:none">
+      <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" fill="none">
+        <g stroke="rgba(226,205,190,.05)" stroke-width="1">
+          <path d="M0 132 H1200 M0 317 H1200 M0 502 H1200"></path>
+          <path d="M425 0 V700 M595 0 V700 M765 0 V700"></path>
+        </g>
+        <path d="M467 77 L519 96 L604 133 L612 188 L638 225 L598 281 L621 367 L677 410 L643 457 L581 503 L564 569 L544 605 L510 625 L507 595 L485 549 L408 490 L422 447 L391 383 L417 327 L391 272 L408 225 L400 207 L434 160 L408 133 L451 105 Z" fill="rgba(179,21,39,.05)" stroke="rgba(240,87,107,.42)" stroke-width="1.1"></path>
+        <g stroke="rgba(226,205,190,.13)" stroke-width="1" fill="none">
+          <path d="M417 323 L479 321 L524 362 L621 401"></path>
+          <path d="M479 321 L459 394 L502 438 L534 555 L510 592"></path>
+          <path d="M459 394 L434 434 L423 481"></path>
+          <path d="M479 321 L449 238 L427 184"></path>
+          <path d="M427 184 L581 202 L583 256"></path>
+        </g>
+        <g stroke="rgba(179,21,39,.5)" stroke-width="1" fill="none">
+          <circle cx="479" cy="321" r="15"></circle>
+          <circle cx="417" cy="323" r="11"></circle>
+        </g>
+        <g fill="#F0576B">
+          <circle cx="479" cy="321" r="4.5"></circle>
+          <circle cx="417" cy="323" r="3.8"></circle>
+          <circle cx="423" cy="481" r="3.5"></circle>
+          <circle cx="427" cy="184" r="3.5"></circle>
+        </g>
+        <g fill="rgba(179,21,39,.72)">
+          <circle cx="524" cy="362" r="3"></circle>
+          <circle cx="434" cy="434" r="3"></circle>
+          <circle cx="643" cy="453" r="3"></circle>
+          <circle cx="510" cy="592" r="3"></circle>
+          <circle cx="502" cy="438" r="3"></circle>
+          <circle cx="449" cy="238" r="3"></circle>
+        </g>
+        <g fill="rgba(227,191,164,.34)">
+          <circle cx="581" cy="202" r="2.4"></circle>
+          <circle cx="621" cy="401" r="2.4"></circle>
+          <circle cx="534" cy="555" r="2.4"></circle>
+          <circle cx="583" cy="256" r="2.4"></circle>
+          <circle cx="435" cy="349" r="2.4"></circle>
+          <circle cx="459" cy="394" r="2.4"></circle>
+          <circle cx="598" cy="281" r="2.4"></circle>
+          <circle cx="485" cy="549" r="2.4"></circle>
+        </g>
+      </svg>
+      <div style="position:absolute;inset:0;background:radial-gradient(120% 95% at 34% 52%,rgba(5,5,8,.15) 8%,rgba(5,5,8,.7) 58%,#050508 100%)"></div>
+    </div>
+
+    <div class="bp-stage" data-accepted="{{ bpAcceptedAttr }}" aria-label="Blueprint evidence topology" style="--bp-stage-o:{{ bpStageO }};--bp-node-prom:{{ bpNodeProm }};--bp-edge-prom:{{ bpEdgeProm }};--bp-id-o:{{ bpIdO }};--bp-depth:{{ bpDepth }};--bp-topology-x:{{ bpTopologyX }};--bp-proof:{{ bpProof }};--bp-matrix-o:{{ bpMatrixO }};--bp-frontier:{{ bpFrontier }};--bp-frontier-label:{{ bpFrontierLabel }};--bp-downstream-dim:{{ bpDownstreamDim }};--bp-downstream-o:{{ bpDownstreamO }};--bp-inspector-o:{{ bpInspectorO }};--bp-claim-o:{{ bpClaimO }};--bp-verify-o:{{ bpVerifyO }};--bp-evidence:{{ bpEvidence }};--bp-decision-o:{{ bpDecisionO }};--bp-accept:{{ bpAccept }};--bp-final:{{ bpFinal }};--bp-next-frontier:{{ bpNextFrontier }};--bp-inspector-pe:{{ bpInspectorPe }};--bp-decision-pe:{{ bpDecisionPe }};pointer-events:{{ bpStagePe }}">
+      <div class="bp-shell">
+        <header class="bp-topbar">
+          <div class="bp-brand"><span class="bp-brand-mark"></span><span>Blueprint</span><small>CONTROL LAYER</small></div>
+          <div class="bp-top-state"><span class="bp-state-dot"></span><span>SYSTEM HEALTH</span><strong>HEALTHY</strong></div>
+          <div class="bp-top-state bp-evidence-state"><span class="bp-state-dot amber"></span><span>EVIDENCE COVERAGE</span><strong class="bp-unverified">PARTIAL</strong><strong class="bp-demonstrated">DEMONSTRATED</strong></div>
+          <div class="bp-final-metrics"><span><b>7</b>SYSTEMS</span><span><b>24</b>BOUNDARIES</span><span><b>18</b>DEMONSTRATED</span><span><b>3</b>PARTIAL</span><span><b>1</b>FRONTIER</span></div>
+        </header>
+
+        <nav class="bp-hierarchy" aria-label="System hierarchy">
+          <div class="bp-hierarchy-label">SYSTEM HIERARCHY</div>
+          <div class="bp-tree">
+            <button class="bp-tree-row" onClick="{{ bpHierarchyFocus }}">SAVVY / ORGANIZATION</button>
+            <button class="bp-tree-row" onClick="{{ bpHierarchyFocus }}">PRODUCT / BLUEPRINT</button>
+            <button class="bp-tree-row" onClick="{{ bpHierarchyFocus }}">SYSTEM / EXTRACTION</button>
+            <button class="bp-tree-row" onClick="{{ bpHierarchyFocus }}">SUBSYSTEM / ELIGIBILITY</button>
+          </div>
+          <div class="bp-hierarchy-meta"><span>VIEW<strong>TRUST TOPOLOGY</strong></span><span>BASELINE<strong>2026.08 / ACTIVE</strong></span><span>MODEL<strong>CLAIMS + EVIDENCE</strong></span></div>
+        </nav>
+
+        <main class="bp-canvas" aria-label="Living trust topology">
+          <svg class="bp-topology" viewBox="0 0 1200 700" role="img" aria-label="Eight connected system components with evidence-bearing boundaries">
+            <defs><marker id="bpArrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path class="bp-edge-arrow" d="M0 0 L7 3.5 L0 7 Z"></path></marker></defs>
+            <path class="bp-edge bp-edge-demo bp-edge-b01" d="M160 350 C190 350 215 350 250 350" marker-end="url(#bpArrow)"></path>
+            <path class="bp-edge bp-edge-demo bp-edge-b02" d="M350 340 C380 305 398 285 430 268" marker-end="url(#bpArrow)"></path>
+            <path class="bp-edge bp-edge-demo bp-edge-b03" d="M530 270 C555 286 572 310 600 338" marker-end="url(#bpArrow)"></path>
+            <path class="bp-edge bp-edge-demo bp-edge-b04" d="M700 340 C725 305 745 282 770 268" marker-end="url(#bpArrow)"></path>
+            <path class="bp-edge bp-edge-b05" d="M870 270 C895 292 910 312 935 338" marker-end="url(#bpArrow)"></path>
+            <path class="bp-edge bp-edge-partial bp-edge-b06" d="M1035 340 C1053 310 1065 286 1080 270" marker-end="url(#bpArrow)"></path>
+            <path class="bp-edge bp-edge-partial bp-edge-b07" d="M1122 302 C1135 340 1137 378 1122 420" marker-end="url(#bpArrow)"></path>
+
+            <g class="bp-node" data-node="product" transform="translate(60 315)"><rect width="100" height="70"></rect><text class="bp-node-kicker" x="13" y="19">SYSTEM 01</text><text class="bp-node-label" x="13" y="38">PRODUCT</text><text class="bp-node-state" x="13" y="56">HEALTHY</text></g>
+            <g class="bp-node" data-node="ingress" transform="translate(250 315)"><rect width="100" height="70"></rect><text class="bp-node-kicker" x="13" y="19">BOUNDARY INPUT</text><text class="bp-node-label" x="13" y="38">INGRESS API</text><text class="bp-node-state" x="13" y="56">OBSERVED</text></g>
+            <g class="bp-node" data-node="queue" transform="translate(430 230)"><rect width="100" height="70"></rect><text class="bp-node-kicker" x="13" y="19">ORCHESTRATION</text><text class="bp-node-label" x="13" y="38">JOB QUEUE</text><text class="bp-node-state" x="13" y="56">STABLE</text></g>
+            <g class="bp-node" data-node="worker" transform="translate(600 315)"><rect width="100" height="70"></rect><text class="bp-node-kicker" x="13" y="19">PROCESS</text><text class="bp-node-label" x="13" y="38">WORKER</text><text class="bp-node-state" x="13" y="56">HEALTHY</text></g>
+            <g class="bp-node" data-node="eligibility" transform="translate(770 230)"><rect width="100" height="70"></rect><text class="bp-node-kicker" x="13" y="19">POLICY</text><text class="bp-node-label" x="13" y="38">SOURCE</text><text class="bp-node-label" x="13" y="51">ELIGIBILITY</text><text class="bp-node-state" x="13" y="64">DEMONSTRATED</text></g>
+            <g class="bp-node downstream" data-node="bonus" transform="translate(935 315)"><rect width="100" height="70"></rect><text class="bp-node-kicker" x="13" y="19">EXTRACTION</text><text class="bp-node-label" x="13" y="38">BONUS</text><text class="bp-node-label" x="13" y="51">EXTRACTION</text><text class="bp-node-state" x="13" y="64">UNVERIFIED</text></g>
+            <g class="bp-node downstream" data-node="save" transform="translate(1080 230)"><rect width="100" height="70"></rect><text class="bp-node-kicker" x="13" y="19">GOVERNANCE</text><text class="bp-node-label" x="13" y="38">GOVERNED</text><text class="bp-node-label" x="13" y="51">SAVE</text><text class="bp-node-state" x="13" y="64">UNKNOWN</text></g>
+            <g class="bp-node downstream" data-node="publish" transform="translate(1072 420)"><rect width="108" height="70"></rect><text class="bp-node-kicker" x="13" y="19">DEPLOYMENT</text><text class="bp-node-label" x="13" y="38">PUBLICATION</text><text class="bp-node-label" x="13" y="51">GATE</text><text class="bp-node-state" x="13" y="64">DOWNSTREAM</text></g>
+          </svg>
+
+          <button class="bp-edge-hit" data-edge="b01" onClick="{{ bpInspectBoundary }}" aria-label="Inspect boundary B-01, Product to Ingress API">B-01<span class="bp-edge-contract">REQUEST SHAPE<br/>must satisfy ingress contract</span></button>
+          <button class="bp-edge-hit" data-edge="b02" onClick="{{ bpInspectBoundary }}" aria-label="Inspect boundary B-02, Ingress API to Job Queue">B-02<span class="bp-edge-contract">QUEUE CONTRACT<br/>accepted jobs are durable</span></button>
+          <button class="bp-edge-hit" data-edge="b03" onClick="{{ bpInspectBoundary }}" aria-label="Inspect boundary B-03, Job Queue to Worker">B-03<span class="bp-edge-contract">DELIVERY CONTRACT<br/>each job reaches one worker</span></button>
+          <button class="bp-edge-hit" data-edge="b04" onClick="{{ bpInspectBoundary }}" aria-label="Inspect boundary B-04, Worker to Source Eligibility">B-04<span class="bp-edge-contract">POLICY INPUT<br/>worker output is classifiable</span></button>
+          <button class="bp-edge-hit" data-edge="b05" onClick="{{ bpToggleFrontier }}" aria-label="Open earliest unverified boundary B-05">B-05<span class="bp-edge-contract">ELIGIBILITY ENFORCEMENT<br/>insufficient input must stop here</span></button>
+          <button class="bp-edge-hit" data-edge="b06" onClick="{{ bpInspectBoundary }}" aria-label="Inspect boundary B-06, Bonus Extraction to Governed Save">B-06<span class="bp-edge-contract">SAVE CONTRACT<br/>only governed output persists</span></button>
+          <button class="bp-edge-hit" data-edge="b07" onClick="{{ bpInspectBoundary }}" aria-label="Inspect boundary B-07, Governed Save to Publication Gate">B-07<span class="bp-edge-contract">PUBLICATION CONTRACT<br/>approved records can release</span></button>
+
+          <div class="bp-frontier-label">EARLIEST UNVERIFIED BOUNDARY<strong>CERTAINTY ENDS HERE</strong></div>
+          <div class="bp-proof-matrix"><h5>BOUNDARY B-05 / STATE DIMENSIONS</h5><div class="bp-proof-row"><span>WORKFLOW</span><b>STABLE</b></div><div class="bp-proof-row"><span>HEALTH</span><b>HEALTHY</b></div><div class="bp-proof-row"><span>EVIDENCE</span><b>UNVERIFIED</b></div></div>
+        </main>
+
+        <aside class="bp-inspector" aria-label="Frontier inspector">
+          <div class="bp-inspector-head"><span class="bp-inspector-title">BOUNDARY B-05</span><div class="bp-inspector-tabs"><span class="active">CLAIM</span><span>EVIDENCE</span><span>VERIFICATION</span><span>DECISION</span></div></div>
+          <div class="bp-inspector-body">
+            <section class="bp-inspector-view bp-claim-view">
+              <div class="bp-inspector-kicker">EARLIEST UNVERIFIED BOUNDARY</div><h4>Source Eligibility → Bonus Extraction</h4>
+              <div class="bp-claim-block"><label>CLAIM / EXPECTED</label><p>Only sufficient extraction input can reach Bonus Extraction.</p></div>
+              <div class="bp-claim-block"><label>OBSERVED</label><p>No complete runtime evidence proves rejected input never reaches this boundary.</p></div>
+              <div class="bp-claim-block gap"><label>EVIDENCE GAP</label><p>Rejection enforcement not demonstrated.</p></div>
+              <div class="bp-claim-block"><label>RISK</label><p>Unproven input may reach downstream processing.</p></div>
+            </section>
+            <section class="bp-inspector-view bp-verify-view">
+              <div class="bp-inspector-kicker">VERIFICATION BRIEF / VB-028</div><h4>Demonstrate the rejection boundary.</h4>
+              <div class="bp-verify-section"><label>VERIFICATION OBJECTIVE</label><p>Demonstrate that insufficient input cannot enqueue Bonus Extraction.</p></div>
+              <div class="bp-verify-section"><label>REQUIRED EVIDENCE</label><ul><li>controlled rejection execution</li><li>queue observation</li><li>zero Bonus Extraction enqueue</li><li>trace / report reference</li></ul></div>
+              <div class="bp-verify-section"><label>EXECUTION AUTHORITY / VERIFICATION ONLY</label><div class="bp-authority"><div><strong>AUTHORIZED</strong>observe<br/>controlled test<br/>collect evidence</div><div class="prohibited"><strong>PROHIBITED</strong>modify behavior<br/>change implementation<br/>self-approve</div></div></div>
+              <div class="bp-verify-section"><label>STOP CONDITION</label><p>Return evidence for review.</p></div>
+              <div class="bp-evidence-list">
+                <button class="bp-evidence-row" onClick="{{ bpInspectEvidence }}" style="--bp-row-o:{{ bpEvidence1 }}"><span>CONTROLLED RUN</span><b>✓ COMPLETE</b></button>
+                <button class="bp-evidence-row" onClick="{{ bpInspectEvidence }}" style="--bp-row-o:{{ bpEvidence2 }}"><span>QUEUE OBSERVED</span><b>✓ COMPLETE</b></button>
+                <button class="bp-evidence-row" onClick="{{ bpInspectEvidence }}" style="--bp-row-o:{{ bpEvidence3 }}"><span>DOWNSTREAM ENQUEUE</span><b>0 OBSERVED</b></button>
+                <button class="bp-evidence-row" onClick="{{ bpInspectEvidence }}" style="--bp-row-o:{{ bpEvidence4 }}"><span>TRACE + REPORT</span><b>✓ ATTACHED</b></button>
+              </div>
+            </section>
+          </div>
+        </aside>
+
+        <section class="bp-decision" aria-label="Human evidence decision">
+          <div class="bp-decision-title">HUMAN DECISION REQUIRED</div>
+          <div class="bp-decision-facts"><span><b>4 / 4</b>EVIDENCE</span><span><b>VALID</b>STRUCTURE</span><span><b>OBSERVED</b>RUNTIME</span><span><b>NONE</b>UNRESOLVED</span></div>
+          <div class="bp-decision-actions"><button class="{{ bpAcceptClass }}" onClick="{{ bpAcceptEvidence }}">ACCEPT EVIDENCE</button><button class="{{ bpRequestClass }}" onClick="{{ bpRequestEvidence }}">REQUEST MORE</button><button class="{{ bpDeferClass }}" onClick="{{ bpDeferEvidence }}">DEFER</button></div>
+        </section>
+
+        <footer class="bp-history"><span><i></i>BASELINE LOADED</span><span><i></i>BOUNDARIES TRACED</span><span class="current"><i></i>FRONTIER B-05</span><span class="accepted"><i></i>EVIDENCE ACCEPTED / FRONTIER → B-06</span></footer>
+
+        <div class="bp-caption bp-caption-1" style="--bp-cap-o:{{ bpCap1O }};--bp-cap-y:{{ bpCap1Y }}"><div class="kicker">03 · INFRASTRUCTURE</div><h4>A system can look finished long before it's proven.</h4><p>Health and certainty are not the same thing.</p></div>
+        <div class="bp-caption bp-caption-2" style="--bp-cap-o:{{ bpCap2O }};--bp-cap-y:{{ bpCap2Y }}"><div class="kicker">03 · INFRASTRUCTURE</div><h4>Every connection carries an assumption.</h4><p>The real risk often lives between the parts.</p></div>
+        <div class="bp-caption bp-caption-3" style="--bp-cap-o:{{ bpCap3O }};--bp-cap-y:{{ bpCap3Y }}"><div class="kicker">03 · INFRASTRUCTURE</div><h4>So proof is tracked separately from progress.</h4><p>What's working. What's observed. What's actually demonstrated.</p></div>
+        <div class="bp-caption bp-caption-4" style="--bp-cap-o:{{ bpCap4O }};--bp-cap-y:{{ bpCap4Y }}"><div class="kicker">03 · INFRASTRUCTURE</div><h4>Certainty ends somewhere.</h4><p>The system makes that boundary impossible to ignore.</p></div>
+        <div class="bp-caption bp-caption-5" style="--bp-cap-o:{{ bpCap5O }};--bp-cap-y:{{ bpCap5Y }}"><div class="kicker">03 · INFRASTRUCTURE</div><h4>Proof becomes the next unit of work.</h4><p>It asks for exactly what would make the claim trustworthy.</p></div>
+        <div class="bp-caption bp-caption-6" style="--bp-cap-o:{{ bpCap6O }};--bp-cap-y:{{ bpCap6Y }}"><div class="kicker">03 · INFRASTRUCTURE</div><h4>Only then does the system move forward.</h4><p>A living record of what the system has actually earned belief for.</p></div>
+        <div class="bp-state-rail" aria-hidden="true"><span class="{{ bpDot1 }}"></span><span class="{{ bpDot2 }}"></span><span class="{{ bpDot3 }}"></span><span class="{{ bpDot4 }}"></span><span class="{{ bpDot5 }}"></span><span class="{{ bpDot6 }}"></span></div>
+      </div>
+    </div>
+
+    <div style="display:none;position:absolute;inset:0;opacity:{{ wkO3 }};pointer-events:none">
+      <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" fill="none">
+        <g stroke="rgba(179,21,39,.4)" stroke-width="1">
+          <path d="M150 480 L300 400 L430 430 L560 330 L700 350"></path>
+          <path d="M300 400 L340 260 L470 210 L560 330"></path>
+          <path d="M470 210 L620 176 L700 350"></path>
+          <path d="M430 430 L470 560 L620 590 L700 350"></path>
+        </g>
+        <g stroke="rgba(226,205,190,.1)" stroke-width="1" stroke-dasharray="4 9">
+          <path d="M700 350 L850 300 L980 340 L1120 290"></path>
+          <path d="M700 350 L840 440 L980 470"></path>
+          <path d="M850 300 L900 190 L1040 160"></path>
+          <path d="M840 440 L880 570 L1020 600"></path>
+        </g>
+        <g fill="rgba(179,21,39,.7)">
+          <circle cx="150" cy="480" r="3"></circle>
+          <circle cx="300" cy="400" r="3.4"></circle>
+          <circle cx="430" cy="430" r="3.4"></circle>
+          <circle cx="340" cy="260" r="3"></circle>
+          <circle cx="470" cy="210" r="3.4"></circle>
+          <circle cx="560" cy="330" r="3.4"></circle>
+          <circle cx="620" cy="176" r="3"></circle>
+          <circle cx="470" cy="560" r="3"></circle>
+          <circle cx="620" cy="590" r="3"></circle>
+        </g>
+        <g fill="rgba(226,205,190,.16)">
+          <circle cx="850" cy="300" r="2.6"></circle>
+          <circle cx="980" cy="340" r="2.6"></circle>
+          <circle cx="1120" cy="290" r="2.6"></circle>
+          <circle cx="840" cy="440" r="2.6"></circle>
+          <circle cx="980" cy="470" r="2.6"></circle>
+          <circle cx="900" cy="190" r="2.6"></circle>
+          <circle cx="1040" cy="160" r="2.6"></circle>
+          <circle cx="880" cy="570" r="2.6"></circle>
+          <circle cx="1020" cy="600" r="2.6"></circle>
+        </g>
+        <circle cx="700" cy="350" r="6" fill="#F0576B"></circle>
+        <circle cx="700" cy="350" r="18" stroke="rgba(240,87,107,.6)" stroke-width="1"></circle>
+        <circle cx="700" cy="350" r="34" stroke="rgba(240,87,107,.18)" stroke-width="1"></circle>
+        <path d="M700 292 V408" stroke="rgba(240,87,107,.22)" stroke-width="1" stroke-dasharray="2 7"></path>
+      </svg>
+      <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 32% 50%,rgba(5,5,8,.1) 14%,rgba(5,5,8,.7) 60%,#050508 100%)"></div>
+    </div>
+
+    <div style="position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;padding:0 clamp(28px,7vw,132px);pointer-events:none">
+      <div style="position:relative;width:100%;max-width:620px">
+
+        <div style="position:absolute;left:0;top:0;width:100%;opacity:0;transform:translateY({{ wkY2 }})">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:34px;height:1px;background:#B31527"></span>
+            <span style="font-size:10px;letter-spacing:.24em;color:rgba(194,24,43,.9)">02 · PRODUCT</span>
+          </div>
+          <h3 style="margin:26px 0 0;font-family:'Bodoni Moda',serif;font-weight:300;font-size:clamp(32px,4.2vw,58px);line-height:1.1;letter-spacing:.005em;color:#F2ECE7;text-wrap:pretty">Not a chatbot over a spreadsheet.</h3>
+          <p style="margin:26px 0 0;max-width:520px;font-size:14px;font-weight:300;line-height:1.85;letter-spacing:.03em;color:rgba(232,222,216,.5);text-wrap:pretty">Every business has real data — status, zone, contact, order value, decline reasons, every past visit. The whole territory lives on a live map the team actually runs their day on. AI doesn't replace that — it reads the mess inside it and turns it into the next right action.</p>
+          <div style="margin:34px 0 0;font-size:9.5px;letter-spacing:.2em;color:rgba(226,205,190,.3)">FULL CRM · LIVE TERRITORY MAP · AI ON REAL INFRASTRUCTURE</div>
+        </div>
+
+        <div style="display:none;position:absolute;left:0;top:0;width:100%;opacity:{{ wkO3 }};transform:translateY({{ wkY3 }})">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:34px;height:1px;background:#B31527"></span>
+            <span style="font-size:10px;letter-spacing:.24em;color:rgba(194,24,43,.9)">03 · INFRASTRUCTURE</span>
+          </div>
+          <h3 style="margin:26px 0 0;font-family:'Bodoni Moda',serif;font-weight:300;font-size:clamp(32px,4.2vw,58px);line-height:1.1;letter-spacing:.005em;color:#F2ECE7;text-wrap:pretty">It stops exactly where certainty ends.</h3>
+          <p style="margin:26px 0 0;max-width:520px;font-size:14px;font-weight:300;line-height:1.85;letter-spacing:.03em;color:rgba(232,222,216,.5);text-wrap:pretty">Most monitoring just says something broke. Blueprint finds the earliest point where the system no longer has enough evidence to safely continue — and stops there, with everything gathered, until a person decides. Every change, every approval, every reason — on record.</p>
+          <div style="margin:34px 0 0;font-size:9.5px;letter-spacing:.2em;color:rgba(226,205,190,.3)">EVIDENCE · HUMAN REVIEW · FULL AUDIT TRAIL</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div aria-hidden="true" style="position:absolute;right:clamp(24px,4vw,64px);top:50%;transform:translateY(-50%);display:none;flex-direction:column;gap:26px;align-items:flex-end">
+      <div onClick="{{ wkGo1 }}" style="display:flex;align-items:center;gap:12px;cursor:pointer">
+        <span style="font-size:9px;letter-spacing:.2em;color:rgba(226,205,190,.3);opacity:{{ wkO1 }}">INTELLIGENCE</span>
+        <span style="position:relative;width:9px;height:9px;display:block">
+          <span style="position:absolute;inset:0;border:1px solid rgba(226,205,190,.22);border-radius:50%"></span>
+          <span style="position:absolute;left:2px;top:2px;width:5px;height:5px;border-radius:50%;background:#F0576B;box-shadow:0 0 10px rgba(240,87,107,.6);opacity:{{ wkO1 }}"></span>
+        </span>
+      </div>
+      <div onClick="{{ wkGo2 }}" style="display:flex;align-items:center;gap:12px;cursor:pointer">
+        <span style="font-size:9px;letter-spacing:.2em;color:rgba(226,205,190,.3);opacity:{{ wkO2 }}">PRODUCT</span>
+        <span style="position:relative;width:9px;height:9px;display:block">
+          <span style="position:absolute;inset:0;border:1px solid rgba(226,205,190,.22);border-radius:50%"></span>
+          <span style="position:absolute;left:2px;top:2px;width:5px;height:5px;border-radius:50%;background:#F0576B;box-shadow:0 0 10px rgba(240,87,107,.6);opacity:{{ wkO2 }}"></span>
+        </span>
+      </div>
+      <div onClick="{{ wkGo3 }}" style="display:flex;align-items:center;gap:12px;cursor:pointer">
+        <span style="font-size:9px;letter-spacing:.2em;color:rgba(226,205,190,.3);opacity:{{ wkO3 }}">INFRASTRUCTURE</span>
+        <span style="position:relative;width:9px;height:9px;display:block">
+          <span style="position:absolute;inset:0;border:1px solid rgba(226,205,190,.22);border-radius:50%"></span>
+          <span style="position:absolute;left:2px;top:2px;width:5px;height:5px;border-radius:50%;background:#F0576B;box-shadow:0 0 10px rgba(240,87,107,.6);opacity:{{ wkO3 }}"></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="ss-intel-caption" data-intel-caption="1" style="position:absolute;left:8%;top:18%;max-width:min(360px,28vw);opacity:{{ wkCap1On }};transform:translateY({{ wkCap1Y }});filter:blur({{ wkCap1Blur }});transition:opacity .62s ease,transform .72s cubic-bezier(.2,.75,.25,1),filter .62s ease;pointer-events:none">
+      <div style="display:flex;align-items:center;gap:9px">
+        <span style="width:15px;height:1px;background:rgba(179,21,39,.85)"></span>
+        <span style="font-family:'Bodoni Moda',serif;font-weight:300;font-size:15px;line-height:1.28;letter-spacing:.008em;color:#F2ECE7;text-wrap:pretty">Something comes in.</span>
+      </div>
+      <p style="margin:8px 0 0 24px;font-size:12.5px;font-weight:300;line-height:1.55;letter-spacing:.02em;color:rgba(232,222,216,.56);text-wrap:pretty">Messy is fine. An email, a form, a half-written message.</p>
+    </div>
+
+    <div class="ss-intel-caption" data-intel-caption="2" style="position:absolute;right:8%;top:17%;max-width:min(370px,29vw);opacity:{{ wkCap2On }};transform:translateY({{ wkCap2Y }});filter:blur({{ wkCap2Blur }});transition:opacity .62s ease,transform .72s cubic-bezier(.2,.75,.25,1),filter .62s ease;pointer-events:none">
+      <div style="display:flex;align-items:center;gap:9px">
+        <span style="width:15px;height:1px;background:rgba(179,21,39,.85)"></span>
+        <span style="font-family:'Bodoni Moda',serif;font-weight:300;font-size:15px;line-height:1.28;letter-spacing:.008em;color:#F2ECE7;text-wrap:pretty">It gets understood, not just scanned.</span>
+      </div>
+      <p style="margin:8px 0 0 24px;font-size:12.5px;font-weight:300;line-height:1.55;letter-spacing:.02em;color:rgba(232,222,216,.56);text-wrap:pretty">Not keyword matching — what's actually being asked.</p>
+    </div>
+
+    <div class="ss-intel-caption" data-intel-caption="3" style="position:absolute;left:8%;bottom:17%;max-width:min(350px,27vw);opacity:{{ wkCap3On }};transform:translateY({{ wkCap3Y }});filter:blur({{ wkCap3Blur }});transition:opacity .62s ease,transform .72s cubic-bezier(.2,.75,.25,1),filter .62s ease;pointer-events:none">
+      <div style="display:flex;align-items:center;gap:9px">
+        <span style="width:15px;height:1px;background:rgba(179,21,39,.85)"></span>
+        <span style="font-family:'Bodoni Moda',serif;font-weight:300;font-size:15px;line-height:1.28;letter-spacing:.008em;color:#F2ECE7;text-wrap:pretty">Unclear? It asks.</span>
+      </div>
+      <p style="margin:8px 0 0 24px;font-size:12.5px;font-weight:300;line-height:1.55;letter-spacing:.02em;color:rgba(232,222,216,.56);text-wrap:pretty">Guessing wrong costs more than asking.</p>
+    </div>
+
+    <div class="ss-intel-caption" data-intel-caption="4" style="position:absolute;right:8%;top:16%;max-width:min(380px,29vw);opacity:{{ wkCap4On }};transform:translateY({{ wkCap4Y }});filter:blur({{ wkCap4Blur }});transition:opacity .62s ease,transform .72s cubic-bezier(.2,.75,.25,1),filter .62s ease;pointer-events:none">
+      <div style="display:flex;align-items:center;gap:9px">
+        <span style="width:15px;height:1px;background:rgba(179,21,39,.85)"></span>
+        <span style="font-family:'Bodoni Moda',serif;font-weight:300;font-size:15px;line-height:1.28;letter-spacing:.008em;color:#F2ECE7;text-wrap:pretty">Then it weighs the right call.</span>
+      </div>
+      <p style="margin:8px 0 0 24px;font-size:12.5px;font-weight:300;line-height:1.55;letter-spacing:.02em;color:rgba(232,222,216,.56);text-wrap:pretty">Not one rule for everyone. The right move for this case.</p>
+    </div>
+
+    <div class="ss-intel-caption" data-intel-caption="5" style="position:absolute;right:8%;bottom:17%;max-width:min(380px,29vw);opacity:{{ wkCap5On }};transform:translateY({{ wkCap5Y }});filter:blur({{ wkCap5Blur }});transition:opacity .62s ease,transform .72s cubic-bezier(.2,.75,.25,1),filter .62s ease;pointer-events:none">
+      <div style="display:flex;align-items:center;gap:9px">
+        <span style="width:15px;height:1px;background:rgba(179,21,39,.85)"></span>
+        <span style="font-family:'Bodoni Moda',serif;font-weight:300;font-size:15px;line-height:1.28;letter-spacing:.008em;color:#F2ECE7;text-wrap:pretty">A decision becomes a sequence.</span>
+      </div>
+      <p style="margin:8px 0 0 24px;font-size:12.5px;font-weight:300;line-height:1.55;letter-spacing:.02em;color:rgba(232,222,216,.56);text-wrap:pretty">Who's told, what's updated, what happens next.</p>
+    </div>
+
+    <div class="ss-intel-caption" data-intel-caption="6" style="position:absolute;left:8%;top:19%;max-width:min(390px,30vw);opacity:{{ wkCap6On }};transform:translateY({{ wkCap6Y }});filter:blur({{ wkCap6Blur }});transition:opacity .62s ease,transform .72s cubic-bezier(.2,.75,.25,1),filter .62s ease;pointer-events:none">
+      <div style="display:flex;align-items:center;gap:9px">
+        <span style="width:15px;height:1px;background:rgba(179,21,39,.85)"></span>
+        <span style="font-family:'Bodoni Moda',serif;font-weight:300;font-size:15px;line-height:1.28;letter-spacing:.008em;color:#F2ECE7;text-wrap:pretty">The outcome lands where it's needed.</span>
+      </div>
+      <p style="margin:8px 0 0 24px;font-size:12.5px;font-weight:300;line-height:1.55;letter-spacing:.02em;color:rgba(232,222,216,.56);text-wrap:pretty">Not just decided — delivered.</p>
+    </div>
+
+    <div style="position:absolute;right:clamp(28px,7vw,132px);bottom:clamp(62px,9.5vh,104px);opacity:{{ wkBackO }};visibility:{{ wkBackV }};pointer-events:{{ wkBackPe }};transition:opacity .8s ease,visibility .8s ease">
+      <button onClick="{{ wkBack }}" style="appearance:none;border:0;border-bottom:1px solid rgba(179,21,39,.5);background:transparent;padding:0 0 5px;font-family:Manrope,sans-serif;font-size:9.5px;letter-spacing:.2em;color:rgba(226,205,190,.54);cursor:pointer;transition:color .4s ease,border-color .4s ease" style-hover="color:#F0576B;border-color:#F0576B">BACK TO THE SYSTEM</button>
+    </div>
+
+    <div style="position:absolute;left:clamp(28px,7vw,132px);bottom:clamp(30px,5vh,54px);display:flex;align-items:center;gap:12px;opacity:{{ wkScrollO }};transition:opacity .5s ease">
+      <span style="width:22px;height:1px;background:rgba(179,21,39,.7)"></span>
+      <span style="font-size:9px;letter-spacing:.22em;color:rgba(226,205,190,.28)">SCROLL TO MOVE THROUGH</span>
+    </div>
+
+    <div style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(226,205,190,.1);opacity:{{ wkScrollO }};transition:opacity .5s ease">
+      <span style="position:absolute;left:0;top:0;height:1px;width:100%;transform-origin:left;transform:scaleX({{ wkBar }});background:linear-gradient(90deg,#7E0F1E,#B31527 45%,#F0576B)"></span>
+    </div>
+
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showTopNav&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;sheen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;showServiceRail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { open: {}, inView: {}, wkMode: 'overview', wkClosingFrom: null, wkP: 0, wkActive: false, wkCapOn: [false, false, false, false, false, false], infraDeep: false, infraDecision: null, infraHierarchy: false, dx: { stage: 'closed', path: null, impact: null, text: '', email: '' } };
+  dxSet = (patch) => this.setState(s => ({ dx: { ...s.dx, ...patch } }));
+  dxGo = (patch) => (e) => { if (e) e.preventDefault(); this.dxSet(patch); };
+  refP1 = React.createRef();
+  refP2 = React.createRef();
+  refP3 = React.createRef();
+  refPause = React.createRef();
+  refFlow = React.createRef();
+  refDx = React.createRef();
+  refSystem = React.createRef();
+  dxStart = (e) => {
+    if (e) e.preventDefault();
+    this.dxSet({ stage: 's1' });
+    const el = this.refDx.current;
+    if (!el) return;
+    this.scrollToY(el.getBoundingClientRect().top + window.pageYOffset - 140, 700);
+  };
+  refWork = React.createRef();
+  refVid = React.createRef();
+  refVidBg = React.createRef();
+  wkExplore = (mode) => (e) => {
+    if (e) e.preventDefault();
+    if (this._wkCloseTimer) clearTimeout(this._wkCloseTimer);
+    this._wp = 0;
+    this._vidCur = 0;
+    this._vidLastTs = null;
+    this._capOn = [false, false, false, false, false, false];
+    const v = this.refVid.current;
+    const bg = this.refVidBg.current;
+    if (v) { try { v.currentTime = 0; } catch (err) {} }
+    if (bg) { try { bg.currentTime = 0; } catch (err) {} }
+    this.setState({ wkMode: mode, wkClosingFrom: null, wkP: 0, wkActive: false, wkCapOn: [false, false, false, false, false, false], infraDeep: false, infraDecision: null, infraHierarchy: false }, () => {
+      requestAnimationFrame(() => {
+        const el = this.refWork.current;
+        if (!el) return;
+        const top = el.getBoundingClientRect().top + window.pageYOffset;
+        this.wkOnScroll();
+        this.scrollToY(top, 820);
+      });
+    });
+  };
+  wkBack = (e) => {
+    if (e) e.preventDefault();
+    const from = this.state.wkMode;
+    if (from === 'overview' || from === 'closing') return;
+    this.setState({ wkMode: 'closing', wkClosingFrom: from, wkActive: false });
+    if (this._wkCloseTimer) clearTimeout(this._wkCloseTimer);
+    this._wkCloseTimer = setTimeout(() => {
+      this._wp = 0;
+      this._vidCur = 0;
+      this._capOn = [false, false, false, false, false, false];
+      this.setState({ wkMode: 'overview', wkClosingFrom: null, wkP: 0, wkActive: false, wkCapOn: [false, false, false, false, false, false], infraDeep: false, infraDecision: null, infraHierarchy: false }, () => {
+        requestAnimationFrame(() => {
+          const el = this.refSystem.current;
+          if (el) this.scrollToY(el.getBoundingClientRect().top + window.pageYOffset, 720);
+        });
+      });
+    }, 560);
+  };
+  bpToggleFrontier = (e) => {
+    if (e) e.preventDefault();
+    if (this.state.wkMode !== 'infrastructure' || this.state.wkP < .43) return;
+    this.setState(s => ({ infraDeep: !s.infraDeep }));
+  };
+  bpInspectBoundary = (e) => {
+    if (e) e.preventDefault();
+    if (this.state.wkMode === 'infrastructure' && this.state.wkP >= .43) this.setState({ infraDeep: true });
+  };
+  bpInspectEvidence = (e) => {
+    if (e) e.preventDefault();
+    this.setState({ infraDeep: true });
+  };
+  bpHierarchyFocus = (e) => {
+    if (e) e.preventDefault();
+    this.setState(s => ({ infraHierarchy: !s.infraHierarchy }));
+  };
+  bpReleaseDecisionFocus = (e) => {
+    if (!e) return;
+    e.preventDefault();
+    e.currentTarget.blur();
+  };
+  bpAcceptEvidence = (e) => { this.bpReleaseDecisionFocus(e); this.setState({ infraDecision: 'accepted' }); };
+  bpRequestEvidence = (e) => { this.bpReleaseDecisionFocus(e); this.setState({ infraDecision: 'request' }); };
+  bpDeferEvidence = (e) => { this.bpReleaseDecisionFocus(e); this.setState({ infraDecision: 'defer' }); };
+  // [startSec, endSec, title, sub] — windows are matched against the scrubbed video's
+  // own currentTime, not wall-clock, so they track wherever scroll has parked the frame.
+  wkCaps = [
+    [0, 6, "Something comes in.", "Messy is fine. An email, a form, a half-written message."],
+    [6, 9, "It gets understood, not just scanned.", "Not keyword matching — what's actually being asked."],
+    [9, 15, "Unclear? It asks.", "Guessing wrong costs more than asking."],
+    [15, 22, "Then it weighs the right call.", "Not one rule for everyone. The right move for this case."],
+    [22, 28, "A decision becomes a sequence.", "Who's told, what's updated, what happens next."],
+    [29, 34, "The outcome lands where it's needed.", "Not just decided — delivered."]
+  ];
+  // The 780vh expanded section provides 680vh of sticky scroll travel.
+  INTEL_RANGE = 1;
+  INTEL_DURATION = 34;
+  wkUpdateCaps = (t) => {
+    const on = this.wkCaps.map(c => t >= c[0] && t < c[1]);
+    const prev = this._capOn;
+    const changed = !prev || on.some((v, i) => v !== prev[i]);
+    if (changed) { this._capOn = on; this.setState({ wkCapOn: on }); }
+  };
+  // Continuous rAF loop, lerp-smoothed scroll → video.currentTime mapping (same
+  // pattern as the tea-leaf scroll-scrub reference). Never calls .play(): the video
+  // only advances when scroll moves its target time, so no scroll means no playback.
+  wkVidTick = (now) => {
+    const v = this.refVid.current;
+    if (v && Number.isFinite(v.duration) && v.duration > 0) {
+      const bg = this.refVidBg.current;
+      const isIntel = this.state.wkMode === 'intelligence' || (this.state.wkMode === 'closing' && this.state.wkClosingFrom === 'intelligence');
+      const target = isIntel ? Math.min(1, Math.max(0, (this._wp || 0) / this.INTEL_RANGE)) : 0;
+      const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const dt = this._vidLastTs == null ? 16.7 : Math.min(64, Math.max(0, now - this._vidLastTs));
+      this._vidLastTs = now;
+      const ease = reduced ? 1 : 1 - Math.exp(-dt / 105);
+      this._vidCur = this._vidCur == null ? target : this._vidCur + (target - this._vidCur) * ease;
+      if (Math.abs(target - this._vidCur) < 0.0005) this._vidCur = target;
+      const time = Math.min(v.duration, Math.max(0, this._vidCur * this.INTEL_DURATION));
+      if (!v.seeking && Math.abs(v.currentTime - time) > 0.012) {
+        try { v.currentTime = time; } catch (e) {}
+      }
+      if (bg && !bg.seeking && Math.abs(bg.currentTime - time) > 0.12) {
+        try { bg.currentTime = time; } catch (e) {}
+      }
+      if (isIntel) this.wkUpdateCaps(time);
+    }
+    this._vidRaf = requestAnimationFrame(this.wkVidTick);
+  };
+  wkOnScroll = () => {
+    if (this._wkTick) return;
+    this._wkTick = requestAnimationFrame(() => {
+      this._wkTick = null;
+      const el = this.refWork.current;
+      if (!el) return;
+      const isIntel = this.state.wkMode === 'intelligence';
+      const isProduct = this.state.wkMode === 'product';
+      const isInfrastructure = this.state.wkMode === 'infrastructure';
+      const isScrub = isIntel || isProduct || isInfrastructure;
+      const r = el.getBoundingClientRect();
+      const span = r.height - window.innerHeight;
+      const p = isScrub && span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
+      const active = isScrub && r.top <= 1 && r.bottom >= window.innerHeight - 1;
+      this._wp = p;
+      const clearDecision = isInfrastructure && p < .62 && this.state.infraDecision;
+      if (Math.abs(p - this.state.wkP) > 0.0015 || active !== this.state.wkActive || clearDecision) {
+        this.setState({ wkP: p, wkActive: active, ...(clearDecision ? { infraDecision: null } : {}) });
+      }
+    });
+  };
+  // rAF-eased scroll: window.scrollTo({behavior:'smooth'}) is a no-op in some hosts
+  scrollToY = (target, ms) => {
+    const start = window.pageYOffset;
+    const max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const end = Math.min(max, Math.max(0, target));
+    const dur = ms || 700;
+    if (this._sr) cancelAnimationFrame(this._sr);
+    const t0 = performance.now();
+    const step = (now) => {
+      const k = Math.min(1, (now - t0) / dur);
+      const e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+      window.scrollTo(0, start + (end - start) * e);
+      if (k < 1) this._sr = requestAnimationFrame(step); else this._sr = null;
+    };
+    this._sr = requestAnimationFrame(step);
+  };
+  wkGo = (i) => (e) => {
+    if (e) e.preventDefault();
+    const el = this.refWork.current;
+    if (!el) return;
+    const span = el.offsetHeight - window.innerHeight;
+    const top = el.getBoundingClientRect().top + window.pageYOffset;
+    const stops = [0, 0.865, 0.965];
+    this.scrollToY(top + span * stops[i], 900);
+  };
+  componentDidMount() {
+    window.addEventListener('scroll', this.wkOnScroll, { passive: true });
+    window.addEventListener('resize', this.wkOnScroll);
+    this.wkOnScroll();
+    this._vidRaf = requestAnimationFrame(this.wkVidTick);
+    const io = new IntersectionObserver(entries => {
+      this._ioFired = true;
+      entries.forEach(en => {
+        const k = en.target.dataset.ssKey;
+        if (en.isIntersecting) {
+          this.setState(s => (s.inView[k] ? null : { inView: { ...s.inView, [k]: true } }));
+          if (k !== 'Pause') io.unobserve(en.target);
+        } else if (k === 'Pause') {
+          // re-arm: dropping out of view resets the section so it replays on re-entry
+          this.setState(s => (s.inView.Pause ? { inView: { ...s.inView, Pause: false } } : null));
+        }
+      });
+    }, { threshold: 0.55 });
+    [['P1', this.refP1], ['P2', this.refP2], ['P3', this.refP3], ['Pause', this.refPause], ['Flow', this.refFlow]].forEach(([k, r]) => {
+      if (r.current) { r.current.dataset.ssKey = k; io.observe(r.current); }
+    });
+    this._io = io;
+    // Real browsers always deliver an initial callback per observed target, so this
+    // never fires there. In capture/export contexts where IO yields nothing, it
+    // guarantees the headline copy is present rather than gated behind a dead observer.
+    this._fallback = setTimeout(() => {
+      if (this._ioFired) return;
+      this.setState({ inView: { P1: true, P2: true, P3: true, Pause: true, Flow: true } });
+    }, 500);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.wkOnScroll);
+    window.removeEventListener('resize', this.wkOnScroll);
+    if (this._wkTick) cancelAnimationFrame(this._wkTick);
+    if (this._sr) cancelAnimationFrame(this._sr);
+    if (this._vidRaf) cancelAnimationFrame(this._vidRaf);
+    if (this._io) this._io.disconnect();
+    if (this._fallback) clearTimeout(this._fallback);
+    if (this._wkCloseTimer) clearTimeout(this._wkCloseTimer);
+  }
+  replayPause = (e) => {
+    if (e) e.preventDefault();
+    this.setState(s => ({ inView: { ...s.inView, Pause: false } }), () => {
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        this.setState(s => ({ inView: { ...s.inView, Pause: true } }));
+      }));
+    });
+  };
+  toggle(key) {
+    return (e) => {
+      if (e) e.preventDefault();
+      this.setState(s => ({ open: { ...s.open, [key]: !s.open[key] } }));
+    };
+  }
+  renderVals() {
+    const o = this.state.open;
+    const vals = {};
+    ['P1','P2','P3'].forEach(k => {
+      vals['open' + k] = !!o[k];
+      vals['toggle' + k] = this.toggle(k);
+      vals['mark' + k + 'Stroke'] = o[k] ? '#F0576B' : 'rgba(179,21,39,.75)';
+      vals['mark' + k + 'Opacity'] = o[k] ? 1 : 0.72;
+      vals['inView' + k] = !!this.state.inView[k];
+      vals['ref' + k] = this['ref' + k];
+    });
+    vals.refPause = this.refPause;
+    vals.inViewPause = !!this.state.inView.Pause;
+    vals.pauseAtRest = !this.state.inView.Pause;
+    vals.replayPause = this.replayPause;
+    const wp = this.state.wkP;
+    const mode = this.state.wkMode;
+    const stageMode = mode === 'closing' ? this.state.wkClosingFrom : mode;
+    const isOverview = mode === 'overview';
+    const isClosing = mode === 'closing';
+    const isIntel = stageMode === 'intelligence';
+    const isProduct = stageMode === 'product';
+    const isInfrastructure = stageMode === 'infrastructure';
+    vals.refSystem = this.refSystem;
+    vals.refWork = this.refWork;
+    vals.wkSystemO = isOverview ? 1 : 0.16;
+    vals.wkSystemY = isOverview ? '0px' : '-14px';
+    vals.wkSystemPe = isOverview ? 'auto' : 'none';
+    vals.wkHowDisplay = isOverview ? 'block' : 'none';
+    vals.wkSectionH = isIntel ? '780vh' : (isProduct ? '600vh' : (isInfrastructure ? '620vh' : '0px'));
+    vals.wkStageO = isOverview || isClosing ? 0 : 1;
+    vals.wkStageV = isOverview ? 'hidden' : 'visible';
+    vals.wkBar = Math.max(0.001, (isIntel || isProduct || isInfrastructure) ? wp : 0);
+    const smooth = (a, b, x) => {
+      const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+      return t * t * (3 - 2 * t);
+    };
+    vals.wkIntelO = isIntel ? 1 : 0;
+    vals.wkProductO = isProduct ? 1 : 0;
+    vals.wkO1 = vals.wkIntelO;
+    vals.wkO2 = isProduct ? 1 : 0;
+    vals.wkO3 = isInfrastructure ? 1 : 0;
+    vals.wkY1 = '0px'; vals.wkY2 = '0px'; vals.wkY3 = '0px';
+    vals.wkGo1 = this.wkExplore('intelligence');
+    vals.wkGo2 = this.wkExplore('product');
+    vals.wkGo3 = this.wkExplore('infrastructure');
+    vals.wkExploreIntelligence = this.wkExplore('intelligence');
+    vals.wkExploreProduct = this.wkExplore('product');
+    vals.wkExploreInfrastructure = this.wkExplore('infrastructure');
+    vals.wkBack = this.wkBack;
+    vals.refVid = this.refVid;
+    vals.refVidBg = this.refVidBg;
+    const capOn = this.state.wkCapOn;
+    this.wkCaps.forEach((c, i) => {
+      const on = isIntel && this.state.wkActive && capOn[i];
+      vals['wkCap' + (i + 1) + 'On'] = on ? 1 : 0;
+      vals['wkCap' + (i + 1) + 'Y'] = on ? '0px' : '10px';
+      vals['wkCap' + (i + 1) + 'Blur'] = on ? '0px' : '3px';
+    });
+    const capWindow = (a, b, x, last) => {
+      const fade = 0.022;
+      const enter = smooth(a, Math.min(b, a + fade), x);
+      const leave = last ? 1 : 1 - smooth(Math.max(a, b - fade), b, x);
+      return Math.min(enter, leave);
+    };
+    const infraIn = (a, b) => isInfrastructure ? smooth(a, b, wp) : 0;
+    const infraWindow = (a, b, c, d) => isInfrastructure ? smooth(a, b, wp) * (1 - smooth(c, d, wp)) : 0;
+    const infraCaptionRanges = [[0,.14],[.14,.29],[.29,.46],[.46,.65],[.65,.83],[.83,1.001]];
+    infraCaptionRanges.forEach((range, i) => {
+      const capO = isInfrastructure ? (i === 0 ? 1 - smooth(.118,.14,wp) : capWindow(range[0], range[1], wp, i === 5)) : 0;
+      vals['bpCap' + (i + 1) + 'O'] = capO.toFixed(4);
+      vals['bpCap' + (i + 1) + 'Y'] = ((1 - capO) * 9).toFixed(2) + 'px';
+    });
+    const bpProof = infraIn(.285,.345);
+    const bpMatrix = infraWindow(.315,.355,.445,.485);
+    const bpFrontierBase = infraIn(.465,.535);
+    const bpInspectorBase = Math.max(infraIn(.515,.575), isInfrastructure && this.state.infraDeep ? 1 : 0);
+    const bpVerify = infraIn(.650,.695);
+    const bpEvidence1 = infraIn(.700,.724);
+    const bpEvidence2 = infraIn(.724,.748);
+    const bpEvidence3 = infraIn(.748,.772);
+    const bpEvidence4 = infraIn(.772,.796);
+    const bpDecision = infraWindow(.792,.820,.875,.915);
+    const scrollAccept = infraIn(.830,.885);
+    const directAccept = isInfrastructure && this.state.infraDecision === 'accepted' ? 1 : 0;
+    const bpAccept = Math.max(scrollAccept, directAccept);
+    const bpFinal = infraIn(.850,.915);
+    const bpInspector = bpInspectorBase * (1 - infraIn(.905,.955));
+    const downstreamDim = bpFrontierBase * (1 - bpAccept);
+    const downstreamO = Math.min(1, 1 - downstreamDim * .72 + bpAccept * .72);
+    vals.bpStageO = isInfrastructure ? 1 : 0;
+    vals.bpStagePe = mode === 'infrastructure' ? 'auto' : 'none';
+    vals.bpNodeProm = (1 - infraIn(.14,.22) * .32 + bpFinal * .22).toFixed(4);
+    vals.bpEdgeProm = infraIn(.10,.205).toFixed(4);
+    vals.bpIdO = infraIn(.145,.220).toFixed(4);
+    vals.bpDepth = (infraIn(.14,.29) * (1 - bpFinal * .46) + (this.state.infraHierarchy && isInfrastructure ? .08 : 0)).toFixed(4);
+    vals.bpTopologyX = (-infraIn(.14,.29) * 2 - bpInspector * 9).toFixed(3) + '%';
+    vals.bpProof = bpProof.toFixed(4);
+    vals.bpMatrixO = bpMatrix.toFixed(4);
+    vals.bpFrontier = (bpFrontierBase * (1 - bpAccept)).toFixed(4);
+    vals.bpFrontierLabel = infraWindow(.500,.550,.665,.705).toFixed(4);
+    vals.bpDownstreamDim = downstreamDim.toFixed(4);
+    vals.bpDownstreamO = downstreamO.toFixed(4);
+    vals.bpInspectorO = bpInspector.toFixed(4);
+    vals.bpInspectorPe = bpInspector > .08 ? 'auto' : 'none';
+    vals.bpClaimO = (bpInspector * (1 - bpVerify)).toFixed(4);
+    vals.bpVerifyO = (bpInspector * bpVerify).toFixed(4);
+    vals.bpEvidence = bpEvidence4.toFixed(4);
+    vals.bpEvidence1 = bpEvidence1.toFixed(4);
+    vals.bpEvidence2 = bpEvidence2.toFixed(4);
+    vals.bpEvidence3 = bpEvidence3.toFixed(4);
+    vals.bpEvidence4 = bpEvidence4.toFixed(4);
+    vals.bpDecisionO = bpDecision.toFixed(4);
+    vals.bpDecisionPe = bpDecision > .08 ? 'auto' : 'none';
+    vals.bpAccept = bpAccept.toFixed(4);
+    vals.bpAcceptedAttr = bpAccept > .55 ? 'true' : 'false';
+    vals.bpFinal = bpFinal.toFixed(4);
+    vals.bpNextFrontier = (bpAccept * infraIn(.865,.925)).toFixed(4);
+    vals.bpToggleFrontier = this.bpToggleFrontier;
+    vals.bpInspectBoundary = this.bpInspectBoundary;
+    vals.bpInspectEvidence = this.bpInspectEvidence;
+    vals.bpHierarchyFocus = this.bpHierarchyFocus;
+    vals.bpAcceptEvidence = this.bpAcceptEvidence;
+    vals.bpRequestEvidence = this.bpRequestEvidence;
+    vals.bpDeferEvidence = this.bpDeferEvidence;
+    vals.bpAcceptClass = this.state.infraDecision === 'accepted' ? 'selected' : '';
+    vals.bpRequestClass = this.state.infraDecision === 'request' ? 'selected' : '';
+    vals.bpDeferClass = this.state.infraDecision === 'defer' ? 'selected' : '';
+    const bpBeat = wp < .14 ? 0 : wp < .29 ? 1 : wp < .46 ? 2 : wp < .65 ? 3 : wp < .83 ? 4 : 5;
+    for (let i = 0; i < 6; i++) vals['bpDot' + (i + 1)] = isInfrastructure && i === bpBeat ? 'on' : '';
+    const productRanges = [[0,.14],[.14,.30],[.30,.47],[.47,.64],[.64,.82],[.82,1.001]];
+    const productCaptionRanges = [[0,.14],[.14,.30],[.30,.47],[.47,.57],[.64,.73],[.82,1.001]];
+    productCaptionRanges.forEach((range, i) => {
+      const capO = isProduct ? capWindow(range[0], range[1], wp, i === 5) : 0;
+      vals['ftCap' + (i + 1) + 'O'] = capO.toFixed(4);
+      vals['ftCap' + (i + 1) + 'Y'] = ((1 - capO) * 10).toFixed(2) + 'px';
+      vals['ftCap' + (i + 1) + 'Blur'] = ((1 - capO) * 3).toFixed(2) + 'px';
+    });
+    const productIn = (a, b) => isProduct ? smooth(a, b, wp) : 0;
+    const productWindow = (a, b, c, d) => isProduct ? smooth(a, b, wp) * (1 - smooth(c, d, wp)) : 0;
+    const focus = productIn(.145,.175);
+    const relation = productIn(.17,.195) * (1 - productIn(.455,.49));
+    const clientIn = productIn(.185,.22);
+    const scheduleIn = productIn(.458,.485);
+    const scheduleOut = productIn(.638,.665);
+    const clientO = clientIn * (1 - scheduleIn);
+    const scheduleO = scheduleIn * (1 - scheduleOut);
+    const aiSignal = productWindow(.642,.656,.682,.700);
+    const aiIn = productIn(.675,.700);
+    const aiRetract = productIn(.838,.862);
+    const aiO = aiIn * (1 - aiRetract);
+    const eastsideSelect = productIn(.812,.840);
+    const finalPanel = productIn(.855,.885);
+    const finalContext = productIn(.882,.918);
+    const finalActions = productIn(.915,.948);
+    const finalRoute = productIn(.798,.825);
+    const settle = productIn(.005,.135);
+    const context1 = productIn(.205,.225);
+    const context2 = productIn(.220,.242);
+    const context3 = productIn(.236,.258);
+    const context4 = productIn(.252,.276);
+    const followActive = productIn(.305,.330) * (1 - scheduleIn);
+    const notes = productIn(.315,.342);
+    const deep = productIn(.335,.370);
+    const recent = productIn(.345,.378);
+    const actions = productIn(.362,.396);
+    const clientNav = productWindow(.295,.320,.438,.466);
+    const navSchedule = scheduleO;
+    const navActive = Math.min(1, clientNav + navSchedule);
+    const navIndex = clientNav + navSchedule * 2;
+    const clientsCue = Math.min(1, .12 + clientIn * .72 + finalPanel * .58);
+    const frameworkAwake = productIn(.640,.690);
+    const focusDisplay = focus * (1 - eastsideSelect * .82);
+    vals.ftFocus = focusDisplay.toFixed(4);
+    vals.ftFocusScale = (.72 + focusDisplay * .28).toFixed(4);
+    vals.ftFocusX = ((1 - focusDisplay) * 10).toFixed(2) + 'px';
+    vals.ftRelationO = relation.toFixed(4);
+    vals.ftRelationScale = relation.toFixed(4);
+    vals.ftCtx1 = context1.toFixed(4);
+    vals.ftCtx2 = context2.toFixed(4);
+    vals.ftCtx3 = context3.toFixed(4);
+    vals.ftCtx4 = context4.toFixed(4);
+    vals.ftFollowActive = followActive.toFixed(4);
+    vals.ftNotesO = notes.toFixed(4);
+    vals.ftDeep = deep.toFixed(4);
+    vals.ftDeepY = ((1 - deep) * 12).toFixed(2) + 'px';
+    vals.ftRecentO = recent.toFixed(4);
+    vals.ftActionsO = actions.toFixed(4);
+    vals.ftNavActiveO = navActive.toFixed(4);
+    vals.ftNavMapDim = navActive.toFixed(4);
+    vals.ftNavTop = (navIndex * 9).toFixed(3) + '%';
+    vals.ftClientsCue = clientsCue.toFixed(4);
+    vals.ftTasksBadgeO = (isProduct ? (.18 + frameworkAwake * .82) : 0).toFixed(4);
+    vals.ftMessagesCue = (isProduct ? (.12 + frameworkAwake * .48 + finalActions * .28) : 0).toFixed(4);
+    vals.ftFollowupsBadgeO = frameworkAwake.toFixed(4);
+    vals.ftSystemAttentionO = Math.max(frameworkAwake, finalPanel * .72).toFixed(4);
+    vals.ftWarnO = Math.max(0, 1 - deep).toFixed(4);
+    vals.ftClientO = clientO.toFixed(4);
+    vals.ftClientX = ((1 - clientO) * 48).toFixed(2) + 'px';
+    vals.ftClientPe = clientO > .08 ? 'auto' : 'none';
+    vals.ftScheduleO = scheduleO.toFixed(4);
+    vals.ftScheduleY = ((1 - scheduleO) * 22).toFixed(2) + 'px';
+    vals.ftSchedulePe = scheduleO > .08 ? 'auto' : 'none';
+    vals.ftScheduleStructure = productIn(.468,.492).toFixed(4);
+    const rowStarts = [.488,.504,.520,.536,.552,.568];
+    rowStarts.forEach((start, i) => { vals['ftRow' + (i + 1)] = productIn(start,start + .018).toFixed(4); });
+    const activeRanges = [[.488,.497,.510,.521],[.504,.513,.526,.537],[.520,.529,.542,.553],[.536,.545,.558,.569],[.552,.561,.574,.585],[.568,.577,.615,.630]];
+    activeRanges.forEach((range, i) => { vals['ftActive' + (i + 1)] = productWindow(range[0],range[1],range[2],range[3]).toFixed(4); });
+    vals.ftRouteSummaryO = productIn(.550,.578).toFixed(4);
+    vals.ftMiniMapO = productIn(.570,.595).toFixed(4);
+    vals.ftRouteDraw = productIn(.582,.625).toFixed(4);
+    vals.ftRouteClip = ((1 - productIn(.582,.625)) * 100).toFixed(2) + '%';
+    vals.ftAiSignalO = aiSignal.toFixed(4);
+    vals.ftAiO = aiO.toFixed(4);
+    vals.ftAiX = ((1 - aiO) * 42).toFixed(2) + 'px';
+    vals.ftAiPe = aiO > .08 ? 'auto' : 'none';
+    vals.ftAiQueryO = productIn(.690,.712).toFixed(4);
+    vals.ftAiAnswerO = productIn(.710,.736).toFixed(4);
+    const aiResult1 = productIn(.734,.752);
+    const aiResult2 = productIn(.750,.768);
+    const aiResult3 = productIn(.766,.784);
+    vals.ftAiResult1O = aiResult1.toFixed(4);
+    vals.ftAiResult2O = aiResult2.toFixed(4);
+    vals.ftAiResult3O = aiResult3.toFixed(4);
+    vals.ftAiMap1O = (aiResult1 * (1 - eastsideSelect)).toFixed(4);
+    vals.ftAiMap2O = (aiResult2 * (1 - aiRetract)).toFixed(4);
+    vals.ftAiMap3O = (aiResult3 * (1 - aiRetract)).toFixed(4);
+    vals.ftAiMapPe = aiO > .08 ? 'auto' : 'none';
+    vals.ftRecommendO = productIn(.786,.812).toFixed(4);
+    const bottomO = Math.max(productIn(.700,.735) * (1 - scheduleO), finalRoute);
+    vals.ftBottomO = bottomO.toFixed(4);
+    vals.ftBottomY = ((1 - bottomO) * 28).toFixed(2) + 'px';
+    vals.ftFinalRouteO = finalRoute.toFixed(4);
+    vals.ftFinalRouteDraw = productIn(.802,.852).toFixed(4);
+    vals.ftEastsideO = eastsideSelect.toFixed(4);
+    vals.ftEastsideScale = (.72 + eastsideSelect * .28).toFixed(4);
+    vals.ftEastsideX = ((1 - eastsideSelect) * 10).toFixed(2) + 'px';
+    vals.ftEastsidePe = eastsideSelect > .08 ? 'auto' : 'none';
+    vals.ftFinalPanelO = finalPanel.toFixed(4);
+    vals.ftFinalPanelX = ((1 - finalPanel) * 48).toFixed(2) + 'px';
+    vals.ftFinalPe = finalPanel > .08 ? 'auto' : 'none';
+    vals.ftFinalContextO = finalContext.toFixed(4);
+    vals.ftFinalActionsO = finalActions.toFixed(4);
+    const markerStarts = [.008,.022,.036,.050,.066,.082,.098,.112];
+    markerStarts.forEach((start, i) => {
+      const markerO = productIn(start,start + .018) * (1 - focus * .62);
+      vals['ftMk' + (i + 1)] = markerO.toFixed(4);
+    });
+    const pulses = [productWindow(.030,.042,.050,.062),productWindow(.070,.082,.090,.102),productWindow(.108,.119,.126,.137)];
+    pulses.forEach((pulse, i) => {
+      vals['ftPulse' + (i + 1)] = pulse.toFixed(4);
+      vals['ftPulseScale' + (i + 1)] = (.72 + pulse * .86).toFixed(4);
+    });
+    vals.ftMapX = (((1 - settle) * .65) - clientO * .7 + finalPanel * .18).toFixed(3) + '%';
+    vals.ftMapY = (((1 - settle) * -.42) + finalPanel * .12).toFixed(3) + '%';
+    vals.ftMapScale = (1.024 - .022 * settle + .032 * focus - .012 * scheduleO + .012 * finalPanel).toFixed(4);
+    const activeBeat = wp < .14 ? 0 : wp < .30 ? 1 : wp < .47 ? 2 : wp < .64 ? 3 : wp < .82 ? 4 : 5;
+    for (let i = 0; i < 6; i++) vals['ftDot' + (i + 1)] = i === activeBeat ? 'ft-on' : '';
+    vals.wkBackO = isClosing ? 0 : (isIntel ? smooth(0.94, 0.985, wp) : (isProduct ? smooth(.93,.975,wp) : (isInfrastructure ? smooth(.93,.975,wp) : 0)));
+    vals.wkBackV = vals.wkBackO > 0.1 ? 'visible' : 'hidden';
+    vals.wkBackPe = vals.wkBackO > 0.1 ? 'auto' : 'none';
+    vals.wkScrollO = (isIntel || isProduct || isInfrastructure) && !isClosing ? 1 : 0;
+    vals.refFlow = this.refFlow;
+    vals.inViewFlow = !!this.state.inView.Flow;
+
+    const dx = this.state.dx;
+    const PILLARS = {
+      I: { label: 'AN INTELLIGENCE PROBLEM', hook: 'The decisions your business makes automatically.' },
+      P: { label: 'A PRODUCT PROBLEM', hook: 'From idea to a product people actually use.' },
+      F: { label: 'AN INFRASTRUCTURE PROBLEM', hook: 'The tools and plumbing that hold it all together.' }
+    };
+    const NOTES = {
+      time: "You told us time is what you get back — that's what we'd design for first.",
+      convert: "You told us it needs to look and convert better — that shapes where we start.",
+      grow: "You told us you want to grow without hiring — that shapes what we automate first.",
+      curious: "You're here to see what's possible. No pitch, just a straight answer.",
+      none: "Leave an email or carry on over WhatsApp and we'll come back with a straight answer.",
+      text: "We read these properly. Leave an email or carry on over WhatsApp and we'll reply with a straight answer."
+    };
+    const p = PILLARS[dx.path];
+    Object.assign(vals, {
+      dxClosed: dx.stage === 'closed',
+      dxStep1: dx.stage === 's1',
+      dxStep2: dx.stage === 's2',
+      dxStep3: dx.stage === 's3',
+      dxResult: dx.stage === 'result',
+      dxIsI: dx.path === 'I', dxIsP: dx.path === 'P', dxIsF: dx.path === 'F',
+      dxResultLabel: p ? 'THIS SOUNDS LIKE ' + p.label : "THANKS — WE'LL TAKE IT FROM HERE",
+      dxResultHook: p ? p.hook : "We'll work out what to build from here.",
+      dxResultNote: p ? (NOTES[dx.impact] || NOTES.none) : NOTES.text,
+      dxText: dx.text,
+      dxEmail: dx.email,
+      dxOnText: (e) => this.dxSet({ text: e.target.value }),
+      dxOnEmail: (e) => this.dxSet({ email: e.target.value }),
+      dxOpen: this.dxGo({ stage: 's1' }),
+      dxStart: this.dxStart,
+      refDx: this.refDx,
+      dxPickI: this.dxGo({ path: 'I', stage: 's2' }),
+      dxPickP: this.dxGo({ path: 'P', stage: 's2' }),
+      dxPickF: this.dxGo({ path: 'F', stage: 's2' }),
+      dxPickUnsure: this.dxGo({ path: null, stage: 's3' }),
+      dxImpactTime: this.dxGo({ impact: 'time', stage: 'result' }),
+      dxImpactConvert: this.dxGo({ impact: 'convert', stage: 'result' }),
+      dxImpactGrow: this.dxGo({ impact: 'grow', stage: 'result' }),
+      dxImpactCurious: this.dxGo({ impact: 'curious', stage: 'result' }),
+      dxSkipImpact: this.dxGo({ impact: null, stage: 'result' }),
+      dxSubmitText: this.dxGo({ stage: 'result' }),
+      dxSubmitEmail: (e) => { if (e) e.preventDefault(); },
+      dxReset: this.dxGo({ stage: 'closed', path: null, impact: null, text: '', email: '' })
+    });
+    return Object.assign(vals, {
+      showTopNav: this.props.showTopNav ?? true,
+      sheen: this.props.sheen ?? true,
+      showServiceRail: this.props.showServiceRail ?? true
+    });
+  }
+}
+</script>
+</body>
+</html>
