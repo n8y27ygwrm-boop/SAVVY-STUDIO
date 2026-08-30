@@ -194,13 +194,101 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
   .ss-intel-caption{transition:opacity .12s linear!important;transform:none!important;filter:none!important}
   .ft-product-stage *{transition-duration:.01ms!important;animation-duration:.01ms!important;filter:none!important}
 }
-</style></helmet>
 
-<section style="position:relative;width:100%;min-height:100vh;background:#050508;overflow:hidden;font-family:Manrope,sans-serif">
-  <div style="position:absolute;right:88px;top:104px;width:600px;height:600px;overflow:hidden;opacity:.62;mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.55) 78%,transparent 100%);-webkit-mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.55) 78%,transparent 100%)">
+/* Final integration: shared journey, interaction grammar, and responsive guardrails. */
+html{background:#050508;scroll-behavior:smooth}
+body{overflow-x:hidden}
+.ss-page{display:flex;flex-direction:column;min-width:0;background:#050508}
+.ss-page>section,.ss-page>footer{flex:0 0 auto;min-width:0}
+.ss-hero{order:0;min-height:100svh!important}
+.ss-problem{order:1;scroll-margin-top:24px}
+.ss-how{order:2;scroll-margin-top:24px}
+.ss-system{order:3;min-height:105vh!important;scroll-margin-top:24px}
+.ss-expanded{order:4}
+.ss-site-footer{order:5}
+.ss-page>section[aria-hidden="true"]{order:99}
+.ss-hero-layout{box-sizing:border-box;min-height:100svh!important}
+.ss-topnav,.ss-hero-layout,.ss-service-rail{box-sizing:border-box}
+.ss-topnav-links a,.ss-site-footer a{transition:color .25s ease}
+.ss-inline-action,.ss-choice,.ss-text-action,.ss-footer-cta{appearance:none;background:transparent;border:0;border-radius:0;font:inherit;text-align:left;color:inherit}
+.ss-choice{width:100%}
+.ss-inline-action:active,.ss-system-cta:active,.ss-footer-cta:active,.ss-text-action:active{transform:translateY(1px)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:1px solid #F0576B;outline-offset:5px}
+input:focus-visible{outline:0;border-bottom-color:#F0576B!important}
+.ss-system-cta:focus-visible{color:#F0576B}
+.ss-site-footer{position:relative;padding:clamp(76px,10vh,118px) clamp(28px,4.7vw,68px) clamp(28px,4vh,48px);border-top:1px solid rgba(226,205,190,.09);background:radial-gradient(54% 90% at 78% 20%,rgba(94,12,24,.12),transparent 72%),#050508;font-family:Manrope,sans-serif}
+.ss-site-footer-main{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:minmax(0,680px) auto;align-items:end;justify-content:space-between;gap:48px}
+.ss-site-footer-label{font-size:9px;letter-spacing:.24em;color:rgba(226,205,190,.42)}
+.ss-site-footer h2{margin:22px 0 0;font:300 clamp(42px,5vw,72px)/1.02 'Cormorant Garamond',serif;color:#F2ECE7}
+.ss-site-footer p{max-width:560px;margin:22px 0 0;font-size:14px;font-weight:300;line-height:1.75;letter-spacing:.02em;color:rgba(232,222,216,.5)}
+.ss-footer-cta{padding:17px 26px;border:1px solid rgba(226,205,190,.22);font-size:10px;letter-spacing:.2em;color:#F0D5C4;white-space:nowrap;cursor:pointer;transition:border-color .25s ease,color .25s ease,background .25s ease,transform .15s ease}
+.ss-footer-cta:hover,.ss-footer-cta:focus-visible{border-color:#B31527;background:rgba(122,14,28,.14);color:#fff}
+.ss-site-footer-meta{max-width:1440px;margin:clamp(64px,9vh,104px) auto 0;padding-top:22px;border-top:1px solid rgba(226,205,190,.09);display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:8.5px;letter-spacing:.2em;color:rgba(226,205,190,.28)}
+.ss-site-footer-meta a{color:rgba(226,205,190,.5)}
+
+@media(max-width:1024px){
+  .ss-topnav{padding:30px 38px!important}
+  .ss-topnav-links{gap:22px!important}
+  .ss-hero-layout{padding:170px 38px 126px!important;grid-template-columns:minmax(0,1fr) auto!important;gap:32px!important}
+  .ss-hero h1{font-size:clamp(60px,7.6vw,78px)!important}
+  .ss-hero-mark{right:-40px!important;top:96px!important;width:520px!important;height:520px!important}
+  .ss-hero-mark img{width:520px!important;height:520px!important}
+  .ss-service-rail{left:38px!important;right:38px!important;bottom:36px!important}
+  .ss-system{min-height:auto!important}
+  .ss-site-footer-main{grid-template-columns:minmax(0,1fr) auto}
+}
+
+@media(max-width:700px){
+  .ss-topnav{padding:24px!important}
+  .ss-topnav-links{gap:18px!important;font-size:8.5px!important;letter-spacing:.18em!important}
+  .ss-topnav-links a:nth-child(1),.ss-topnav-links a:nth-child(2){display:none}
+  .ss-hero-mark{right:-21vw!important;top:10vh!important;width:86vw!important;height:86vw!important;opacity:.5!important}
+  .ss-hero-mark img{width:86vw!important;height:86vw!important}
+  .ss-hero-layout{min-height:100svh!important;grid-template-columns:1fr!important;align-content:end!important;align-items:end!important;padding:clamp(128px,22vh,190px) 24px 112px!important}
+  .ss-hero h1{margin-top:18px!important;font-size:clamp(46px,13.4vw,58px)!important;line-height:1!important}
+  .ss-hero p{margin-top:20px!important;font-size:14px!important;line-height:1.65!important}
+  .ss-hero-cta{justify-content:flex-start!important;margin-top:4px}
+  .ss-hero-cta a{padding:15px 20px!important;font-size:9.5px!important}
+  .ss-service-rail{left:24px!important;right:24px!important;bottom:24px!important;display:grid!important;grid-template-columns:1fr 1fr;gap:11px 20px!important;padding-top:15px!important;font-size:7.5px!important;letter-spacing:.16em!important}
+  .ss-service-rail span:nth-child(even){text-align:right}
+  .ss-problem{padding-top:86px!important;padding-bottom:98px!important}
+  .ss-inline-action{max-width:100%;gap:10px!important}
+  .ss-inline-action>svg:last-child{display:none!important}
+  .ss-inline-action>span:nth-last-of-type(1){letter-spacing:.17em!important;font-size:9.5px!important}
+  .ss-choice{min-height:50px}
+  .ss-how{padding-top:82px!important;padding-bottom:96px!important}
+  .ss-how [ref]{min-width:0}
+  .ss-system{padding-top:88px!important;padding-bottom:102px!important}
+  .ss-system-entry{min-height:228px}
+  .ss-site-footer{padding-top:82px}
+  .ss-site-footer-main{grid-template-columns:1fr;align-items:start}
+  .ss-site-footer h2{font-size:clamp(42px,13vw,58px)}
+  .ss-footer-cta{width:100%;text-align:center;white-space:normal}
+  .ss-site-footer-meta{align-items:flex-start;flex-direction:column;line-height:1.6}
+}
+
+@media(max-width:390px){
+  .ss-hero-layout{padding-left:20px!important;padding-right:20px!important}
+  .ss-topnav{padding:20px!important}
+  .ss-service-rail{left:20px!important;right:20px!important}
+  .ss-hero h1{font-size:clamp(43px,13.2vw,52px)!important}
+  .ss-site-footer,.ss-problem,.ss-how,.ss-system{padding-left:20px!important;padding-right:20px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ss-page [data-anim],.ss-page [style*="animation:"]{animation:none!important}
+  .ss-page *{transition-duration:.01ms!important;transition-delay:0ms!important}
+  .ss-intel-caption,.ft-caption,.bp-caption{transform:none!important;filter:none!important}
+}
+</style></helmet>
+<div class="ss-page">
+
+<section id="top" class="ss-hero" style="position:relative;width:100%;min-height:100vh;background:#050508;overflow:hidden;font-family:Manrope,sans-serif">
+  <div class="ss-hero-mark" style="position:absolute;right:88px;top:104px;width:600px;height:600px;overflow:hidden;opacity:.62;mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.55) 78%,transparent 100%);-webkit-mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.55) 78%,transparent 100%)">
     <img data-anim src="assets/ss-monogram.png" alt="Savvy Studio monogram" style="position:absolute;width:600px;height:600px;left:0;top:0;mix-blend-mode:screen;animation:ssDraw 2.6s cubic-bezier(.2,.85,.2,1) .2s both"/>
     <sc-if value="{{ sheen }}" hint-placeholder-val="{{ true }}">
-    <div data-anim style="position:absolute;inset:0;background:linear-gradient(100deg,transparent 42%,rgba(255,214,208,.4) 50%,transparent 58%);mix-blend-mode:color-dodge;animation:ssSheen 9s ease-in-out 2s infinite"></div>
+    <div data-anim style="position:absolute;inset:0;background:linear-gradient(100deg,transparent 42%,rgba(255,214,208,.4) 50%,transparent 58%);mix-blend-mode:color-dodge;animation:ssSheen 9s ease-in-out 2s 2"></div>
     </sc-if>
   </div>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,8,.55) 0%,rgba(5,5,8,.1) 30%,rgba(5,5,8,.86) 68%,#050508 100%)"></div>
@@ -212,36 +300,36 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
   <div data-anim style="position:absolute;left:0;right:0;top:40%;height:1px;transform-origin:left;background:linear-gradient(90deg,rgba(194,24,43,0),rgba(126,15,30,.35) 30%,#B31527 62%,#F0576B 78%,rgba(194,24,43,0));animation:ssRule 2s cubic-bezier(.25,.9,.2,1) 1.1s both"></div>
 
   <sc-if value="{{ showTopNav }}" hint-placeholder-val="{{ true }}">
-  <div data-anim style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:36px 68px;animation:ssFade 1.2s ease .8s both">
+  <div class="ss-topnav" data-anim style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:36px 68px;animation:ssFade 1.2s ease .8s both">
     <div style="display:flex;flex-direction:column;gap:5px">
       <div style="font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.44em;color:#E3BFA4">SAVVY</div>
       <div style="font-size:8.5px;letter-spacing:.5em;color:rgba(226,205,190,.45)">STUDIO</div>
     </div>
-    <div style="display:flex;gap:34px;font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.45)">
-      <a href="#">WORK</a><a href="#">APPROACH</a><a href="#">SYSTEMS</a><a href="#" style="color:#E3BFA4">CONTACT</a>
-    </div>
+    <nav class="ss-topnav-links" aria-label="Primary" style="display:flex;gap:34px;font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.45)">
+      <a href="#system">WORK</a><a href="#approach">APPROACH</a><a href="#system">SYSTEMS</a><a href="#contact" style="color:#E3BFA4">CONTACT</a>
+    </nav>
   </div>
   </sc-if>
 
-  <div style="position:relative;min-height:100vh;display:grid;grid-template-columns:minmax(0,660px) auto;align-items:end;gap:48px;padding:200px 68px 150px">
+  <div class="ss-hero-layout" style="position:relative;min-height:100vh;display:grid;grid-template-columns:minmax(0,660px) auto;align-items:end;gap:48px;padding:200px 68px 150px">
     <div>
       <div data-anim style="font-size:10px;letter-spacing:.36em;color:rgba(226,205,190,.55);animation:ssRise 1s ease 1.4s both">SAVVY STUDIO — INTELLIGENT SYSTEMS &amp; DIGITAL PRODUCTS</div>
       <h1 data-anim style="margin:24px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:80px;line-height:1.02;letter-spacing:.01em;color:#F6F0EB;animation:ssRise 1.2s ease 1.6s both">Systems that think<br/>before they act.</h1>
       <p data-anim style="margin:28px 0 0;max-width:540px;font-size:16px;font-weight:300;line-height:1.72;color:rgba(232,222,216,.6);animation:ssRise 1.1s ease 1.9s both">We turn complex business problems into systems, products, and tools that work.</p>
     </div>
-    <div data-anim style="display:flex;justify-content:flex-end;animation:ssRise 1s ease 2.1s both">
-      <a href="#" style="padding:18px 34px;border:1px solid rgba(226,205,190,.24);border-radius:2px;font-size:11px;letter-spacing:.2em;color:#F0D5C4;background:rgba(122,14,28,.12);backdrop-filter:blur(2px);white-space:nowrap" style-hover="background:linear-gradient(100deg,#4A0812,#C2182B 55%,#7E0F1E);border-color:#C2182B;color:#fff">START A CONVERSATION</a>
+    <div class="ss-hero-cta" data-anim style="display:flex;justify-content:flex-end;animation:ssRise 1s ease 2.1s both">
+      <a href="#contact" onClick="{{ dxStart }}" style="padding:18px 34px;border:1px solid rgba(226,205,190,.24);border-radius:2px;font-size:11px;letter-spacing:.2em;color:#F0D5C4;background:rgba(122,14,28,.12);backdrop-filter:blur(2px);white-space:nowrap" style-hover="background:linear-gradient(100deg,#4A0812,#C2182B 55%,#7E0F1E);border-color:#C2182B;color:#fff">START A CONVERSATION</a>
     </div>
   </div>
 
   <sc-if value="{{ showServiceRail }}" hint-placeholder-val="{{ true }}">
-  <div data-anim style="position:absolute;left:68px;right:68px;bottom:56px;display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(226,205,190,.1);font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.42);animation:ssFade 1.2s ease 2.4s both">
+  <div class="ss-service-rail" data-anim style="position:absolute;left:68px;right:68px;bottom:56px;display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(226,205,190,.1);font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.42);animation:ssFade 1.2s ease 2.4s both">
     <span>INTELLIGENT SYSTEMS</span><span>DIGITAL PRODUCTS</span><span>AUTOMATION</span><span>INFRASTRUCTURE</span>
   </div>
   </sc-if>
 </section>
 
-<section style="position:relative;background:#050508;padding:clamp(96px,13vh,150px) clamp(28px,4.7vw,68px);font-family:Manrope,sans-serif">
+<section id="problem" class="ss-problem" style="position:relative;background:#050508;padding:clamp(96px,13vh,150px) clamp(28px,4.7vw,68px);font-family:Manrope,sans-serif">
   <div style="position:relative;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;padding-left:clamp(0px,14vw,300px)">
     <span style="position:relative;width:64px;height:1px;background:#B31527"></span>
     <div ref="{{ refPause }}" style="position:relative;display:flex;flex-wrap:wrap;gap:0 .3em;width:100%;max-width:660px;min-height:56px;margin:34px 0 0">
@@ -278,12 +366,12 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
       </sc-if>
     </div>
     <p style="margin:26px 0 0;max-width:520px;font-size:14px;font-weight:300;line-height:1.8;letter-spacing:.03em;color:rgba(232,222,216,.46);text-wrap:pretty">Bring us the problem, the process, or the idea. We'll figure out what should exist.</p>
-    <div ref="{{ refDx }}" style="width:100%;max-width:660px;margin:44px 0 0">
+    <div ref="{{ refDx }}" tabIndex="-1" style="width:100%;max-width:660px;margin:44px 0 0;outline:none">
       <sc-if value="{{ dxClosed }}" hint-placeholder-val="{{ true }}">
-      <div onClick="{{ dxOpen }}" style="display:inline-flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease" style-hover="border-color:rgba(179,21,39,.75)">
+      <button type="button" class="ss-inline-action" onClick="{{ dxOpen }}" style="display:inline-flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease" style-hover="border-color:rgba(179,21,39,.75)">
         <span style="position:relative;flex:0 0 auto;width:22px;height:22px;display:block">
-          <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border:1px solid #B31527;border-radius:50%;animation:ssBreatheRing 3.4s ease-in-out infinite"></span>
-          <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="#F0576B" stroke-width="0.9" stroke-linejoin="round" style="display:block;animation:ssBreathe 3.4s ease-in-out infinite">
+          <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border:1px solid #B31527;border-radius:50%;animation:ssBreatheRing 3.4s ease-in-out 2"></span>
+          <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="#F0576B" stroke-width="0.9" stroke-linejoin="round" style="display:block;animation:ssBreathe 3.4s ease-in-out 2">
             <path d="M11 5.5 L16 11 L11 16.5 L6 11 Z"></path>
             <path d="M11 9.4 L11 12.6"></path>
           </svg>
@@ -292,9 +380,9 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
         <span style="font-size:10.5px;letter-spacing:.22em;color:#E3BFA4">FIND THE RIGHT SYSTEM</span>
         <svg viewBox="0 0 130 18" width="130" height="18" fill="none" style="display:block;flex:0 0 auto;overflow:visible">
           <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="rgba(179,21,39,.34)" stroke-width="1" stroke-linejoin="round"></path>
-          <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="#F0576B" stroke-width="1" stroke-linejoin="round" stroke-dasharray="26 320" style="animation:ssEkg 2.8s cubic-bezier(.5,0,.5,1) infinite"></path>
+          <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="#F0576B" stroke-width="1" stroke-linejoin="round" stroke-dasharray="26 320" style="animation:ssEkg 2.8s cubic-bezier(.5,0,.5,1) 3"></path>
         </svg>
-      </div>
+      </button>
       </sc-if>
 
       <sc-if value="{{ dxStep1 }}" hint-placeholder-val="{{ false }}">
@@ -312,32 +400,32 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
           </div>
           <div style="margin:28px 0 0">
 
-        <div onClick="{{ dxPickI }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.34s both" style-hover="border-color:rgba(179,21,39,.75)">
+        <button type="button" class="ss-choice" onClick="{{ dxPickI }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.34s both" style-hover="border-color:rgba(179,21,39,.75)">
           <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
           <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">Manual, repetitive work — leads, follow-ups, admin that eats our time</span>
-        </div>
+        </button>
 
-        <div onClick="{{ dxPickP }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.42s both" style-hover="border-color:rgba(179,21,39,.75)">
+        <button type="button" class="ss-choice" onClick="{{ dxPickP }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.42s both" style-hover="border-color:rgba(179,21,39,.75)">
           <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
           <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">We have an idea for a product or tool, but no way to build it</span>
-        </div>
+        </button>
 
-        <div onClick="{{ dxPickF }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.5s both" style-hover="border-color:rgba(179,21,39,.75)">
+        <button type="button" class="ss-choice" onClick="{{ dxPickF }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.5s both" style-hover="border-color:rgba(179,21,39,.75)">
           <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
           <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">Our team lacks the tools or dashboards to work efficiently</span>
-        </div>
+        </button>
 
-        <div onClick="{{ dxPickUnsure }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.58s both" style-hover="border-color:rgba(179,21,39,.75)">
+        <button type="button" class="ss-choice" onClick="{{ dxPickUnsure }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.58s both" style-hover="border-color:rgba(179,21,39,.75)">
           <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
           <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">Not sure — something just isn't working the way it should</span>
-        </div>
+        </button>
           </div>
 
       <div style="margin:34px 0 0;animation:ssNudge .55s ease 0.66s both">
         <div style="font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.42)">OR SKIP THE QUESTIONS</div>
         <div style="display:flex;align-items:flex-end;gap:16px;margin:14px 0 0;max-width:560px">
           <input type="text" value="{{ dxText }}" onChange="{{ dxOnText }}" placeholder="Or just tell us in your own words." style="flex:1 1 auto;min-width:0;background:transparent;border:0;border-bottom:1px solid rgba(226,205,190,.18);padding:10px 0;font-family:Manrope,sans-serif;font-size:14px;font-weight:300;letter-spacing:.02em;color:#F2ECE7;outline:none"/>
-          <a href="#" onClick="{{ dxSubmitText }}" style="flex:0 0 auto;padding-bottom:11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">SEND</a>
+          <button type="button" class="ss-text-action" onClick="{{ dxSubmitText }}" style="flex:0 0 auto;padding:10px 0 11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">CONTINUE</button>
         </div>
       </div>
         </div>
@@ -359,33 +447,33 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
           </div>
           <div style="margin:28px 0 0">
 
-        <div onClick="{{ dxImpactTime }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.3s both" style-hover="border-color:rgba(179,21,39,.75)">
+        <button type="button" class="ss-choice" onClick="{{ dxImpactTime }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.3s both" style-hover="border-color:rgba(179,21,39,.75)">
           <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
           <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">We'd save real time</span>
-        </div>
+        </button>
 
-        <div onClick="{{ dxImpactConvert }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.38s both" style-hover="border-color:rgba(179,21,39,.75)">
+        <button type="button" class="ss-choice" onClick="{{ dxImpactConvert }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.38s both" style-hover="border-color:rgba(179,21,39,.75)">
           <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
           <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">We'd look more professional and convert better</span>
-        </div>
+        </button>
 
-        <div onClick="{{ dxImpactGrow }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.46s both" style-hover="border-color:rgba(179,21,39,.75)">
+        <button type="button" class="ss-choice" onClick="{{ dxImpactGrow }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.46s both" style-hover="border-color:rgba(179,21,39,.75)">
           <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
           <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">We could grow without hiring more people</span>
-        </div>
+        </button>
 
-        <div onClick="{{ dxImpactCurious }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.54s both" style-hover="border-color:rgba(179,21,39,.75)">
+        <button type="button" class="ss-choice" onClick="{{ dxImpactCurious }}" style="position:relative;display:flex;align-items:baseline;gap:14px;padding:17px 2px 17px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease;animation:ssNudge .55s ease 0.54s both" style-hover="border-color:rgba(179,21,39,.75)">
           <span style="flex:0 0 auto;width:14px;height:1px;margin-top:11px;background:rgba(179,21,39,.75)"></span>
           <span style="font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(240,232,226,.78);text-wrap:pretty">Just curious what's possible</span>
-        </div>
+        </button>
           </div>
-          <a href="#" onClick="{{ dxSkipImpact }}" style="display:inline-block;margin:26px 0 0;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.4);border-bottom:1px solid rgba(226,205,190,.14);padding-bottom:3px;animation:ssNudge .55s ease .62s both" style-hover="color:#E3BFA4;border-color:rgba(179,21,39,.7)">SKIP THIS</a>
+          <button type="button" class="ss-text-action" onClick="{{ dxSkipImpact }}" style="display:inline-block;margin:26px 0 0;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.4);border-bottom:1px solid rgba(226,205,190,.14);padding:8px 0 3px;animation:ssNudge .55s ease .62s both" style-hover="color:#E3BFA4;border-color:rgba(179,21,39,.7)">SKIP THIS</button>
 
       <div style="margin:34px 0 0;animation:ssNudge .55s ease 0.68s both">
         <div style="font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.42)">OR IN YOUR OWN WORDS</div>
         <div style="display:flex;align-items:flex-end;gap:16px;margin:14px 0 0;max-width:560px">
           <input type="text" value="{{ dxText }}" onChange="{{ dxOnText }}" placeholder="Or just tell us in your own words." style="flex:1 1 auto;min-width:0;background:transparent;border:0;border-bottom:1px solid rgba(226,205,190,.18);padding:10px 0;font-family:Manrope,sans-serif;font-size:14px;font-weight:300;letter-spacing:.02em;color:#F2ECE7;outline:none"/>
-          <a href="#" onClick="{{ dxSubmitText }}" style="flex:0 0 auto;padding-bottom:11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">SEND</a>
+          <button type="button" class="ss-text-action" onClick="{{ dxSubmitText }}" style="flex:0 0 auto;padding:10px 0 11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">CONTINUE</button>
         </div>
       </div>
         </div>
@@ -410,7 +498,7 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
         <div style="font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.42)">IN YOUR OWN WORDS</div>
         <div style="display:flex;align-items:flex-end;gap:16px;margin:14px 0 0;max-width:560px">
           <input type="text" value="{{ dxText }}" onChange="{{ dxOnText }}" placeholder="Or just tell us in your own words." style="flex:1 1 auto;min-width:0;background:transparent;border:0;border-bottom:1px solid rgba(226,205,190,.18);padding:10px 0;font-family:Manrope,sans-serif;font-size:14px;font-weight:300;letter-spacing:.02em;color:#F2ECE7;outline:none"/>
-          <a href="#" onClick="{{ dxSubmitText }}" style="flex:0 0 auto;padding-bottom:11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">SEND</a>
+          <button type="button" class="ss-text-action" onClick="{{ dxSubmitText }}" style="flex:0 0 auto;padding:10px 0 11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">CONTINUE</button>
         </div>
       </div>
         </div>
@@ -438,17 +526,14 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
               <p style="margin:16px 0 0;max-width:440px;font-size:14px;font-weight:300;line-height:1.6;letter-spacing:.02em;color:rgba(232,222,216,.44)">{{ dxResultNote }}</p>
             </div>
           </div>
-          <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:30px 44px;margin:40px 0 0;padding-top:26px;border-top:1px solid rgba(226,205,190,.12);animation:ssNudge .6s ease .34s both">
-            <div style="flex:1 1 300px;min-width:0">
-              <div style="font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.42)">EMAIL</div>
-              <div style="display:flex;align-items:flex-end;gap:16px;margin:12px 0 0">
-                <input type="email" value="{{ dxEmail }}" onChange="{{ dxOnEmail }}" placeholder="you@company.com" style="flex:1 1 auto;min-width:0;background:transparent;border:0;border-bottom:1px solid rgba(226,205,190,.18);padding:10px 0;font-family:Manrope,sans-serif;font-size:14px;font-weight:300;letter-spacing:.02em;color:#F2ECE7;outline:none"/>
-                <a href="#" onClick="{{ dxSubmitEmail }}" style="flex:0 0 auto;padding-bottom:11px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.55)" style-hover="color:#F0576B">SEND</a>
-              </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px 44px;margin:40px 0 0;padding-top:26px;border-top:1px solid rgba(226,205,190,.12);animation:ssNudge .6s ease .34s both">
+            <div style="flex:1 1 320px;min-width:0">
+              <div style="font-size:10px;letter-spacing:.24em;color:rgba(226,205,190,.42)">YOUR BRIEF</div>
+              <p style="margin:12px 0 0;max-width:470px;font-size:12px;font-weight:300;line-height:1.65;letter-spacing:.02em;color:rgba(232,222,216,.42)">This prototype does not submit contact details. Copy the summary and use your preferred contact channel.</p>
             </div>
-            <a href="#" style="flex:0 0 auto;padding-bottom:11px;font-size:10px;letter-spacing:.22em;color:#F0D5C4;border-bottom:1px solid rgba(179,21,39,.55)" style-hover="color:#fff;border-color:#F0576B">CONTINUE ON WHATSAPP</a>
+            <button type="button" class="ss-text-action ss-copy-action" onClick="{{ dxCopyBrief }}" aria-live="polite" style="flex:0 0 auto;padding:10px 0 8px;font-size:10px;letter-spacing:.22em;color:#F0D5C4;border-bottom:1px solid rgba(179,21,39,.55)" style-hover="color:#fff;border-color:#F0576B">{{ dxCopyLabel }}</button>
           </div>
-          <a href="#" onClick="{{ dxReset }}" style="display:inline-block;margin:30px 0 0;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.34);border-bottom:1px solid rgba(226,205,190,.14);padding-bottom:3px" style-hover="color:#E3BFA4;border-color:rgba(179,21,39,.7)">START OVER</a>
+          <button type="button" class="ss-text-action" onClick="{{ dxReset }}" style="display:inline-block;margin:30px 0 0;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.34);border-bottom:1px solid rgba(226,205,190,.14);padding:8px 0 3px" style-hover="color:#E3BFA4;border-color:rgba(179,21,39,.7)">START OVER</button>
         </div>
       </div>
       </sc-if>
@@ -456,7 +541,7 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
   </div>
 </section>
 
-<section ref="{{ refSystem }}" data-screen-label="The System" style="position:relative;min-height:118vh;background:#050508;padding:clamp(92px,12vh,148px) clamp(28px,4.7vw,68px);font-family:Manrope,sans-serif;box-sizing:border-box;display:flex;align-items:center;overflow:hidden">
+<section id="system" class="ss-system" ref="{{ refSystem }}" data-screen-label="The System" style="position:relative;min-height:118vh;background:#050508;padding:clamp(92px,12vh,148px) clamp(28px,4.7vw,68px);font-family:Manrope,sans-serif;box-sizing:border-box;display:flex;align-items:center;overflow:hidden">
   <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(54% 44% at 78% 38%,rgba(94,12,24,.12),transparent 72%)"></div>
   <div style="position:relative;width:100%;max-width:1440px;margin:0 auto;opacity:{{ wkSystemO }};transform:translateY({{ wkSystemY }});transition:opacity .65s ease,transform .8s cubic-bezier(.2,.75,.25,1);pointer-events:{{ wkSystemPe }}">
     <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:16px;margin:0 0 clamp(58px,7vh,86px)">
@@ -659,7 +744,7 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
   </div>
 </section>
 
-<section style="display:{{ wkHowDisplay }};position:relative;background:#050508;padding:clamp(90px,11vh,130px) clamp(28px,4.7vw,68px) clamp(110px,13vh,160px);font-family:Manrope,sans-serif;border-top:1px solid rgba(226,205,190,.07)">
+<section id="approach" class="ss-how" style="position:relative;background:#050508;padding:clamp(90px,11vh,130px) clamp(28px,4.7vw,68px) clamp(110px,13vh,160px);font-family:Manrope,sans-serif;border-top:1px solid rgba(226,205,190,.07)">
   <div style="max-width:1440px;margin:0 auto">
     <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 clamp(56px,7vh,84px)">
       <span style="width:44px;height:1px;background:#B31527"></span>
@@ -670,7 +755,7 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
       <sc-if value="{{ inViewFlow }}" hint-placeholder-val="{{ false }}">
       <span style="position:absolute;left:4px;right:0;top:0;height:1px;transform-origin:left;background:linear-gradient(90deg,rgba(194,24,43,0),#7E0F1E 6%,#B31527 46%,#F0576B 82%,rgba(194,24,43,.25));animation:ssRule 2.1s cubic-bezier(.25,.9,.2,1) both"></span>
       <span style="position:absolute;left:50%;right:25%;top:-2px;height:5px;overflow:hidden;pointer-events:none;mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)">
-        <span style="position:absolute;inset:0;background:linear-gradient(100deg,transparent 42%,rgba(255,214,208,.4) 50%,transparent 58%);mix-blend-mode:color-dodge;animation:ssSheen 9s ease-in-out 2.1s infinite"></span>
+        <span style="position:absolute;inset:0;background:linear-gradient(100deg,transparent 42%,rgba(255,214,208,.4) 50%,transparent 58%);mix-blend-mode:color-dodge;animation:ssSheen 9s ease-in-out 2.1s 2"></span>
       </span>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(30px,3.4vw,56px)">
       <div style="position:relative;display:flex;flex-direction:column;padding-top:38px">
@@ -727,10 +812,10 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
       </sc-if>
     </div>
     <div style="display:flex;margin:clamp(76px,9.5vh,116px) 0 0">
-      <div onClick="{{ dxStart }}" style="display:inline-flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease" style-hover="border-color:rgba(179,21,39,.75)">
+      <button type="button" class="ss-inline-action" onClick="{{ dxStart }}" style="display:inline-flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid rgba(226,205,190,.12);border-bottom:1px solid rgba(226,205,190,.12);cursor:pointer;transition:border-color .45s ease" style-hover="border-color:rgba(179,21,39,.75)">
         <span style="position:relative;flex:0 0 auto;width:22px;height:22px;display:block">
-          <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border:1px solid #B31527;border-radius:50%;animation:ssBreatheRing 3.4s ease-in-out infinite"></span>
-          <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="#F0576B" stroke-width="0.9" stroke-linejoin="round" style="display:block;animation:ssBreathe 3.4s ease-in-out infinite">
+          <span style="position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border:1px solid #B31527;border-radius:50%;animation:ssBreatheRing 3.4s ease-in-out 2"></span>
+          <svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="#F0576B" stroke-width="0.9" stroke-linejoin="round" style="display:block;animation:ssBreathe 3.4s ease-in-out 2">
             <path d="M11 5.5 L16 11 L11 16.5 L6 11 Z"></path>
             <path d="M11 9.4 L11 12.6"></path>
           </svg>
@@ -739,19 +824,19 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
         <span style="font-size:10.5px;letter-spacing:.22em;color:#E3BFA4">BRING US THE PROBLEM</span>
         <svg viewBox="0 0 130 18" width="130" height="18" fill="none" style="display:block;flex:0 0 auto;overflow:visible">
           <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="rgba(179,21,39,.34)" stroke-width="1" stroke-linejoin="round"></path>
-          <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="#F0576B" stroke-width="1" stroke-linejoin="round" stroke-dasharray="26 320" style="animation:ssEkg 2.8s cubic-bezier(.5,0,.5,1) infinite"></path>
+          <path d="M0 9 H34 L39 9 L43 2.5 L49 15.5 L54 9 L64 9 L68 5.5 L72 9 H130" stroke="#F0576B" stroke-width="1" stroke-linejoin="round" stroke-dasharray="26 320" style="animation:ssEkg 2.8s cubic-bezier(.5,0,.5,1) 3"></path>
         </svg>
-      </div>
+      </button>
     </div>
   </div>
 </section>
 
-<section ref="{{ refWork }}" data-screen-label="Expanded System" style="position:relative;height:{{ wkSectionH }};background:#050508;overflow:visible;visibility:{{ wkStageV }};opacity:{{ wkStageO }};transition:opacity .6s ease">
-  <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:#050508">
+<section class="ss-expanded" ref="{{ refWork }}" data-screen-label="Expanded System" style="position:relative;height:{{ wkSectionH }};background:#050508;overflow:{{ wkStageOverflow }};visibility:{{ wkStageV }};opacity:{{ wkStageO }};transition:opacity .6s ease">
+  <div style="position:{{ wkStickyPosition }};top:0;height:100vh;overflow:hidden;background:#050508">
 
     <div style="position:absolute;inset:0;opacity:{{ wkIntelO }};pointer-events:none">
-      <video ref="{{ refVidBg }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" src="assets/intelligence_16x9_pillarbox.mp4" style="position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(52px) saturate(.72);opacity:.22"></video>
-      <video ref="{{ refVid }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" src="assets/intelligence_16x9_pillarbox.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center"></video>
+      <video ref="{{ refVidBg }}" muted="{{ true }}" playsInline="{{ true }}" preload="none" src="assets/intelligence_16x9_pillarbox.mp4" style="position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(52px) saturate(.72);opacity:.22"></video>
+      <video ref="{{ refVid }}" muted="{{ true }}" playsInline="{{ true }}" preload="metadata" src="assets/intelligence_16x9_pillarbox.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center"></video>
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,8,.18),rgba(5,5,8,0) 28%,rgba(5,5,8,0) 72%,rgba(5,5,8,.32))"></div>
       <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;opacity:0" fill="none" stroke="#B31527" stroke-width="1">
         <path d="M-40 350 H420" stroke="rgba(240,87,107,.85)"></path>
@@ -775,7 +860,7 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
 
     <div class="ft-product-stage" aria-label="FieldTrack product walkthrough" style="--ft-stage-opacity:{{ wkProductO }}">
       <div class="ft-shell" style="--ft-map-x:{{ ftMapX }};--ft-map-y:{{ ftMapY }};--ft-map-scale:{{ ftMapScale }};--ft-focus:{{ ftFocus }};--ft-focus-scale:{{ ftFocusScale }};--ft-focus-x:{{ ftFocusX }};--ft-relation-o:{{ ftRelationO }};--ft-relation-scale:{{ ftRelationScale }};--ft-ctx-1:{{ ftCtx1 }};--ft-ctx-2:{{ ftCtx2 }};--ft-ctx-3:{{ ftCtx3 }};--ft-ctx-4:{{ ftCtx4 }};--ft-follow-active:{{ ftFollowActive }};--ft-notes-o:{{ ftNotesO }};--ft-deep:{{ ftDeep }};--ft-deep-y:{{ ftDeepY }};--ft-recent-o:{{ ftRecentO }};--ft-actions-o:{{ ftActionsO }};--ft-schedule-o:{{ ftScheduleO }};--ft-schedule-y:{{ ftScheduleY }};--ft-schedule-structure:{{ ftScheduleStructure }};--ft-route-summary-o:{{ ftRouteSummaryO }};--ft-mini-map-o:{{ ftMiniMapO }};--ft-route-draw:{{ ftRouteDraw }};--ft-route-clip:{{ ftRouteClip }};--ft-ai-signal-o:{{ ftAiSignalO }};--ft-ai-o:{{ ftAiO }};--ft-ai-x:{{ ftAiX }};--ft-ai-query-o:{{ ftAiQueryO }};--ft-ai-answer-o:{{ ftAiAnswerO }};--ft-recommend-o:{{ ftRecommendO }};--ft-bottom-o:{{ ftBottomO }};--ft-bottom-y:{{ ftBottomY }};--ft-final-route-o:{{ ftFinalRouteO }};--ft-final-route-draw:{{ ftFinalRouteDraw }};--ft-eastside-o:{{ ftEastsideO }};--ft-eastside-scale:{{ ftEastsideScale }};--ft-eastside-x:{{ ftEastsideX }};--ft-final-context-o:{{ ftFinalContextO }};--ft-final-actions-o:{{ ftFinalActionsO }};--ft-nav-map-dim:{{ ftNavMapDim }};--ft-nav-top:{{ ftNavTop }};--ft-nav-active-o:{{ ftNavActiveO }};--ft-clients-cue:{{ ftClientsCue }};--ft-messages-cue:{{ ftMessagesCue }};--ft-tasks-badge-o:{{ ftTasksBadgeO }};--ft-followups-badge-o:{{ ftFollowupsBadgeO }};--ft-system-attention-o:{{ ftSystemAttentionO }}">
-        <img class="ft-map-base" src="assets/fieldtrack-map-overview.png" alt="FieldTrack territory map with client locations"/>
+        <img class="ft-map-base" src="assets/fieldtrack-map-overview.png" loading="lazy" decoding="async" alt="FieldTrack territory map with client locations"/>
         <div class="ft-map-tint"></div>
         <div class="ft-nav-overlay" aria-hidden="true">
           <div class="ft-nav-map-dimmer"></div>
@@ -854,8 +939,8 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
             <h5 style="margin-top:20px">Next stop</h5>
             <div style="padding:11px;border:1px solid rgba(255,255,255,.09);font-size:10px;color:#eee9e5">Northline Pharmacy<br/><span style="color:#82898d">09:00 AM – 09:45 AM</span></div>
             <div class="ft-route-line" aria-label="Mini route map">
-              <img class="ft-route-map-asset ft-route-map-underlay" src="assets/fieldtrack-route-map.png" alt=""/>
-              <img class="ft-route-map-asset ft-route-map-reveal" src="assets/fieldtrack-route-map.png" alt=""/>
+              <img class="ft-route-map-asset ft-route-map-underlay" src="assets/fieldtrack-route-map.png" loading="lazy" decoding="async" alt=""/>
+              <img class="ft-route-map-asset ft-route-map-reveal" src="assets/fieldtrack-route-map.png" loading="lazy" decoding="async" alt=""/>
               <button class="ft-route-node" data-stop="1" aria-label="Highlight visit 1, Northline Pharmacy" style="--ft-node-o:{{ ftRow1 }};--ft-node-active:{{ ftActive1 }}">1</button>
               <button class="ft-route-node" data-stop="2" aria-label="Highlight visit 2, WellCare Clinic" style="--ft-node-o:{{ ftRow2 }};--ft-node-active:{{ ftActive2 }}">2</button>
               <button class="ft-route-node" data-stop="3" aria-label="Highlight visit 3, Eastside Pharmacy" style="--ft-node-o:{{ ftRow3 }};--ft-node-active:{{ ftActive3 }}">3</button>
@@ -1217,12 +1302,29 @@ a{color:#E3BFA4;text-decoration:none}a:hover{color:#F0576B}
   </div>
 </section>
 
+<footer id="contact" class="ss-site-footer">
+  <div class="ss-site-footer-main">
+    <div>
+      <div class="ss-site-footer-label">COMPLEX PROBLEM → CLEAR SYSTEM → CONVERSATION</div>
+      <h2>Start with the problem.</h2>
+      <p>Bring us the process, the idea, or the part that is not working. We’ll map what should exist.</p>
+    </div>
+    <button type="button" class="ss-footer-cta" onClick="{{ dxStart }}">START A CONVERSATION</button>
+  </div>
+  <div class="ss-site-footer-meta">
+    <span>SAVVY STUDIO · INTELLIGENT SYSTEMS &amp; DIGITAL PRODUCTS</span>
+    <a href="#top">BACK TO TOP</a>
+  </div>
+</footer>
+
+</div>
+
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showTopNav&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;sheen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;showServiceRail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
 class Component extends DCLogic {
-  state = { open: {}, inView: {}, wkMode: 'overview', wkClosingFrom: null, wkP: 0, wkActive: false, wkCapOn: [false, false, false, false, false, false], infraDeep: false, infraDecision: null, infraHierarchy: false, dx: { stage: 'closed', path: null, impact: null, text: '', email: '' } };
+  state = { open: {}, inView: {}, wkMode: 'overview', wkClosingFrom: null, wkP: 0, wkActive: false, wkCapOn: [false, false, false, false, false, false], infraDeep: false, infraDecision: null, infraHierarchy: false, dx: { stage: 'closed', path: null, impact: null, text: '', copied: false } };
   dxSet = (patch) => this.setState(s => ({ dx: { ...s.dx, ...patch } }));
-  dxGo = (patch) => (e) => { if (e) e.preventDefault(); this.dxSet(patch); };
+  dxGo = (patch) => (e) => { if (e) e.preventDefault(); this.dxSet({ ...patch, copied: false }); };
   refP1 = React.createRef();
   refP2 = React.createRef();
   refP3 = React.createRef();
@@ -1232,16 +1334,44 @@ class Component extends DCLogic {
   refSystem = React.createRef();
   dxStart = (e) => {
     if (e) e.preventDefault();
-    this.dxSet({ stage: 's1' });
+    this.dxSet({ stage: 's1', copied: false });
     const el = this.refDx.current;
     if (!el) return;
-    this.scrollToY(el.getBoundingClientRect().top + window.pageYOffset - 140, 700);
+    const offset = Math.min(140, window.innerHeight * .16);
+    this.scrollToY(el.getBoundingClientRect().top + window.pageYOffset - offset, 700, () => {
+      try { el.focus({ preventScroll: true }); } catch (err) { el.focus(); }
+    });
+  };
+  dxCopyBrief = async (e) => {
+    if (e) e.preventDefault();
+    const dx = this.state.dx;
+    const areas = { I: 'Intelligence — how the system understands and decides', P: 'Product — where the system becomes useful', F: 'Infrastructure — what keeps everything connected' };
+    const impacts = { time: 'Save real time', convert: 'Look more professional and convert better', grow: 'Grow without hiring more people', curious: 'Explore what is possible' };
+    const summary = ['Savvy Studio brief', areas[dx.path] || 'Problem area still to be mapped', impacts[dx.impact] ? 'Desired change: ' + impacts[dx.impact] : '', dx.text ? 'Context: ' + dx.text : ''].filter(Boolean).join('\n');
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) await navigator.clipboard.writeText(summary);
+      else {
+        const area = document.createElement('textarea');
+        area.value = summary;
+        area.setAttribute('readonly', '');
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        document.body.removeChild(area);
+      }
+      this.dxSet({ copied: true });
+    } catch (err) {
+      this.dxSet({ copied: false });
+    }
   };
   refWork = React.createRef();
   refVid = React.createRef();
   refVidBg = React.createRef();
   wkExplore = (mode) => (e) => {
     if (e) e.preventDefault();
+    this._wkTrigger = e && e.currentTarget ? e.currentTarget : null;
     if (this._wkCloseTimer) clearTimeout(this._wkCloseTimer);
     this._wp = 0;
     this._vidCur = 0;
@@ -1249,8 +1379,13 @@ class Component extends DCLogic {
     this._capOn = [false, false, false, false, false, false];
     const v = this.refVid.current;
     const bg = this.refVidBg.current;
-    if (v) { try { v.currentTime = 0; } catch (err) {} }
-    if (bg) { try { bg.currentTime = 0; } catch (err) {} }
+    if (mode === 'intelligence') {
+      if (v) { try { v.load(); v.currentTime = 0; } catch (err) {} }
+      if (bg) { try { bg.load(); bg.currentTime = 0; } catch (err) {} }
+      this.wkStartVidLoop();
+    } else {
+      this.wkStopVidLoop();
+    }
     this.setState({ wkMode: mode, wkClosingFrom: null, wkP: 0, wkActive: false, wkCapOn: [false, false, false, false, false, false], infraDeep: false, infraDecision: null, infraHierarchy: false }, () => {
       requestAnimationFrame(() => {
         const el = this.refWork.current;
@@ -1265,19 +1400,28 @@ class Component extends DCLogic {
     if (e) e.preventDefault();
     const from = this.state.wkMode;
     if (from === 'overview' || from === 'closing') return;
-    this.setState({ wkMode: 'closing', wkClosingFrom: from, wkActive: false });
     if (this._wkCloseTimer) clearTimeout(this._wkCloseTimer);
-    this._wkCloseTimer = setTimeout(() => {
+    const finishClose = () => {
       this._wp = 0;
       this._vidCur = 0;
       this._capOn = [false, false, false, false, false, false];
+      this.wkStopVidLoop();
       this.setState({ wkMode: 'overview', wkClosingFrom: null, wkP: 0, wkActive: false, wkCapOn: [false, false, false, false, false, false], infraDeep: false, infraDecision: null, infraHierarchy: false }, () => {
         requestAnimationFrame(() => {
-          const el = this.refSystem.current;
-          if (el) this.scrollToY(el.getBoundingClientRect().top + window.pageYOffset, 720);
+          const trigger = this._wkTrigger;
+          if (trigger && document.contains(trigger)) {
+            try { trigger.focus({ preventScroll: true }); } catch (err) { trigger.focus(); }
+          }
         });
       });
-    }, 560);
+    };
+    this.setState({ wkMode: 'closing', wkClosingFrom: from, wkActive: false }, () => {
+      requestAnimationFrame(() => {
+        const el = this.refSystem.current;
+        if (!el) { finishClose(); return; }
+        this.scrollToY(el.getBoundingClientRect().top + window.pageYOffset, 720, finishClose);
+      });
+    });
   };
   bpToggleFrontier = (e) => {
     if (e) e.preventDefault();
@@ -1322,6 +1466,14 @@ class Component extends DCLogic {
     const prev = this._capOn;
     const changed = !prev || on.some((v, i) => v !== prev[i]);
     if (changed) { this._capOn = on; this.setState({ wkCapOn: on }); }
+  };
+  wkStartVidLoop = () => {
+    if (!this._vidRaf) this._vidRaf = requestAnimationFrame(this.wkVidTick);
+  };
+  wkStopVidLoop = () => {
+    if (this._vidRaf) cancelAnimationFrame(this._vidRaf);
+    this._vidRaf = null;
+    this._vidLastTs = null;
   };
   // Continuous rAF loop, lerp-smoothed scroll → video.currentTime mapping (same
   // pattern as the tea-leaf scroll-scrub reference). Never calls .play(): the video
@@ -1371,18 +1523,26 @@ class Component extends DCLogic {
     });
   };
   // rAF-eased scroll: window.scrollTo({behavior:'smooth'}) is a no-op in some hosts
-  scrollToY = (target, ms) => {
+  scrollToY = (target, ms, done) => {
     const start = window.pageYOffset;
     const max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
     const end = Math.min(max, Math.max(0, target));
     const dur = ms || 700;
     if (this._sr) cancelAnimationFrame(this._sr);
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced || dur <= 0) {
+      window.scrollTo(0, end);
+      this._sr = null;
+      if (done) done();
+      return;
+    }
     const t0 = performance.now();
     const step = (now) => {
       const k = Math.min(1, (now - t0) / dur);
       const e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
       window.scrollTo(0, start + (end - start) * e);
-      if (k < 1) this._sr = requestAnimationFrame(step); else this._sr = null;
+      if (k < 1) this._sr = requestAnimationFrame(step);
+      else { this._sr = null; if (done) done(); }
     };
     this._sr = requestAnimationFrame(step);
   };
@@ -1399,7 +1559,6 @@ class Component extends DCLogic {
     window.addEventListener('scroll', this.wkOnScroll, { passive: true });
     window.addEventListener('resize', this.wkOnScroll);
     this.wkOnScroll();
-    this._vidRaf = requestAnimationFrame(this.wkVidTick);
     const io = new IntersectionObserver(entries => {
       this._ioFired = true;
       entries.forEach(en => {
@@ -1430,7 +1589,7 @@ class Component extends DCLogic {
     window.removeEventListener('resize', this.wkOnScroll);
     if (this._wkTick) cancelAnimationFrame(this._wkTick);
     if (this._sr) cancelAnimationFrame(this._sr);
-    if (this._vidRaf) cancelAnimationFrame(this._vidRaf);
+    this.wkStopVidLoop();
     if (this._io) this._io.disconnect();
     if (this._fallback) clearTimeout(this._fallback);
     if (this._wkCloseTimer) clearTimeout(this._wkCloseTimer);
@@ -1477,10 +1636,11 @@ class Component extends DCLogic {
     vals.wkSystemO = isOverview ? 1 : 0.16;
     vals.wkSystemY = isOverview ? '0px' : '-14px';
     vals.wkSystemPe = isOverview ? 'auto' : 'none';
-    vals.wkHowDisplay = isOverview ? 'block' : 'none';
     vals.wkSectionH = isIntel ? '780vh' : (isProduct ? '600vh' : (isInfrastructure ? '620vh' : '0px'));
     vals.wkStageO = isOverview || isClosing ? 0 : 1;
     vals.wkStageV = isOverview ? 'hidden' : 'visible';
+    vals.wkStageOverflow = isOverview ? 'hidden' : 'visible';
+    vals.wkStickyPosition = isOverview ? 'absolute' : 'sticky';
     vals.wkBar = Math.max(0.001, (isIntel || isProduct || isInfrastructure) ? wp : 0);
     const smooth = (a, b, x) => {
       const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
@@ -1725,8 +1885,8 @@ class Component extends DCLogic {
       convert: "You told us it needs to look and convert better — that shapes where we start.",
       grow: "You told us you want to grow without hiring — that shapes what we automate first.",
       curious: "You're here to see what's possible. No pitch, just a straight answer.",
-      none: "Leave an email or carry on over WhatsApp and we'll come back with a straight answer.",
-      text: "We read these properly. Leave an email or carry on over WhatsApp and we'll reply with a straight answer."
+      none: "That's enough to frame the system before anything gets built.",
+      text: "That's enough to start mapping what should exist. Copy the brief below when you're ready."
     };
     const p = PILLARS[dx.path];
     Object.assign(vals, {
@@ -1736,13 +1896,11 @@ class Component extends DCLogic {
       dxStep3: dx.stage === 's3',
       dxResult: dx.stage === 'result',
       dxIsI: dx.path === 'I', dxIsP: dx.path === 'P', dxIsF: dx.path === 'F',
-      dxResultLabel: p ? 'THIS SOUNDS LIKE ' + p.label : "THANKS — WE'LL TAKE IT FROM HERE",
-      dxResultHook: p ? p.hook : "We'll work out what to build from here.",
+      dxResultLabel: p ? 'THIS SOUNDS LIKE ' + p.label : 'YOUR PROBLEM, IN PLAIN LANGUAGE',
+      dxResultHook: p ? p.hook : "That's enough to start mapping what should exist.",
       dxResultNote: p ? (NOTES[dx.impact] || NOTES.none) : NOTES.text,
       dxText: dx.text,
-      dxEmail: dx.email,
       dxOnText: (e) => this.dxSet({ text: e.target.value }),
-      dxOnEmail: (e) => this.dxSet({ email: e.target.value }),
       dxOpen: this.dxGo({ stage: 's1' }),
       dxStart: this.dxStart,
       refDx: this.refDx,
@@ -1756,8 +1914,9 @@ class Component extends DCLogic {
       dxImpactCurious: this.dxGo({ impact: 'curious', stage: 'result' }),
       dxSkipImpact: this.dxGo({ impact: null, stage: 'result' }),
       dxSubmitText: this.dxGo({ stage: 'result' }),
-      dxSubmitEmail: (e) => { if (e) e.preventDefault(); },
-      dxReset: this.dxGo({ stage: 'closed', path: null, impact: null, text: '', email: '' })
+      dxCopyBrief: this.dxCopyBrief,
+      dxCopyLabel: dx.copied ? 'COPIED' : 'COPY SUMMARY',
+      dxReset: this.dxGo({ stage: 'closed', path: null, impact: null, text: '' })
     });
     return Object.assign(vals, {
       showTopNav: this.props.showTopNav ?? true,

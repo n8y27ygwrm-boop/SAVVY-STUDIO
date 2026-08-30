@@ -1,71 +1,78 @@
-# Product Design QA — 03 · Infrastructure
+# Savvy Studio — Final Integration Design QA
 
-## Evidence
+## Comparison target
 
-- Source visual truth: `/private/tmp/savvy-infrastructure-baseline.png`, captured from the existing Savvy Studio system overview before the Infrastructure walkthrough was implemented.
-- Source pixels / CSS viewport / density: `1458 × 833` px / `1458 × 833` CSS px / `1x`.
-- Browser-rendered implementation: `/private/tmp/savvy-infrastructure-after-01.png` through `/private/tmp/savvy-infrastructure-after-06.png`.
-- Implementation pixels / CSS viewport / density: `1458 × 833` px / `1458 × 833` CSS px / `1x` in the selected Chrome session.
-- Full-view combined comparison: `/private/tmp/savvy-infrastructure-qa-comparison.png` (`1458 × 1678` px), with the source capture above the final trusted-baseline implementation.
-- Focused combined comparison: `/private/tmp/savvy-infrastructure-qa-focus.png` (`1220 × 1272` px), comparing the source Infrastructure card's typography, palette, and restraint against the implemented certainty-frontier caption, topology, and inspector.
-- Compared scroll states: `0.08`, `0.22`, `0.38`, `0.58`, `0.82`, and `0.96` across the `620vh` sticky scene.
-- Normalization: source and implementation were captured from the same selected browser at the same viewport and density. No resampling was needed in the full-view comparison. The focused crop was scaled only to make small type and state-color relationships legible.
-- Scope note: the source capture defines Savvy's visual language, not an exact Infrastructure topology layout. The implementation is therefore judged for continuity of typography, palette, rhythm, editorial restraint, and interaction quality rather than false pixel parity with a non-existent state mock.
+- Source visual truth: `qa-evidence/final-integration/01-before-desktop-full.png` plus the focused captures `02-before-hero.png`, `03-before-problem.png`, `04-before-system.png`, and `05-before-how-it-works.png`.
+- Implementation screenshot: unavailable after the integration changes. The selected in-app Browser blocked further access to the local URL after the initial audit, so a rendered after-state could not be captured without changing browser surfaces or bypassing the browser policy.
+- Local implementation: `http://127.0.0.1:8080/Savvy%20Studio%20Hero.dc.html?v=infra-final`
+- Source file: `Savvy Studio Hero.dc.html`
+- Viewport: 1440 × 900 CSS px for the focused source captures; the full-page source capture is 1440 × 4427 px.
+- Pixel density normalization: captures were made at 1 CSS px to 1 image px. No after-state density comparison was possible.
+- State: compact default page journey, with the three deep experiences closed.
+
+## Full-view comparison evidence
+
+The pre-change full-page capture established the existing Savvy Studio visual language and exposed four integration problems: the hero content began below the fold, the rendered journey placed THE SYSTEM before HOW IT WORKS, the collapsed deep-experience wrapper created a blank viewport, and the page had no intentional conversion/footer ending. Source changes address each issue, but no browser-rendered after capture is available to verify the result visually.
+
+## Focused region comparison evidence
+
+- Hero source: `qa-evidence/final-integration/02-before-hero.png`.
+- Problem/diagnostic source: `qa-evidence/final-integration/03-before-problem.png`.
+- THE SYSTEM source: `qa-evidence/final-integration/04-before-system.png`.
+- HOW IT WORKS source: `qa-evidence/final-integration/05-before-how-it-works.png`.
+- Focused after-state comparisons were not possible because the in-app Browser blocked the local URL after the initial captures.
+
+## Required fidelity surfaces
+
+- Fonts and typography: existing Cormorant Garamond, Bodoni Moda, and Manrope families and their editorial hierarchy were preserved in source. Rendered wrapping and fallback behavior after the responsive changes remain unverified.
+- Spacing and layout rhythm: source now orders Hero → Problem → How It Works → THE SYSTEM → expanded experience → contact/footer, removes the collapsed expanded-stage blank viewport, and adds breakpoint guardrails. Rendered rhythm at 1440, 1024, 768, 390, and 320 remains unverified.
+- Colors and visual tokens: the established near-black, crimson, warm ivory, muted grey, and Product amber palette is preserved. No new generic surface language was introduced.
+- Image quality and asset fidelity: all existing local image/video assets resolve. The Intelligence video is deferred appropriately and Product map assets are lazy-loaded. Rendered crop/sharpness after responsive changes remains unverified.
+- Copy and content: the required Hero, Problem, How It Works, and THE SYSTEM overview copy is present; the exact 01/02/03 deep-experience captions were not rewritten.
 
 ## Findings
 
-No actionable P0, P1, or P2 findings remain.
+- [P1] Rendered after-state evidence is unavailable.
+  - Location: whole page and all required breakpoints.
+  - Evidence: source captures exist only for the pre-change 1440 × 900 state; the in-app Browser blocked subsequent local-page access.
+  - Impact: layout, sticky behavior, CTA interactions, keyboard behavior, console state, and responsive adaptation cannot be truthfully certified after the code changes.
+  - Fix: reopen the local preview in the selected in-app Browser, capture the after-state at 1440, 1024, 768, 390, and 320, exercise all three open/close paths plus reduced motion and keyboard focus, then repeat this comparison.
 
-- Fonts and typography: editorial captions use Bodoni Moda with the same light optical treatment as the system cards; interface and body copy use Manrope; topology labels use a compact mono stack. The hierarchy remains legible without making the technical layer feel like the Product dashboard.
-- Spacing and layout rhythm: the persistent shell, hierarchy rail, central topology, inspector, decision surface, history strip, and six caption positions share the existing site's restrained margins and thin-rule rhythm. The inspector transition preserves the active frontier and adjacent nodes.
-- Colors and visual tokens: near-black surfaces, ivory context, muted grey unknowns, amber uncertainty/frontier, crimson decision action, and muted green demonstrated state are consistent and semantically stable across all six beats.
-- Image quality and asset fidelity: the Infrastructure experience contains no supplied hero artwork or raster product screenshot. The SVG is the live semantic topology itself—nodes, directed boundaries, and proof state—not a fabricated decorative asset. Existing Savvy imagery and the Product raster assets remain untouched.
-- Copy and content: all six requested captions are exact. Claim, observed evidence, gap, risk, verification objective, required evidence, authorized/prohibited actions, stop condition, returned evidence, human decision, and final metrics are present and coherent.
-- Icons and controls: the new scene avoids a competing icon family. Boundary IDs, evidence rows, hierarchy levels, and decision actions use native buttons with visible hover/focus treatments and descriptive labels where the compact boundary ID alone would be ambiguous.
-- States and interactions: seven boundary buttons expose contract detail; B-05 opens the claim inspector; evidence rows emphasize the frontier; Accept, Request More, and Defer retain selected state; accepted evidence turns B-05 demonstrated and moves the amber frontier to B-06.
-- Scroll and reversibility: the six windows map to `0–14`, `14–29`, `29–46`, `46–65`, `65–83`, and `83–100`. Reverse scrolling from the resolved state back through `0.58`, `0.22`, and `0.08` retracts the inspector, proof matrix, frontier, IDs, and accepted state in the correct order.
-- Accessibility: the scene exposes semantic button controls, aria-labels for all boundary targets, `:focus-visible` treatments, pointer-event gating for hidden panels, and a dedicated `prefers-reduced-motion` rule. The desktop test has zero horizontal overflow.
-- Regression: Back to the System restores the three-card overview and collapses the expanded section to `0px`. Intelligence still opens exclusively with its existing video scene; Product still opens exclusively with FieldTrack, and all three Product images load at native intrinsic dimensions.
+## Comparison history
 
-## Comparison History
+### Iteration 1 — initial rendered audit
 
-### Pass 1 — blocked
+- Earlier P1/P2 findings: hero content below the fold; HOW IT WORKS after THE SYSTEM; a blank viewport from the collapsed expanded-stage sticky child; dead `#` navigation and primary CTAs; no intentional contact/footer ending; unnecessary continuous decorative motion.
+- Fixes made: bounded hero box sizing; visual journey reordering; zero-height/absolute collapsed expanded stage; functional fragment navigation and diagnostic CTA flow; concise contact/footer ending; finite decorative animations; reduced-motion overrides; semantic CTA/diagnostic controls; focus return after closing; lazy media initialization.
+- Post-fix visual evidence: blocked by the in-app Browser local-URL policy.
 
-- [P2] The claim inspector covered too much of the downstream topology and clipped the active frontier label.
-  - Fix: introduced a shared topology x-offset and applied it consistently to the SVG, boundary targets, and frontier label while the inspector is open.
-  - Post-fix evidence: `/private/tmp/savvy-infrastructure-after-04.png` keeps Source Eligibility, B-05, Bonus Extraction, and the frontier label visible beside the claim inspector.
-- [P2] The final top bar allowed the outgoing `PARTIAL` status, incoming demonstrated status, and metrics to collide.
-  - Fix: reserved a stable evidence-status slot, anchored the incoming label, and switched the evidence dot to green after acceptance.
-  - Post-fix evidence: `/private/tmp/savvy-infrastructure-after-06.png` shows a clean `DEMONSTRATED` status plus the five requested final metrics without overlap.
+## Source-level validation completed
 
-### Pass 2 — passed
+- DC component script parsed successfully.
+- `support.js` passed `node --check`.
+- HTML parser completed without errors and paired tag counts are balanced.
+- No duplicate IDs, placeholder fragment links, `preload="auto"`, accidental lorem ipsum, or prohibited generic agency phrases were found.
+- All six local media asset references resolve.
+- All fragment links resolve to existing IDs.
+- `git diff --check` passes.
 
-- `/private/tmp/savvy-infrastructure-qa-comparison.png` confirms continuity with the current Savvy visual language at the full-view level.
-- `/private/tmp/savvy-infrastructure-qa-focus.png` confirms the display typography, thin crimson rules, near-black/ivory balance, mono technical layer, and restrained amber frontier treatment at readable scale.
-- `/private/tmp/savvy-infrastructure-after-01.png` through `/private/tmp/savvy-infrastructure-after-06.png` show one persistent topology changing state rather than six replacement screens.
-- No P0/P1/P2 visual or interaction issue remains.
+## Implementation checklist
 
-## Primary Verification
+- [x] Preserve the existing trilogy and exact deep-experience caption copy.
+- [x] Correct compact journey order and remove collapsed-stage dead space.
+- [x] Make primary navigation and conversion CTAs intentional.
+- [x] Add semantic controls, visible focus, focus restoration, and reduced-motion handling.
+- [x] Defer heavy media and clean up animation-frame work.
+- [ ] Capture rendered after-states at all required breakpoints.
+- [ ] Exercise all three experience open/close/reopen paths and reverse scroll.
+- [ ] Verify keyboard, focus restoration, reduced motion, console errors, overflow, and jank in the rendered page.
 
-- Six scroll checkpoints and exact captions: passed.
-- Eight topology nodes and seven interactive boundaries: passed.
-- B-05 computed certainty frontier and claim inspector: passed.
-- Verification brief and four progressive evidence rows: passed.
-- Human decision controls and accepted-state transition: passed.
-- B-05 green / B-06 amber frontier migration: passed.
-- Final metrics `7 / 24 / 18 / 3 / 1`: passed.
-- Reverse-scroll restoration: passed.
-- Back-to-system restoration: passed.
-- Intelligence and Product scene isolation: passed.
-- Product image regression: `3/3` images complete.
-- Desktop horizontal overflow: `0px`.
-- Browser diagnostic log after reload and state exercise: `[]`.
+## Open questions
 
-## Follow-up Polish
+- None about the intended design direction. The only blocker is rendered after-state access in the selected browser.
 
-- P3: tune individual progress thresholds after stakeholder review on a physical trackpad.
-- P3: capture and visually review the existing mobile media-query treatment in a resizable selected-browser session; the responsive and reduced-motion code paths are present, but this pass was visually captured only at the selected desktop viewport.
+## Follow-up polish
 
-## Final Result
+- No P3 polish is proposed until the rendered after-state can be reviewed; visual adjustments without evidence would be speculative.
 
-final result: passed
+final result: blocked
