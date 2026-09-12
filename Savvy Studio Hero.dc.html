@@ -749,9 +749,9 @@ input:focus-visible{outline:0;border-bottom-color:#F0576B!important}
 }
 
 @media(max-width:700px){
-  .ss-topnav{padding:24px!important}
-  .ss-topnav-links{gap:18px!important;font-size:8.5px!important;letter-spacing:.18em!important}
-  .ss-topnav-links > :nth-child(1),.ss-topnav-links > :nth-child(2){display:none}
+  .ss-topnav{padding:24px 18px!important;gap:10px}
+  .ss-topnav-links{gap:11px!important;font-size:9px!important;letter-spacing:.09em!important}
+  .ss-topnav-links button{font-size:9px!important;letter-spacing:.09em!important}
   .ss-hero-mark{right:-21vw!important;top:10vh!important;width:86vw!important;height:86vw!important;opacity:.5!important}
   .ss-hero-mark img{width:86vw!important;height:86vw!important}
   .ss-hero-layout{min-height:100svh!important;grid-template-columns:1fr!important;align-content:end!important;align-items:end!important;padding:clamp(128px,22vh,190px) 24px 112px!important}
@@ -780,7 +780,9 @@ input:focus-visible{outline:0;border-bottom-color:#F0576B!important}
 
 @media(max-width:390px){
   .ss-hero-layout{padding-left:20px!important;padding-right:20px!important}
-  .ss-topnav{padding:20px!important}
+  .ss-topnav{padding:20px 14px!important;gap:8px}
+  .ss-topnav-links{gap:9px!important;font-size:8.5px!important;letter-spacing:.08em!important}
+  .ss-topnav-links button{font-size:8.5px!important;letter-spacing:.08em!important}
   .ss-service-rail{left:20px!important;right:20px!important}
   .ss-hero h1{font-size:clamp(43px,13.2vw,52px)!important}
   .ss-site-footer,.ss-problem,.ss-how,.ss-system{padding-left:20px!important;padding-right:20px!important}
@@ -4667,6 +4669,15 @@ class Component extends DCLogic {
     return { page: 'home', key: 'savvyedge', queryRoute: false };
   })();
 
+  _homePath = (function() {
+    if (typeof window === 'undefined') return '/';
+    const pathname = window.location.pathname || '';
+    if (pathname.includes('Savvy%20Studio%20Hero') || pathname.includes('Savvy Studio Hero')) {
+      return '/Savvy%20Studio%20Hero.dc.html';
+    }
+    return '/';
+  })();
+
   SOLUTIONS = {
     // 01 INTELLIGENCE
     "intel-doc": { layer: "01", subgroup: "UNDERSTAND", name: "Document Processing & Data Extraction", grammar: "converge", grammarCaption: "Multi-format ingest -> OCR & entity parsing -> Verified schema output", problem: "Manual data entry from invoices, contracts, and claims creates massive operational lag and expensive error rates.", outcome: "10x faster document throughput with continuous automated validation.", flow: ["Multi-source PDF / Docs", "AI Parser & Entity Extractor", "Validation Engine", "Core ERP / Database"] },
@@ -4914,8 +4925,8 @@ class Component extends DCLogic {
 
   siteGoHome = (anchor) => (e) => {
     if (e) e.preventDefault();
-    const homePath = '/Savvy%20Studio%20Hero.dc.html';
-    const target = anchor ? homePath + '#' + anchor : homePath;
+    const homePath = this._homePath || '/';
+    const target = anchor ? (homePath === '/' ? '/#' + anchor : homePath + '#' + anchor) : homePath;
     if (typeof window !== 'undefined') window.history.pushState({ savvyHome: true }, '', target);
     this.setState({ sitePage: 'home', workOverlayOpen: false,layerExplorerOpen: false }, () => {
       this.siteSetTitle();
@@ -5064,7 +5075,7 @@ class Component extends DCLogic {
 
   goHomeRoot = (e) => {
     if (e) e.preventDefault();
-    const homePath = "/Savvy%20Studio%20Hero.dc.html";
+    const homePath = this._homePath || '/';
     window.history.pushState({ savvyHome: true }, "", homePath);
     this.setState({ sitePage: "home", workOverlayOpen: false,layerExplorerOpen: false }, () => {
       this.siteSetTitle();
@@ -5753,7 +5764,8 @@ class Component extends DCLogic {
     if (e) e.preventDefault();
     const away = this.state.sitePage !== 'home' || this.state.layerExplorerOpen;
     if (away && typeof window !== 'undefined') {
-      window.history.pushState({ savvyHome: true }, '', '/Savvy%20Studio%20Hero.dc.html');
+      const homePath = this._homePath || '/';
+      window.history.pushState({ savvyHome: true }, '', homePath);
     }
     this.setState(s => ({
       sitePage: 'home',
@@ -6246,7 +6258,9 @@ class Component extends DCLogic {
     this.scrollToY(top + span * stops[i], 900);
   };
     componentDidMount() {
-    this._homePath = '/Savvy%20Studio%20Hero.dc.html';
+    if (!this._homePath) {
+      this._homePath = (typeof window !== 'undefined' && ((window.location.pathname || '').includes('Savvy%20Studio%20Hero') || (window.location.pathname || '').includes('Savvy Studio Hero'))) ? '/Savvy%20Studio%20Hero.dc.html' : '/';
+    }
     if (this._initialSiteRoute && this._initialSiteRoute.queryRoute) {
       window.history.replaceState({ savvyProject: this._initialSiteRoute.key }, '', '/work/' + this._initialSiteRoute.key);
     }
@@ -7053,7 +7067,7 @@ class Component extends DCLogic {
       vals["selectSol_" + sanitized] = this.selectSolution(k);
     }
 
-    const homePath = '/Savvy%20Studio%20Hero.dc.html';
+    const homePath = this._homePath || (typeof window !== 'undefined' && ((window.location.pathname || '').includes('Savvy%20Studio%20Hero') || (window.location.pathname || '').includes('Savvy Studio Hero')) ? '/Savvy%20Studio%20Hero.dc.html' : '/');
     const project = (this.PROJECTS && this.PROJECTS[this.state.projectKey]) || this.PROJECTS.savvyedge;
     const layerCount = (l) => { const n = l === 'product' ? '02' : l === 'infrastructure' ? '03' : '01';
       return Object.keys(this.SOLUTIONS).filter(k => this.SOLUTIONS[k].layer === n).length; };
@@ -7130,9 +7144,9 @@ class Component extends DCLogic {
 
       homePath: homePath,
       goHomeRoot: this.goHomeRoot,
-      homeApproachHref: homePath + "#approach",
-      homeSystemHref: homePath + "#system",
-      homeContactHref: homePath + "#contact",
+      homeApproachHref: (homePath === '/' ? '/#approach' : homePath + "#approach"),
+      homeSystemHref: (homePath === '/' ? '/#system' : homePath + "#system"),
+      homeContactHref: (homePath === '/' ? '/#contact' : homePath + "#contact"),
       goApproach: this.siteGoHome("approach"),
       goSystem: this.siteGoHome("system"),
 
