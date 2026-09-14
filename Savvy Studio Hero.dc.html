@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Savvy Studio — Intelligent Systems &amp; Digital Products</title>
+<link rel="canonical" href="https://savvystudio.cc/">
+<meta name="description" content="Savvy Studio builds intelligent systems, bespoke digital products, and robust infrastructure for complex operations. Systems that think before they act.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://savvystudio.cc/">
+<meta property="og:title" content="Savvy Studio — Intelligent Systems &amp; Digital Products">
+<meta property="og:description" content="Savvy Studio builds intelligent systems, bespoke digital products, and robust infrastructure for complex operations. Systems that think before they act.">
+<meta property="og:site_name" content="Savvy Studio">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="https://savvystudio.cc/">
+<meta name="twitter:title" content="Savvy Studio — Intelligent Systems &amp; Digital Products">
+<meta name="twitter:description" content="Savvy Studio builds intelligent systems, bespoke digital products, and robust infrastructure for complex operations. Systems that think before they act.">
+
+<!-- Favicon & Touch Icons -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" href="assets/ss-monogram.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
 <script>(function(){try{var p=location.pathname||"/";var m=p.match(/^(.*)\/work\/(?:savvyedge|blueprint|eye)\/?$/);var root=m?(m[1]+"/"):p.replace(/[^\/]*$/,"");var b=document.createElement("base");b.href=root;document.head.appendChild(b);}catch(e){}})();</script>
 <script src="./support.js"></script>
 </head>
@@ -735,6 +758,13 @@ input:focus-visible{outline:0;border-bottom-color:#F0576B!important}
 .ss-site-footer p{max-width:560px;margin:22px 0 0;font-size:14px;font-weight:300;line-height:1.75;letter-spacing:.02em;color:rgba(232,222,216,.5)}
 .ss-site-footer-meta{max-width:1440px;margin:clamp(64px,9vh,104px) auto 0;padding-top:22px;border-top:1px solid rgba(226,205,190,.09);display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:8.5px;letter-spacing:.2em;color:rgba(226,205,190,.28)}
 .ss-site-footer-meta a{color:rgba(226,205,190,.5)}
+.ss-footer-meta-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.ss-footer-direct{margin-top:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:10px;letter-spacing:.2em}
+.ss-footer-direct-label{color:rgba(226,205,190,.38)}
+.ss-footer-direct-sep{color:rgba(226,205,190,.2)}
+.ss-footer-wa-link,.ss-footer-mail-link{color:#E3BFA4;display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid rgba(226,205,190,.2);padding-bottom:2px;transition:color .25s ease,border-color .25s ease}
+.ss-footer-wa-link:hover,.ss-footer-wa-link:focus-visible,.ss-footer-mail-link:hover,.ss-footer-mail-link:focus-visible{color:#F0576B;border-color:#F0576B}
+
 
 @media(max-width:1024px){
   .ss-topnav{padding:30px 38px!important}
@@ -2412,7 +2442,7 @@ button.bl-row[data-sel="true"]{background:rgba(217,86,107,.12);box-shadow:inset 
 
           <!-- FORM -->
           <sc-if value="{{ pdxOnForm }}" hint-placeholder-val="{{ true }}">
-          <form class="ss-modal-form" onSubmit="{{ pdxReviewBrief }}" noValidate style="margin-top:26px;animation:ssNudge .55s ease .28s both">
+          <form class="ss-modal-form" onSubmit="{{ pdxSendInquiry }}" noValidate style="margin-top:26px;animation:ssNudge .55s ease .28s both">
             <div class="ss-field-group">
               <label for="direct-brief-text" class="ss-field-label">{{ pdxContextLabel }}</label>
               <textarea id="direct-brief-text" class="ss-textarea" rows="{{ pdxContextRows }}" value="{{ pdxDText }}" onChange="{{ pdxOnDText }}" placeholder="{{ pdxContextPlaceholder }}"></textarea>
@@ -2433,96 +2463,45 @@ button.bl-row[data-sel="true"]{background:rgba(217,86,107,.12);box-shadow:inset 
             </div>
             <div class="ss-field-group">
               <label for="direct-brief-phone" class="ss-field-label">PHONE / WHATSAPP <span class="ss-optional">(OPTIONAL)</span></label>
-              <input type="tel" id="direct-brief-phone" name="tel" autoComplete="tel" inputMode="tel" value="{{ pdxDPhone }}" onChange="{{ pdxOnDPhone }}" placeholder="+355 …" class="ss-input"/>
+              <input type="tel" id="direct-brief-phone" name="tel" autoComplete="tel" inputMode="tel" value="{{ pdxDPhone }}" onChange="{{ pdxOnDPhone }}" placeholder="+355 68 558 5065" class="ss-input"/>
             </div>
-            <div class="ss-modal-actions">
-              <button type="submit" class="ss-btn-primary">REVIEW YOUR BRIEF</button>
+            <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;height:0;overflow:hidden" aria-hidden="true">
+              <label for="direct-brief-website">Website</label>
+              <input type="text" id="direct-brief-website" name="website" tabIndex="-1" autoComplete="off" value="{{ pdxDWebsite }}" onChange="{{ pdxOnDWebsite }}"/>
+            </div>
+            <sc-if value="{{ pdxError }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:20px;padding:16px;border:1px solid rgba(240,87,107,.4);border-radius:4px;background:rgba(240,87,107,.08);animation:ssNudge .4s ease both">
+              <div style="font-size:10px;letter-spacing:.22em;color:#F0576B">WE COULDN'T SEND YOUR INQUIRY</div>
+              <p style="margin:8px 0 0;font-size:13.5px;font-weight:300;line-height:1.6;color:rgba(240,232,226,.8)">Your details are still here. Please try again.</p>
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:16px">
+                <button type="submit" class="ss-btn-primary" style="padding:10px 20px;font-size:10px;letter-spacing:.2em" disabled="{{ pdxSending }}">{{ pdxSubmitButtonText }}</button>
+                <button type="button" onClick="{{ onDirectWhatsApp }}" style="padding:10px 20px;font-size:10px;letter-spacing:.2em;border:1px solid rgba(226,205,190,.3);color:#E3BFA4;background:transparent;cursor:pointer">CONTINUE ON WHATSAPP</button>
+              </div>
+            </div>
+            </sc-if>
+            <div class="ss-modal-actions" style="margin-top:24px">
+              <button type="submit" class="ss-btn-primary" disabled="{{ pdxSending }}">{{ pdxSubmitButtonText }}</button>
+            </div>
+            <div style="margin-top:16px;font-size:10px;letter-spacing:.16em;color:rgba(226,205,190,.4);line-height:1.7">
+              <span>PREFER TO REACH OUT DIRECTLY? </span>
+              <a id="direct-brief-mail-link" href="mailto:hello@savvystudio.cc" style="color:#E3BFA4;text-decoration:underline;text-underline-offset:3px" style-hover="color:#F0576B">HELLO@SAVVYSTUDIO.CC</a>
+              <span> · </span>
+              <a id="direct-brief-wa-link" href="https://wa.me/355685585065" target="_blank" rel="noopener noreferrer" style="color:#E3BFA4;text-decoration:underline;text-underline-offset:3px" style-hover="color:#F0576B">+355 68 558 5065</a>
             </div>
           </form>
           </sc-if>
 
-          <!-- PREVIEW -->
-          <sc-if value="{{ pdxOnPreview }}" hint-placeholder-val="{{ false }}">
-          <div style="margin-top:26px;max-width:520px;animation:ssNudge .55s ease .06s both">
-            <div style="font-size:9.5px;letter-spacing:.22em;color:#E3BFA4">REVIEW YOUR BRIEF</div>
-            <p style="margin:10px 0 0;font-size:13.5px;font-weight:300;line-height:1.62;color:rgba(232,222,216,.55)">Nothing has been sent yet. This is exactly what would go to us.</p>
-
-            <div style="margin:18px 0 0;padding-top:14px;border-top:1px solid rgba(226,205,190,.1)">
-              <div style="font-size:9.5px;letter-spacing:.22em;color:rgba(226,205,190,.38)">CONTACT</div>
-              <p style="margin:8px 0 0;font-size:13px;font-weight:300;line-height:1.7;color:rgba(240,232,226,.75)">{{ pdxPvName }}<br/><sc-if value="{{ pdxPvHasBusiness }}" hint-placeholder-val="{{ false }}">{{ pdxPvBusiness }}<br/></sc-if>{{ pdxPvEmail }}<sc-if value="{{ pdxPvHasPhone }}" hint-placeholder-val="{{ false }}"><br/>{{ pdxPvPhone }}</sc-if></p>
-            </div>
-
-            <sc-if value="{{ pdxPvHasContext }}" hint-placeholder-val="{{ false }}">
-            <div style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(226,205,190,.07)">
-              <div style="font-size:9.5px;letter-spacing:.22em;color:rgba(226,205,190,.38)">IN YOUR WORDS</div>
-              <p style="margin:8px 0 0;font-size:13px;font-weight:300;line-height:1.65;color:rgba(232,222,216,.6);white-space:pre-wrap;overflow-wrap:anywhere">{{ pdxPvContext }}</p>
-            </div>
-            </sc-if>
-
-            <sc-if value="{{ pdxPvHasDiag }}" hint-placeholder-val="{{ false }}">
-            <div style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(226,205,190,.07)">
-              <div style="font-size:9.5px;letter-spacing:.22em;color:rgba(226,205,190,.38)">DIAGNOSIS</div>
-              <sc-if value="{{ pdxPvConfident }}" hint-placeholder-val="{{ true }}">
-              <p style="margin:8px 0 0;font-size:13px;font-weight:300;line-height:1.6;color:rgba(240,232,226,.72)">{{ pdxPvDirection }}</p>
-              </sc-if>
-              <sc-if value="{{ pdxPvNotConfident }}" hint-placeholder-val="{{ false }}">
-              <p style="margin:8px 0 0;font-size:13px;font-weight:300;line-height:1.6;color:rgba(240,232,226,.72)">Not confident yet — mapping first.</p>
-              </sc-if>
-              <sc-if value="{{ pdxPvHasCaps }}" hint-placeholder-val="{{ false }}">
-              <p style="margin:6px 0 0;font-size:12.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.58)">Likely needs · {{ pdxPvCaps }}</p>
-              </sc-if>
-              <sc-if value="{{ pdxPvHasWork }}" hint-placeholder-val="{{ false }}">
-              <p style="margin:6px 0 0;font-size:12.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.58)">Relevant work · {{ pdxPvWork }}</p>
-              </sc-if>
-              <sc-if value="{{ pdxPvHasFirstMap }}" hint-placeholder-val="{{ false }}">
-              <p style="margin:8px 0 0;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:10.5px;line-height:1.7;letter-spacing:.03em;color:rgba(240,232,226,.55);overflow-wrap:anywhere">{{ pdxPvFirstMap }}</p>
-              </sc-if>
-            </div>
-            </sc-if>
-
-            <sc-if value="{{ pdxPvHasAnswers }}" hint-placeholder-val="{{ false }}">
-            <div style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(226,205,190,.07)">
-              <div style="font-size:9.5px;letter-spacing:.22em;color:rgba(226,205,190,.38)">WHAT WE HEARD</div>
-              <sc-if value="{{ pdxPvHasA1 }}" hint-placeholder-val="{{ false }}"><p style="margin:6px 0 0;font-size:12.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.58)">{{ pdxPvA1 }}</p></sc-if>
-              <sc-if value="{{ pdxPvHasA2 }}" hint-placeholder-val="{{ false }}"><p style="margin:6px 0 0;font-size:12.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.58)">{{ pdxPvA2 }}</p></sc-if>
-              <sc-if value="{{ pdxPvHasA3 }}" hint-placeholder-val="{{ false }}"><p style="margin:6px 0 0;font-size:12.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.58)">{{ pdxPvA3 }}</p></sc-if>
-              <sc-if value="{{ pdxPvHasA4 }}" hint-placeholder-val="{{ false }}"><p style="margin:6px 0 0;font-size:12.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.58)">{{ pdxPvA4 }}</p></sc-if>
-              <sc-if value="{{ pdxPvHasA5 }}" hint-placeholder-val="{{ false }}"><p style="margin:6px 0 0;font-size:12.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.58)">{{ pdxPvA5 }}</p></sc-if>
-              <sc-if value="{{ pdxPvHasA6 }}" hint-placeholder-val="{{ false }}"><p style="margin:6px 0 0;font-size:12.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.58)">{{ pdxPvA6 }}</p></sc-if>
-              <sc-if value="{{ pdxPvHasA7 }}" hint-placeholder-val="{{ false }}"><p style="margin:6px 0 0;font-size:12.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.58)">{{ pdxPvA7 }}</p></sc-if>
-            </div>
-            </sc-if>
-
-            <sc-if value="{{ pdxPvHasNote }}" hint-placeholder-val="{{ false }}">
-            <div style="margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(226,205,190,.07)">
-              <div style="font-size:9.5px;letter-spacing:.22em;color:rgba(226,205,190,.38)">THE NOTE YOU ADDED</div>
-              <p style="margin:8px 0 0;font-size:13px;font-weight:300;line-height:1.65;color:rgba(232,222,216,.6);white-space:pre-wrap;overflow-wrap:anywhere">{{ pdxPvNote }}</p>
-            </div>
-            </sc-if>
-
-            <p style="margin:22px 0 0;font-size:13px;font-weight:300;line-height:1.62;color:rgba(232,222,216,.55)">This opens WhatsApp with your brief prepared. Press send there to share it.</p>
-            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin:16px 0 0">
-              <button type="button" class="ss-btn-primary" onClick="{{ onDirectWhatsApp }}">CONTINUE ON WHATSAPP</button>
-              <button type="button" class="ss-text-action" onClick="{{ pdxEditBrief }}" style="padding:8px 0 3px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.34);border-bottom:1px solid rgba(226,205,190,.14)" style-hover="color:#E3BFA4;border-color:rgba(179,21,39,.55)">EDIT</button>
-            </div>
-          </div>
-          </sc-if>
-
-          <!-- CONFIRMATION -->
+          <!-- CONFIRMATION / SUCCESS SCREEN -->
           <sc-if value="{{ pdxOnSent }}" hint-placeholder-val="{{ false }}">
           <div style="margin-top:26px;max-width:520px;animation:ssNudge .55s ease .06s both">
-            <div style="font-size:9.5px;letter-spacing:.22em;color:#E3BFA4">{{ pdxHandoffKicker }}</div>
-            <sc-if value="{{ pdxHandoffBlocked }}" hint-placeholder-val="{{ false }}">
-            <p style="margin:12px 0 0;font-size:14px;font-weight:300;line-height:1.65;color:rgba(240,232,226,.75)">Your browser blocked the new tab, so WhatsApp did not open. Nothing has been sent and we have not received anything.</p>
-            <p style="margin:12px 0 0;font-size:13px;font-weight:300;line-height:1.62;color:rgba(232,222,216,.5)">Your brief is still here, exactly as you reviewed it. Allow pop-ups for this site, then try again below.</p>
-            </sc-if>
-            <sc-if value="{{ pdxHandoffAttempted }}" hint-placeholder-val="{{ true }}">
-            <p style="margin:12px 0 0;font-size:14px;font-weight:300;line-height:1.65;color:rgba(240,232,226,.75)">We handed your brief to WhatsApp in a new tab, already written out. It only reaches us once you press send there.</p>
-            <p style="margin:12px 0 0;font-size:13px;font-weight:300;line-height:1.62;color:rgba(232,222,216,.5)">If you cannot see that tab, your browser may have blocked or closed it. Your brief is still here — open it again below.</p>
-            </sc-if>
-            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin:22px 0 0">
-              <button type="button" class="ss-btn-whatsapp" onClick="{{ onDirectWhatsApp }}">{{ pdxHandoffRetryLabel }}</button>
-              <button type="button" class="ss-text-action" onClick="{{ pdxEditBrief }}" style="padding:8px 0 3px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.34);border-bottom:1px solid rgba(226,205,190,.14)" style-hover="color:#E3BFA4;border-color:rgba(179,21,39,.55)">EDIT THE BRIEF</button>
+            <div style="font-size:9.5px;letter-spacing:.22em;color:#E3BFA4">INQUIRY RECEIVED</div>
+            <p style="margin:14px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:26px;line-height:1.25;color:#F2ECE7">Thank you, {{ pdxFirstName }}.</p>
+            <p style="margin:14px 0 0;font-size:14px;font-weight:300;line-height:1.65;color:rgba(240,232,226,.75)">We've received your request and will review the details shortly.</p>
+            <p style="margin:8px 0 0;font-size:13.5px;font-weight:300;line-height:1.6;color:rgba(232,222,216,.55)">You'll hear from Savvy Studio soon.</p>
+
+            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin:26px 0 0">
+              <button type="button" class="ss-btn-primary" onClick="{{ onDirectWhatsApp }}">CONTINUE ON WHATSAPP</button>
+              <button type="button" class="ss-text-action" onClick="{{ pdxBackToStudio }}" style="padding:8px 0 3px;font-size:9.5px;letter-spacing:.24em;color:rgba(226,205,190,.34);border-bottom:1px solid rgba(226,205,190,.14)" style-hover="color:#E3BFA4;border-color:rgba(179,21,39,.55)">BACK TO STUDIO</button>
             </div>
           </div>
           </sc-if>
@@ -3581,12 +3560,26 @@ button.bl-row[data-sel="true"]{background:rgba(217,86,107,.12);box-shadow:inset 
       <div class="ss-site-footer-label">COMPLEX PROBLEM → CLEAR SYSTEM → CONVERSATION</div>
       <h2>Start with the problem.</h2>
       <p>Bring us the process, the idea, or the part that is not working. We’ll map what should exist.</p>
+      <div class="ss-footer-direct">
+        <span class="ss-footer-direct-label">DIRECT INQUIRY</span>
+        <a href="mailto:hello@savvystudio.cc" class="ss-footer-mail-link" aria-label="Email: hello@savvystudio.cc">
+          <span>EMAIL · HELLO@SAVVYSTUDIO.CC</span>
+        </a>
+        <span class="ss-footer-direct-sep">/</span>
+        <a href="https://wa.me/355685585065" target="_blank" rel="noopener noreferrer" class="ss-footer-wa-link" aria-label="WhatsApp: +355 68 558 5065">
+          <span>WHATSAPP · +355 68 558 5065</span>
+        </a>
+      </div>
     </div>
     <button type="button" class="ss-cta-line" onClick="{{ pdxStartConversation }}"><span class="ss-cta-rule"></span><span class="ss-cta-label">START A CONVERSATION</span><span class="ss-cta-signal-track"></span></button>
   </div>
   <div class="ss-site-footer-meta">
     <span>SAVVY STUDIO · INTELLIGENT SYSTEMS &amp; DIGITAL PRODUCTS</span>
-    <a href="#top">BACK TO TOP</a>
+    <div class="ss-footer-meta-links">
+      <a href="mailto:hello@savvystudio.cc" class="ss-footer-meta-mail">HELLO@SAVVYSTUDIO.CC</a>
+      <a href="https://wa.me/355685585065" target="_blank" rel="noopener noreferrer" class="ss-footer-meta-wa">WHATSAPP · +355 68 558 5065</a>
+      <a href="#top">BACK TO TOP</a>
+    </div>
   </div>
 </footer>
 
@@ -4905,11 +4898,14 @@ class Component extends DCLogic {
 
   siteSetTitle() {
     if (typeof document === 'undefined') return;
+    const can = document.querySelector('link[rel="canonical"]');
     if (this.state.sitePage === 'project') {
       const p = (this.PROJECTS && this.PROJECTS[this.state.projectKey]) || this.PROJECTS.savvyedge;
       document.title = p.name + ' · ' + p.category + ' — Savvy Studio';
+      if (can) can.setAttribute('href', 'https://savvystudio.cc/work/' + this.state.projectKey);
     } else {
       document.title = 'Savvy Studio — Intelligent Systems & Digital Products';
+      if (can) can.setAttribute('href', 'https://savvystudio.cc/');
     }
   }
 
@@ -5877,6 +5873,7 @@ class Component extends DCLogic {
   pdxOnDBusiness = (e) => this.pdxSet({ dBusiness: e ? e.target.value : '', dBusinessError: false });
   pdxOnDPhone = (e) => this.pdxSet({ dPhone: e ? e.target.value : '', dReplyError: false });
   pdxOnDEmail = (e) => this.pdxSet({ dEmail: e ? e.target.value : '', dReplyError: false });
+  pdxOnDWebsite = (e) => this.pdxSet({ dWebsite: e ? e.target.value : '' });
 
   // Deliberately permissive shape check -- enough to catch a typo, not enough
   // to reject an address a real mail server would accept.
@@ -5891,29 +5888,151 @@ class Component extends DCLogic {
     return { nameErr: nameErr, emailErr: emailErr, ok: !nameErr && !emailErr };
   };
 
-  // Form -> preview. Nothing leaves the page here.
-  pdxReviewBrief = (e) => {
-    if (e) e.preventDefault();
-    const v = this.pdxValidateBrief();
-    if (!v.ok) { this.pdxSet({ dNameError: v.nameErr, dEmailError: v.emailErr }); return; }
-    this.pdxSet({ dNameError: false, dEmailError: false, briefStage: 'preview' });
+  pdxBriefContent = () => {
+    const p = this.pdxBriefParts();
+    if (!p.hasDiag) {
+      return p.context;
+    }
+    const L = [];
+    if (p.confident) {
+      L.push('Likely direction: ' + p.direction);
+      if (p.caps.length) L.push('What this likely needs: ' + p.caps.join(' · '));
+      if (p.work) L.push('Relevant work: ' + p.work);
+    } else if (p.hasDiag) {
+      L.push('Direction: not confident yet — mapping first.');
+    }
+    if (p.firstMap) L.push('First thing to map: ' + p.firstMap);
+    if (p.answers.length) { L.push('', 'What we heard:'); p.answers.forEach(a => L.push('- ' + a[0] + ': ' + a[1])); }
+    if (p.note) L.push('', 'In their words: ' + p.note);
+    if (p.context) L.push('', 'Extra context: ' + p.context);
+    return L.filter((l, i) => l !== '' || (L[i - 1] !== '' && i !== L.length - 1)).join('\n');
   };
 
-  pdxEditBrief = (e) => { if (e) e.preventDefault(); this.pdxSet({ briefStage: 'form' }); };
+  pdxSendInquiry = (e) => {
+    if (e) e.preventDefault();
+    const d = this.state.problemDx;
+    if (d.dSending) return;
 
-  // The one genuinely working destination. Only reachable from the preview,
-  // and it opens WhatsApp with the message visible for the visitor to send.
+    const v = this.pdxValidateBrief();
+    if (!v.ok) {
+      this.pdxSet({ dNameError: v.nameErr, dEmailError: v.emailErr });
+      return;
+    }
+
+    const bp = this.pdxBriefParts();
+    const hasDiag = !!bp.hasDiag;
+    const briefStr = (this.pdxBriefContent() || '').trim();
+
+    const payload = {
+      source: hasDiag ? 'diagnostic' : 'direct',
+      name: (d.dName || '').trim(),
+      email: (d.dEmail || '').trim(),
+      phone: (d.dPhone || '').trim(),
+      business: (d.dBusiness || '').trim(),
+      brief: briefStr,
+      diagnosticDirection: hasDiag ? (bp.direction || '') : '',
+      diagnosticAnswers: hasDiag ? JSON.stringify(d.a || {}) : '',
+      submittedAt: new Date().toISOString(),
+      website: (d.dWebsite || '').trim()
+    };
+
+    this.pdxSet({
+      dNameError: false,
+      dEmailError: false,
+      dSending: true,
+      dError: false,
+      dPayload: payload
+    });
+
+    fetch('/api/inquiry', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(async res => {
+      let data = null;
+      try { data = await res.json(); } catch (e) {}
+      if (res.ok && data && data.ok) {
+        this.pdxSet({
+          dSending: false,
+          dError: false,
+          briefStage: 'sent',
+          dSentSuccess: true
+        });
+      } else {
+        this.pdxSet({
+          dSending: false,
+          dError: true
+        });
+      }
+    })
+    .catch(err => {
+      this.pdxSet({
+        dSending: false,
+        dError: true
+      });
+    });
+  };
+
   onDirectWhatsApp = (e) => {
     if (e) e.preventDefault();
-    const url = 'https://wa.me/' + STUDIO_WHATSAPP_NUMBER + '?text=' + encodeURIComponent(this.pdxBriefText());
-    // Opened synchronously inside the click so the browser treats it as a user
-    // gesture. A null handle means the tab was definitely blocked; a non-null one
-    // is not proof it rendered, so the confirmation never asserts more than that.
+    const d = this.state.problemDx;
+    const bp = this.pdxBriefParts();
+    const payload = d.dPayload || {
+      source: bp.hasDiag ? 'diagnostic' : 'direct',
+      name: bp.name,
+      email: bp.email,
+      phone: bp.phone,
+      business: bp.business,
+      brief: (this.pdxBriefContent() || '').trim(),
+      diagnosticDirection: bp.hasDiag ? (bp.direction || '') : ''
+    };
+
+    const lines = [
+      'Hello Savvy Studio,',
+      '',
+      'I just submitted an inquiry through savvystudio.cc.',
+      '',
+      'Name: ' + payload.name
+    ];
+    if (payload.business) lines.push('Business: ' + payload.business);
+    lines.push('Email: ' + payload.email);
+    if (payload.phone) lines.push('Phone: ' + payload.phone);
+    if (payload.brief) lines.push('', payload.brief);
+    if (payload.source === 'diagnostic' && payload.diagnosticDirection) {
+      lines.push('', 'Direction: ' + payload.diagnosticDirection);
+    }
+
+    const text = lines.join('\n');
+    const url = 'https://wa.me/355685585065?text=' + encodeURIComponent(text);
+
     let handle = null;
     if (typeof window !== 'undefined') {
       try { handle = window.open(url, '_blank', 'noopener,noreferrer'); } catch (err) { handle = null; }
     }
-    this.pdxSet({ briefStage: 'sent', dSentVia: handle ? 'whatsapp' : 'whatsapp-blocked' });
+  };
+
+  pdxBackToStudio = (e) => {
+    if (e) e.preventDefault();
+    this.setState(s => ({
+      sitePage: 'home',
+      workOverlayOpen: false,
+      layerExplorerOpen: false,
+      problemDx: {
+        ...s.problemDx,
+        stage: 'open',
+        briefStage: 'form',
+        dSending: false,
+        dError: false,
+        dSentVia: null
+      }
+    }));
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   // Single source of truth for what the handoff carries, used by both the
@@ -5987,7 +6106,7 @@ class Component extends DCLogic {
   // Anything typed into the direct brief survives.
   pdxReset = (e) => {
     if (e) e.preventDefault();
-    this.setState(s => ({ problemDx: { ...s.problemDx, stage: 'open', diagExpanded: true, resultReady: false, briefStage: 'form', dSentVia: null, dSubmitted: false, a: { s: null, w: null, b: null, c: null, d: null, r: null, n: null }, note: '' } }));
+    this.setState(s => ({ problemDx: { ...s.problemDx, stage: 'open', diagExpanded: true, resultReady: false, briefStage: 'form', dSentVia: null, dSubmitted: false, dWebsite: '', a: { s: null, w: null, b: null, c: null, d: null, r: null, n: null }, note: '' } }));
   };
 
   // Read a contextual entry from the URL (?dx=intelligence etc). Session only.
@@ -6876,8 +6995,16 @@ class Component extends DCLogic {
       pdxOnDBusiness: this.pdxOnDBusiness,
       pdxOnDPhone: this.pdxOnDPhone,
       pdxOnDEmail: this.pdxOnDEmail,
+      pdxDWebsite: problemDx.dWebsite || '',
+      pdxOnDWebsite: this.pdxOnDWebsite,
       pdxReviewBrief: this.pdxReviewBrief,
       pdxEditBrief: this.pdxEditBrief,
+      pdxSendInquiry: this.pdxSendInquiry,
+      pdxSending: !!problemDx.dSending,
+      pdxSubmitButtonText: problemDx.dSending ? 'SENDING…' : 'SEND INQUIRY',
+      pdxError: !!problemDx.dError,
+      pdxFirstName: (problemDx.dName || '').trim().split(/\s+/)[0] || 'there',
+      pdxBackToStudio: this.pdxBackToStudio,
 
       // entry modes
       pdxBriefModeOpen: briefMode === 'open',
