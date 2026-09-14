@@ -2488,6 +2488,9 @@ button.bl-row[data-sel="true"]{background:rgba(217,86,107,.12);box-shadow:inset 
               <span> · </span>
               <a id="direct-brief-wa-link" href="https://wa.me/355685585065" target="_blank" rel="noopener noreferrer" style="color:#E3BFA4;text-decoration:underline;text-underline-offset:3px" style-hover="color:#F0576B">+355 68 558 5065</a>
             </div>
+            <div style="margin-top:14px;font-size:10px;font-weight:300;line-height:1.55;color:rgba(226,205,190,.36)">
+              <span>Submitted details are used solely to respond to your inquiry and are processed through service providers used for form delivery and email communication.</span>
+            </div>
           </form>
           </sc-if>
 
@@ -5960,7 +5963,8 @@ class Component extends DCLogic {
           dSending: false,
           dError: false,
           briefStage: 'sent',
-          dSentSuccess: true
+          dSentSuccess: true,
+          dConfirmationEmailSent: !!(data && data.confirmationEmailSent)
         });
       } else {
         this.pdxSet({

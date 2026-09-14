@@ -26,6 +26,8 @@ coverage/
 tmp/
 temp/
 uploads/pasted-*.txt
+*.pre-repair*
+*.backup.*
 
 # Local configuration and secrets
 .env
