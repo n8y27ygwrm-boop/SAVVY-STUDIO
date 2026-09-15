@@ -262,7 +262,7 @@ function escapeHtml(str) {
 function buildConfirmationHtml(firstName, hasMonogram) {
   const safeFirstName = escapeHtml(firstName);
   const headerImageCell = hasMonogram
-    ? `<td style="vertical-align:middle;padding-right:12px;"><img src="cid:ss-monogram@savvystudio.cc" alt="Savvy Studio" width="34" height="34" style="display:block;width:34px;height:34px;border:0;outline:none;" /></td>`
+    ? `<td style="vertical-align:middle;padding-right:12px;"><img src="cid:ss-monogram@savvystudio.cc" alt="Savvy Systems" width="34" height="34" style="display:block;width:34px;height:34px;border:0;outline:none;" /></td>`
     : '';
 
   return `<!DOCTYPE html>
@@ -270,7 +270,7 @@ function buildConfirmationHtml(firstName, hasMonogram) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>We've received your inquiry — Savvy Studio</title>
+<title>We've received your inquiry — Savvy Systems</title>
 </head>
 <body style="margin:0;padding:0;background-color:#07070a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#f0ece8;line-height:1.6;">
   <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#07070a;width:100%;table-layout:fixed;">
@@ -283,7 +283,7 @@ function buildConfirmationHtml(firstName, hasMonogram) {
                 <tr>
                   ${headerImageCell}
                   <td style="vertical-align:middle;">
-                    <span style="font-size:11px;letter-spacing:0.2em;color:#e3bfa4;font-weight:600;text-transform:uppercase;">SAVVY STUDIO</span>
+                    <span style="font-size:11px;letter-spacing:0.2em;color:#e3bfa4;font-weight:600;text-transform:uppercase;">SAVVY SYSTEMS</span>
                   </td>
                 </tr>
               </table>
@@ -296,7 +296,7 @@ function buildConfirmationHtml(firstName, hasMonogram) {
           </tr>
           <tr>
             <td style="font-size:14px;line-height:1.65;color:rgba(240,232,226,0.85);padding-bottom:14px;">
-              Thank you for reaching out to Savvy Studio.
+              Thank you for reaching out to Savvy Systems.
             </td>
           </tr>
           <tr>
@@ -306,12 +306,12 @@ function buildConfirmationHtml(firstName, hasMonogram) {
           </tr>
           <tr>
             <td style="font-size:14px;line-height:1.65;color:rgba(240,232,226,0.85);padding-bottom:28px;">
-              You'll hear from Savvy Studio soon.
+              You'll hear from Savvy Systems soon.
             </td>
           </tr>
           <tr>
             <td style="border-top:1px solid rgba(226,205,190,0.15);padding-top:20px;font-size:12px;line-height:1.6;color:rgba(226,205,190,0.6);">
-              <div style="color:#e3bfa4;font-size:12px;font-weight:500;letter-spacing:0.05em;margin-bottom:4px;">Savvy Studio</div>
+              <div style="color:#e3bfa4;font-size:12px;font-weight:500;letter-spacing:0.05em;margin-bottom:4px;">Savvy Systems</div>
               <div><a href="mailto:hello@savvystudio.cc" style="color:rgba(226,205,190,0.7);text-decoration:none;">hello@savvystudio.cc</a></div>
               <div><a href="https://savvystudio.cc" style="color:rgba(226,205,190,0.7);text-decoration:none;">https://savvystudio.cc</a></div>
             </td>
@@ -468,13 +468,13 @@ module.exports = async function handler(req, res) {
       const emailBody = [
         `Hi ${firstName},`,
         '',
-        'Thank you for reaching out to Savvy Studio.',
+        'Thank you for reaching out to Savvy Systems.',
         '',
         "We've received your inquiry and will review the details shortly.",
         '',
-        "You'll hear from Savvy Studio soon.",
+        "You'll hear from Savvy Systems soon.",
         '',
-        'Savvy Studio',
+        'Savvy Systems',
         'hello@savvystudio.cc',
         'https://savvystudio.cc'
       ].join('\n');
@@ -492,10 +492,10 @@ module.exports = async function handler(req, res) {
       }
 
       const mailOptions = {
-        from: `Savvy Studio <${EXPECTED_MAILBOX}>`,
+        from: `Savvy Systems <${EXPECTED_MAILBOX}>`,
         to: email,
         replyTo: EXPECTED_MAILBOX,
-        subject: "We've received your inquiry — Savvy Studio",
+        subject: "We've received your inquiry — Savvy Systems",
         text: emailBody,
         html: buildConfirmationHtml(firstName, hasMonogram),
         attachments
