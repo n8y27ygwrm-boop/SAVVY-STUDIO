@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /qa-evidence/
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://savvystudio.cc/sitemap.xml

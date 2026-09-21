@@ -1,0 +1,25 @@
+# Savvy Studio
+
+> Savvy Studio designs and builds intelligent systems, AI automation, digital products and operational software for businesses with complex problems and workflows.
+
+## Identity & Contact
+- Canonical Domain: https://savvystudio.cc/
+- Contact: hello@savvystudio.cc
+- Primary Positioning: Intelligent Systems & Digital Products
+
+## Core Capabilities
+- AI Automation: Workflows, agents, orchestration, automated document extraction, classification, and operational automation.
+- Intelligent Systems: Autonomous decision systems, grounded retrieval, competitive intelligence, and predictive scoring models.
+- Digital Products: Bespoke web applications, client portals, internal operational tools, and custom conversion interfaces.
+- Operational Software: Systems built around real business processes, tracking tasks, field operations, and workflows.
+- Integrations: API connectivity, database synchronizations, and event-driven pipelines.
+
+## Selected Work & Systems
+- [SavvyEdge](https://savvystudio.cc/work/savvyedge): Real-time intelligence infrastructure for iGaming, analyzing changing game conditions, RTP variations, and bonus math.
+- [Blueprint](https://savvystudio.cc/work/blueprint): Product control and evidence verification system, identifying boundaries, blockers, and runtime evidence.
+- [Eye](https://savvystudio.cc/work/eye): Field operations system for client visits, route planning, account histories, and operational next actions.
+
+## Canonical Resources
+- Homepage: https://savvystudio.cc/
+- XML Sitemap: https://savvystudio.cc/sitemap.xml
+- Robots Policy: https://savvystudio.cc/robots.txt
